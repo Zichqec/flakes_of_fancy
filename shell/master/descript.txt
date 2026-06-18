@@ -7,3 +7,19 @@ craftmanw,Zichqec
 craftmanurl,https://ukagaka.zichqec.com/
 
 seriko.use_self_alpha,1
+
+
+char0.bindoption20000.group,Snow drift stage,mustselect
+char0.bindgroup20000.default,1
+char0.bindgroup20000.name,Snow drift stage,0
+char0.bindgroup20001.name,Snow drift stage,1
+char0.bindgroup20002.name,Snow drift stage,2
+char0.bindgroup20003.name,Snow drift stage,3
+
+char0.bindoption30000.group,Snow ball variant,mustselect
+char0.bindgroup30000.default,1
+char0.bindgroup30000.name,Snow ball variant,0
+
+char0.bindoption40000.group,Snowman variant,mustselect
+char0.bindgroup40000.default,1
+char0.bindgroup40000.name,Snowman variant,0

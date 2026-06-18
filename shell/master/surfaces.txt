@@ -3,8 +3,10 @@ descript
 	version,1
 }
 
+//Menu blob
 surface0
 {
+	
 }
 
 //Snowflake
@@ -133,6 +135,43 @@ surface1
 	animation99999.pattern4,reduce,19904,200,0,0
 }
 
+//Snow drift
+surface2
+{
+	element0,overlay,surface20000.png,0,0
+	
+	point.basepos.y,90
+	
+	animation20000.interval,bind
+	animation20000.pattern0,replace,20000,0,0,0
+	
+	animation20001.interval,bind
+	animation20001.pattern0,replace,20001,0,0,0
+	
+	animation20002.interval,bind
+	animation20002.pattern0,replace,20002,0,0,0
+	
+	animation20003.interval,bind
+	animation20003.pattern0,replace,20003,0,0,0
+}
+
+//Snow ball
+surface3
+{
+	element0,overlay,surface30000.png,0,0
+	
+	animation30000.interval,bind
+	animation30000.pattern0,replace,30000,0,0,0
+}
+
+//Snow man
+surface4
+{
+	element0,overlay,surface40000.png,0,0
+	
+	animation40000.interval,bind
+	animation40000.pattern0,replace,40000,0,0,0
+}
 
 surface10
 {

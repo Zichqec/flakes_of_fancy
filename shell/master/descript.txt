@@ -1,0 +1,7 @@
+charset,UTF-8
+type,shell
+name,Programmer art
+
+craftman,Zichqec
+craftmanw,Zichqec
+craftmanurl,https://ukagaka.zichqec.com/

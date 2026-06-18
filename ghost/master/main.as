@@ -1,0 +1,4 @@
+talk OnBoot
+{
+	Hello, world!
+}

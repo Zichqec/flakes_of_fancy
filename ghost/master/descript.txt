@@ -1,0 +1,10 @@
+charset,UTF-8
+type,ghost
+name,Flakes of Fancy
+sakura.name,Snowflakes
+
+craftman,Blue & Galla & Zichqec
+craftmanw,Blue & Galla & Zichqec
+craftmanurl,https://github.com/Zichqec/flakes_of_fancy
+
+shiori,aosora.dll

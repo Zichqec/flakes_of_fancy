@@ -5,3 +5,5 @@ name,Programmer art
 craftman,Zichqec
 craftmanw,Zichqec
 craftmanurl,https://ukagaka.zichqec.com/
+
+seriko.use_self_alpha,1

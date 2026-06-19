@@ -6,12 +6,12 @@ talk RandomTalk(p)
 
 talk Chain_VolumeWarning1
 {
-	\p[{LastScope}]\b[0]THIS IS A JOKE!! MY EYES HAVE NOT CHANGED IN FORM OR FUNCTION!! DID YOU LAUGH!!
+	{Chain}\b[0]THIS IS A JOKE!! MY EYES HAVE NOT CHANGED IN FORM OR FUNCTION!! DID YOU LAUGH!!
 }
 
 talk Chain_VolumeWarning2
 {
-	\p[{LastScope}]\b[0]HOW DO I TURN THE VOLUME BACK DOWN!!
+	{Chain}\b[0]HOW DO I TURN THE VOLUME BACK DOWN!!
 }
 
 talk RandomTalk(p)
@@ -67,5 +67,5 @@ talk OnFaceThing2
 
 talk Chain_FaceThing
 {
-	\p[{LastScope}]\b[0]Fine, don't tell me! I was just testing you anyways. I know what all of my face things are.
+	{Chain}\b[0]Fine, don't tell me! I was just testing you anyways. I know what all of my face things are.
 }

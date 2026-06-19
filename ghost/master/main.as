@@ -24,6 +24,8 @@ function OnAosoraLoad
 	TalkTimer.RandomTalk = OnTimedTalk;
 	LastScope = -1;
 	TalkScope = -1;
+	TalkEndTime = Time.GetNowUnixEpoch();
+	TalkLatch = 0;
 }
 
 function OnInitialize
@@ -40,6 +42,7 @@ function OnTimedTalk
 {
 	if (SnowmanCount() > 0)
 	{
+		TalkLatch = 1;
 		local scopes = SnowmanScopes();
 		local rand = Random.GetIndex(0,scopes.length);
 		local scope = scopes[rand];
@@ -55,6 +58,7 @@ function OnTimedTalk
 		return LastTalk;
 	}
 	TalkScope = -1;
+	TalkLatch = 0;
 }
 
 function OnAITalk(scope)
@@ -258,27 +262,36 @@ function abs(num)
 
 function OnSecondChange
 {
+	local cantalk = true;
+	if (Shiori.Reference[3] == "0") cantalk = false;
+	//TODO I don't know why I have to write out the == false here and can't just write !cantalk...... i'm losing my mind a bit right now, i'll revisit this. can't get the debugging functions working either
+	if (cantalk == false && TalkLatch == 1) TalkEndTime = Time.GetNowUnixEpoch();
+	else TalkLatch = 0;
+	
 	if (Save.Data.SnowRate != -1)
 	{
 		local currenttime = Time.GetNowUnixEpoch();
 		
 		local C = "";
-		if (BalloonIsOpen()) C = "\C";
+		//Hoping that by checking for when the last dialogue ended, we can avoid the problem of the balloon staying open forever...
+		//TODO ugh... this is gonna be weird when flakes don't fall every second. But maybe it's okay...?
+		if (BalloonIsOpen() && currenttime - TalkEndTime < 15) C = "\C";
 		
 		//Snow drifts
-		if (currenttime - LastDriftTime >= (Save.Data.SnowRate * 10) && Shiori.Reference[3] == 1)
+		if (currenttime - LastDriftTime >= (Save.Data.SnowRate * 10) && cantalk == true)
 		{
 			LastDriftTime = Time.GetNowUnixEpoch();
 			
-			return C + OnSpawnSnowdrift();
+			//Using raise for these just so it'll break the balloon when desired...
+			return C + "\![raise,OnSpawnSnowdrift]";
 		}
 		
 		//Snowflakes
-		if (currenttime - LastFlakeTime >= Save.Data.SnowRate && Shiori.Reference[3] == 1)
+		if (currenttime - LastFlakeTime >= Save.Data.SnowRate && cantalk == true)
 		{
 			LastFlakeTime = Time.GetNowUnixEpoch();
 			
-			return C + OnSpawnSnowflake();
+			return C + "\![raise,OnSpawnSnowflake]";
 		}
 	}
 }
@@ -454,4 +467,10 @@ function OnSpawnSnowman@Move
 function ColorAnchorAsChoice
 {
 	return "\f[anchor.font.color,default.cursor]";
+}
+
+function Chain
+{
+	TalkLatch = 1;
+	return "\p[{LastScope}]";
 }

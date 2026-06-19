@@ -345,7 +345,7 @@ function OnSpawnSnowflake@ChoosePosition
 	
 	local output = "";
 	if (BalloonIsOpen()) output += "\C";
-	output += "\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[{Shiori.Reference[1]}]\![set,alpha,100]";
+	output += "\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[{Shiori.Reference[1]}]\![set,alpha,100,500]";
 	return output;
 }
 

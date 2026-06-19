@@ -57,21 +57,40 @@ function OnMouseLeaveAll
 
 function OnOverlap
 {
-	// //return "\0\b[4]\_q" + Shiori.Reference[0] + "\n" + Shiori.Reference[1];
-	// local overlaps = Shiori.Reference[0].Split((1).ToAscii());
+	//return "\0\b[4]\_q" + Shiori.Reference[0] + "\n" + Shiori.Reference[1];
+	local reference = Shiori.Reference[0].Split((1).ToAscii());
+	local overlaps = []; //Temporary list of all the overlapping scopes
+	local scopes = []; //Final scopes to remove
 	
-	// foreach (overlap in overlaps)
-	// {
-		// local snowball = overlap.Split("-");
-		// snowball[0] = snowball[0].ToNumber();
-		// snowball[1] = snowball[1].ToNumber();
+	foreach (ref in reference)
+	{
+		local snowball = ref.Split("-");
+		snowball[0] = snowball[0].ToNumber();
+		snowball[1] = snowball[1].ToNumber();
 		
-		// //Ignore any overlaps that are not snow balls (not in the 300 range)
-		// if ((snowball[0] >= 300 && snowball[0] < 400) && (snowball[1] >= 300 && snowball[1] < 400))
-		// {
-			
-		// }
-	// }
+		//Ignore any overlaps that are not snow balls (not in the 300 range)
+		if ((snowball[0] >= 300 && snowball[0] < 400) && (snowball[1] >= 300 && snowball[1] < 400))
+		{
+			//All we have to do is find an existing overlap, and if this matches at least one of the numbers, then we have a chain of 3 (because we already filtered out any non-snowballs)
+			foreach (overlap in overlaps)
+			{
+				local pair = overlap.Split("-");
+				local found;
+				
+				if (overlap.Contains(snowball[0])) found = snowball[1];
+				if (overlap.Contains(snowball[1])) found = snowball[0];
+				
+				if (!found.IsNull())
+				{
+					scopes.Add(pair[0]);
+					scopes.Add(pair[1]);
+					scopes.Add(found);
+					return OnSpawnSnowman(scopes);
+				}
+			}
+			overlaps.Add(ref);
+		}
+	}
 }
 
 function OnSurfaceChange
@@ -266,4 +285,44 @@ function OnSpawnSnowBall@ChoosePosition
 	local X = SnowDriftPos.center - (FlakeWidth / 2).Floor();
 	
 	return "\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[3]\![set,alpha,100]";
+}
+
+function OnSpawnSnowman(p)
+{
+	local scope = -1;
+	for (local i = 400; i < 500; i++)
+	{
+		if (Surfaces["{i}"] == -1 || !Surfaces.Contains("{i}"))
+		{
+			scope = i;
+			break;
+		}
+	}
+	
+	return "\p[{scope}]\![set,alpha,0]\s[4]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![get,property,OnSpawnSnowman@WidthCheck,currentghost.scope({p[0]}).rect,currentghost.scope({p[1]}).rect,currentghost.scope({p[2]}).rect]\![embed,OnSpawnSnowman@Move,{p[0]},{p[1]},{p[2]},{scope}]";
+}
+
+function OnSpawnSnowman@WidthCheck
+{
+	local ref0 = Shiori.Reference[0].Split(",");
+	local ref1 = Shiori.Reference[1].Split(",");
+	local ref2 = Shiori.Reference[2].Split(",");
+	
+	local left = ref0[0].ToNumber();
+	if (ref1[0].ToNumber() < left) left = ref1[0].ToNumber();
+	if (ref2[0].ToNumber() < left) left = ref2[0].ToNumber();
+	
+	local right = ref0[2].ToNumber();
+	if (ref1[2].ToNumber() > right) right = ref1[2].ToNumber();
+	if (ref2[2].ToNumber() > right) right = ref2[2].ToNumber();
+	
+	local width = abs(right - left);
+	AllTogetherCenter = right - (width /  2).Floor();
+}
+
+function OnSpawnSnowman@Move
+{
+	//TODO for some reason the snowman doesn't appear in the center of the snowballs properly like it should even though i have triple checked... I'll come back to this
+	local X = AllTogetherCenter - (FlakeWidth / 2).Floor();
+	return "\p[{Shiori.Reference[3]}]\![move,--X={X}]\s[4]\![set,alpha,100]\p[{Shiori.Reference[0]}]\s[-1]\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[2]}]\s[-1]" + "{AllTogetherCenter}, {FlakeWidth} / 2 = {(FlakeWidth / 2).Floor()}, together {X}";
 }

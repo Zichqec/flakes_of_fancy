@@ -40,7 +40,7 @@ function OnInitialize
 //NOTE: chain talks don't come through this function............. or at least not if i prompt them
 function OnTimedTalk
 {
-	if (SnowmanCount() > 0)
+	if (SnowmanScopes().length() > 0)
 	{
 		TalkLatch = 1;
 		local scopes = SnowmanScopes();
@@ -69,25 +69,23 @@ function OnAITalk(scope)
 	return LastTalk;
 }
 
-function SnowmanCount
-{
-	return SnowmanScopes().length;
-}
-
-function OnSnowScopes
-{
-	local output = "";
-	foreach (scope in SnowmanScopes())
-	{
-		output += "{scope},";
-	}
-	return output;
-}
-
 function SnowmanScopes
 {
 	local scopes = [];
 	for (local i = 400; i < 500; i++)
+	{
+		if (Surfaces.Contains("{i}") && Surfaces["{i}"] != -1)
+		{
+			scopes.Add("{i}");
+		}
+	}
+	return scopes;
+}
+
+function SnowdriftScopes
+{
+	local scopes = [];
+	for (local i = 200; i < 300; i++)
 	{
 		if (Surfaces.Contains("{i}") && Surfaces["{i}"] != -1)
 		{
@@ -283,7 +281,14 @@ function OnSecondChange
 			LastDriftTime = Time.GetNowUnixEpoch();
 			
 			//Using raise for these just so it'll break the balloon when desired...
-			return C + "\![raise,OnSpawnSnowdrift]";
+			
+			local count = SnowdriftScopes().length;
+			local action = "new";
+			if (count >= 100) action = "increase";
+			else if (count >= 5 && Random.GetIndex(0,3) == 0) action = "increase";
+			
+			if (action == "increase") return C + "\![raise,OnIncreaseSnowdrift]";
+			else return C + "\![raise,OnSpawnSnowdrift]";
 		}
 		
 		//Snowflakes
@@ -383,6 +388,26 @@ function OnSpawnSnowdrift
 	}
 }
 
+function OnIncreaseSnowdrift
+{
+	local eligible = [];
+	for (local i = 200; i < 300; i++)
+	{
+		if (Surfaces["{i}"] != -1 && SnowDriftHeight["{i}"] < 4) eligible.Add(i);
+	}
+	
+	if (eligible.length == 0) return;
+	
+	local rand = Random.GetIndex(0,eligible.length);
+	local character = eligible[rand];
+	local height = SnowDriftHeight["{character}"];
+	
+	local output = "";
+	if (BalloonIsOpen()) output += "\C";
+	output += "\p[{character}]\![bind,Snow drift stage,{height + 1},1]";
+	return output;
+}
+
 function OnMakeSnowBall
 {
 	local scope = -1;
@@ -474,3 +499,23 @@ function Chain
 	TalkLatch = 1;
 	return "\p[{LastScope}]";
 }
+
+function OnNotifyDressupInfo
+{
+	SnowDriftHeight = {};
+	for (local i = 0; i < Shiori.Reference.length; i++)
+	{
+		local dressup = Shiori.Reference[i].Split((1).ToAscii());
+		
+		if (dressup[4] == "0") continue;
+		
+		local character = dressup[0].ToNumber();
+		//[character ID, category name, part name, option, on-1/off-0, thumbnail path]
+		if (character >= 200 && character < 300) //Snow drifts
+		{
+			//If this is the stage dressup, save the character ID and stage number
+			if (dressup[1] == "Snow drift stage") SnowDriftHeight["{character}"] = dressup[2].ToNumber();
+		}
+	}
+}
+

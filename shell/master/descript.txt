@@ -9,12 +9,606 @@ craftmanurl,https://ukagaka.zichqec.com/
 seriko.use_self_alpha,1
 
 
-char0.bindoption20000.group,Snow drift stage,mustselect
-char0.bindgroup20000.default,1
-char0.bindgroup20000.name,Snow drift stage,0
-char0.bindgroup20001.name,Snow drift stage,1
-char0.bindgroup20002.name,Snow drift stage,2
-char0.bindgroup20003.name,Snow drift stage,3
+char200.bindoption20000.group,Snow drift stage,mustselect
+char200.bindgroup20000.default,1
+char200.bindgroup20000.name,Snow drift stage,0
+char200.bindgroup20001.name,Snow drift stage,1
+char200.bindgroup20002.name,Snow drift stage,2
+char200.bindgroup20003.name,Snow drift stage,3
+char201.bindoption20000.group,Snow drift stage,mustselect
+char201.bindgroup20000.default,1
+char201.bindgroup20000.name,Snow drift stage,0
+char201.bindgroup20001.name,Snow drift stage,1
+char201.bindgroup20002.name,Snow drift stage,2
+char201.bindgroup20003.name,Snow drift stage,3
+char202.bindoption20000.group,Snow drift stage,mustselect
+char202.bindgroup20000.default,1
+char202.bindgroup20000.name,Snow drift stage,0
+char202.bindgroup20001.name,Snow drift stage,1
+char202.bindgroup20002.name,Snow drift stage,2
+char202.bindgroup20003.name,Snow drift stage,3
+char203.bindoption20000.group,Snow drift stage,mustselect
+char203.bindgroup20000.default,1
+char203.bindgroup20000.name,Snow drift stage,0
+char203.bindgroup20001.name,Snow drift stage,1
+char203.bindgroup20002.name,Snow drift stage,2
+char203.bindgroup20003.name,Snow drift stage,3
+char204.bindoption20000.group,Snow drift stage,mustselect
+char204.bindgroup20000.default,1
+char204.bindgroup20000.name,Snow drift stage,0
+char204.bindgroup20001.name,Snow drift stage,1
+char204.bindgroup20002.name,Snow drift stage,2
+char204.bindgroup20003.name,Snow drift stage,3
+char205.bindoption20000.group,Snow drift stage,mustselect
+char205.bindgroup20000.default,1
+char205.bindgroup20000.name,Snow drift stage,0
+char205.bindgroup20001.name,Snow drift stage,1
+char205.bindgroup20002.name,Snow drift stage,2
+char205.bindgroup20003.name,Snow drift stage,3
+char206.bindoption20000.group,Snow drift stage,mustselect
+char206.bindgroup20000.default,1
+char206.bindgroup20000.name,Snow drift stage,0
+char206.bindgroup20001.name,Snow drift stage,1
+char206.bindgroup20002.name,Snow drift stage,2
+char206.bindgroup20003.name,Snow drift stage,3
+char207.bindoption20000.group,Snow drift stage,mustselect
+char207.bindgroup20000.default,1
+char207.bindgroup20000.name,Snow drift stage,0
+char207.bindgroup20001.name,Snow drift stage,1
+char207.bindgroup20002.name,Snow drift stage,2
+char207.bindgroup20003.name,Snow drift stage,3
+char208.bindoption20000.group,Snow drift stage,mustselect
+char208.bindgroup20000.default,1
+char208.bindgroup20000.name,Snow drift stage,0
+char208.bindgroup20001.name,Snow drift stage,1
+char208.bindgroup20002.name,Snow drift stage,2
+char208.bindgroup20003.name,Snow drift stage,3
+char209.bindoption20000.group,Snow drift stage,mustselect
+char209.bindgroup20000.default,1
+char209.bindgroup20000.name,Snow drift stage,0
+char209.bindgroup20001.name,Snow drift stage,1
+char209.bindgroup20002.name,Snow drift stage,2
+char209.bindgroup20003.name,Snow drift stage,3
+char210.bindoption20000.group,Snow drift stage,mustselect
+char210.bindgroup20000.default,1
+char210.bindgroup20000.name,Snow drift stage,0
+char210.bindgroup20001.name,Snow drift stage,1
+char210.bindgroup20002.name,Snow drift stage,2
+char210.bindgroup20003.name,Snow drift stage,3
+char211.bindoption20000.group,Snow drift stage,mustselect
+char211.bindgroup20000.default,1
+char211.bindgroup20000.name,Snow drift stage,0
+char211.bindgroup20001.name,Snow drift stage,1
+char211.bindgroup20002.name,Snow drift stage,2
+char211.bindgroup20003.name,Snow drift stage,3
+char212.bindoption20000.group,Snow drift stage,mustselect
+char212.bindgroup20000.default,1
+char212.bindgroup20000.name,Snow drift stage,0
+char212.bindgroup20001.name,Snow drift stage,1
+char212.bindgroup20002.name,Snow drift stage,2
+char212.bindgroup20003.name,Snow drift stage,3
+char213.bindoption20000.group,Snow drift stage,mustselect
+char213.bindgroup20000.default,1
+char213.bindgroup20000.name,Snow drift stage,0
+char213.bindgroup20001.name,Snow drift stage,1
+char213.bindgroup20002.name,Snow drift stage,2
+char213.bindgroup20003.name,Snow drift stage,3
+char214.bindoption20000.group,Snow drift stage,mustselect
+char214.bindgroup20000.default,1
+char214.bindgroup20000.name,Snow drift stage,0
+char214.bindgroup20001.name,Snow drift stage,1
+char214.bindgroup20002.name,Snow drift stage,2
+char214.bindgroup20003.name,Snow drift stage,3
+char215.bindoption20000.group,Snow drift stage,mustselect
+char215.bindgroup20000.default,1
+char215.bindgroup20000.name,Snow drift stage,0
+char215.bindgroup20001.name,Snow drift stage,1
+char215.bindgroup20002.name,Snow drift stage,2
+char215.bindgroup20003.name,Snow drift stage,3
+char216.bindoption20000.group,Snow drift stage,mustselect
+char216.bindgroup20000.default,1
+char216.bindgroup20000.name,Snow drift stage,0
+char216.bindgroup20001.name,Snow drift stage,1
+char216.bindgroup20002.name,Snow drift stage,2
+char216.bindgroup20003.name,Snow drift stage,3
+char217.bindoption20000.group,Snow drift stage,mustselect
+char217.bindgroup20000.default,1
+char217.bindgroup20000.name,Snow drift stage,0
+char217.bindgroup20001.name,Snow drift stage,1
+char217.bindgroup20002.name,Snow drift stage,2
+char217.bindgroup20003.name,Snow drift stage,3
+char218.bindoption20000.group,Snow drift stage,mustselect
+char218.bindgroup20000.default,1
+char218.bindgroup20000.name,Snow drift stage,0
+char218.bindgroup20001.name,Snow drift stage,1
+char218.bindgroup20002.name,Snow drift stage,2
+char218.bindgroup20003.name,Snow drift stage,3
+char219.bindoption20000.group,Snow drift stage,mustselect
+char219.bindgroup20000.default,1
+char219.bindgroup20000.name,Snow drift stage,0
+char219.bindgroup20001.name,Snow drift stage,1
+char219.bindgroup20002.name,Snow drift stage,2
+char219.bindgroup20003.name,Snow drift stage,3
+char220.bindoption20000.group,Snow drift stage,mustselect
+char220.bindgroup20000.default,1
+char220.bindgroup20000.name,Snow drift stage,0
+char220.bindgroup20001.name,Snow drift stage,1
+char220.bindgroup20002.name,Snow drift stage,2
+char220.bindgroup20003.name,Snow drift stage,3
+char221.bindoption20000.group,Snow drift stage,mustselect
+char221.bindgroup20000.default,1
+char221.bindgroup20000.name,Snow drift stage,0
+char221.bindgroup20001.name,Snow drift stage,1
+char221.bindgroup20002.name,Snow drift stage,2
+char221.bindgroup20003.name,Snow drift stage,3
+char222.bindoption20000.group,Snow drift stage,mustselect
+char222.bindgroup20000.default,1
+char222.bindgroup20000.name,Snow drift stage,0
+char222.bindgroup20001.name,Snow drift stage,1
+char222.bindgroup20002.name,Snow drift stage,2
+char222.bindgroup20003.name,Snow drift stage,3
+char223.bindoption20000.group,Snow drift stage,mustselect
+char223.bindgroup20000.default,1
+char223.bindgroup20000.name,Snow drift stage,0
+char223.bindgroup20001.name,Snow drift stage,1
+char223.bindgroup20002.name,Snow drift stage,2
+char223.bindgroup20003.name,Snow drift stage,3
+char224.bindoption20000.group,Snow drift stage,mustselect
+char224.bindgroup20000.default,1
+char224.bindgroup20000.name,Snow drift stage,0
+char224.bindgroup20001.name,Snow drift stage,1
+char224.bindgroup20002.name,Snow drift stage,2
+char224.bindgroup20003.name,Snow drift stage,3
+char225.bindoption20000.group,Snow drift stage,mustselect
+char225.bindgroup20000.default,1
+char225.bindgroup20000.name,Snow drift stage,0
+char225.bindgroup20001.name,Snow drift stage,1
+char225.bindgroup20002.name,Snow drift stage,2
+char225.bindgroup20003.name,Snow drift stage,3
+char226.bindoption20000.group,Snow drift stage,mustselect
+char226.bindgroup20000.default,1
+char226.bindgroup20000.name,Snow drift stage,0
+char226.bindgroup20001.name,Snow drift stage,1
+char226.bindgroup20002.name,Snow drift stage,2
+char226.bindgroup20003.name,Snow drift stage,3
+char227.bindoption20000.group,Snow drift stage,mustselect
+char227.bindgroup20000.default,1
+char227.bindgroup20000.name,Snow drift stage,0
+char227.bindgroup20001.name,Snow drift stage,1
+char227.bindgroup20002.name,Snow drift stage,2
+char227.bindgroup20003.name,Snow drift stage,3
+char228.bindoption20000.group,Snow drift stage,mustselect
+char228.bindgroup20000.default,1
+char228.bindgroup20000.name,Snow drift stage,0
+char228.bindgroup20001.name,Snow drift stage,1
+char228.bindgroup20002.name,Snow drift stage,2
+char228.bindgroup20003.name,Snow drift stage,3
+char229.bindoption20000.group,Snow drift stage,mustselect
+char229.bindgroup20000.default,1
+char229.bindgroup20000.name,Snow drift stage,0
+char229.bindgroup20001.name,Snow drift stage,1
+char229.bindgroup20002.name,Snow drift stage,2
+char229.bindgroup20003.name,Snow drift stage,3
+char230.bindoption20000.group,Snow drift stage,mustselect
+char230.bindgroup20000.default,1
+char230.bindgroup20000.name,Snow drift stage,0
+char230.bindgroup20001.name,Snow drift stage,1
+char230.bindgroup20002.name,Snow drift stage,2
+char230.bindgroup20003.name,Snow drift stage,3
+char231.bindoption20000.group,Snow drift stage,mustselect
+char231.bindgroup20000.default,1
+char231.bindgroup20000.name,Snow drift stage,0
+char231.bindgroup20001.name,Snow drift stage,1
+char231.bindgroup20002.name,Snow drift stage,2
+char231.bindgroup20003.name,Snow drift stage,3
+char232.bindoption20000.group,Snow drift stage,mustselect
+char232.bindgroup20000.default,1
+char232.bindgroup20000.name,Snow drift stage,0
+char232.bindgroup20001.name,Snow drift stage,1
+char232.bindgroup20002.name,Snow drift stage,2
+char232.bindgroup20003.name,Snow drift stage,3
+char233.bindoption20000.group,Snow drift stage,mustselect
+char233.bindgroup20000.default,1
+char233.bindgroup20000.name,Snow drift stage,0
+char233.bindgroup20001.name,Snow drift stage,1
+char233.bindgroup20002.name,Snow drift stage,2
+char233.bindgroup20003.name,Snow drift stage,3
+char234.bindoption20000.group,Snow drift stage,mustselect
+char234.bindgroup20000.default,1
+char234.bindgroup20000.name,Snow drift stage,0
+char234.bindgroup20001.name,Snow drift stage,1
+char234.bindgroup20002.name,Snow drift stage,2
+char234.bindgroup20003.name,Snow drift stage,3
+char235.bindoption20000.group,Snow drift stage,mustselect
+char235.bindgroup20000.default,1
+char235.bindgroup20000.name,Snow drift stage,0
+char235.bindgroup20001.name,Snow drift stage,1
+char235.bindgroup20002.name,Snow drift stage,2
+char235.bindgroup20003.name,Snow drift stage,3
+char236.bindoption20000.group,Snow drift stage,mustselect
+char236.bindgroup20000.default,1
+char236.bindgroup20000.name,Snow drift stage,0
+char236.bindgroup20001.name,Snow drift stage,1
+char236.bindgroup20002.name,Snow drift stage,2
+char236.bindgroup20003.name,Snow drift stage,3
+char237.bindoption20000.group,Snow drift stage,mustselect
+char237.bindgroup20000.default,1
+char237.bindgroup20000.name,Snow drift stage,0
+char237.bindgroup20001.name,Snow drift stage,1
+char237.bindgroup20002.name,Snow drift stage,2
+char237.bindgroup20003.name,Snow drift stage,3
+char238.bindoption20000.group,Snow drift stage,mustselect
+char238.bindgroup20000.default,1
+char238.bindgroup20000.name,Snow drift stage,0
+char238.bindgroup20001.name,Snow drift stage,1
+char238.bindgroup20002.name,Snow drift stage,2
+char238.bindgroup20003.name,Snow drift stage,3
+char239.bindoption20000.group,Snow drift stage,mustselect
+char239.bindgroup20000.default,1
+char239.bindgroup20000.name,Snow drift stage,0
+char239.bindgroup20001.name,Snow drift stage,1
+char239.bindgroup20002.name,Snow drift stage,2
+char239.bindgroup20003.name,Snow drift stage,3
+char240.bindoption20000.group,Snow drift stage,mustselect
+char240.bindgroup20000.default,1
+char240.bindgroup20000.name,Snow drift stage,0
+char240.bindgroup20001.name,Snow drift stage,1
+char240.bindgroup20002.name,Snow drift stage,2
+char240.bindgroup20003.name,Snow drift stage,3
+char241.bindoption20000.group,Snow drift stage,mustselect
+char241.bindgroup20000.default,1
+char241.bindgroup20000.name,Snow drift stage,0
+char241.bindgroup20001.name,Snow drift stage,1
+char241.bindgroup20002.name,Snow drift stage,2
+char241.bindgroup20003.name,Snow drift stage,3
+char242.bindoption20000.group,Snow drift stage,mustselect
+char242.bindgroup20000.default,1
+char242.bindgroup20000.name,Snow drift stage,0
+char242.bindgroup20001.name,Snow drift stage,1
+char242.bindgroup20002.name,Snow drift stage,2
+char242.bindgroup20003.name,Snow drift stage,3
+char243.bindoption20000.group,Snow drift stage,mustselect
+char243.bindgroup20000.default,1
+char243.bindgroup20000.name,Snow drift stage,0
+char243.bindgroup20001.name,Snow drift stage,1
+char243.bindgroup20002.name,Snow drift stage,2
+char243.bindgroup20003.name,Snow drift stage,3
+char244.bindoption20000.group,Snow drift stage,mustselect
+char244.bindgroup20000.default,1
+char244.bindgroup20000.name,Snow drift stage,0
+char244.bindgroup20001.name,Snow drift stage,1
+char244.bindgroup20002.name,Snow drift stage,2
+char244.bindgroup20003.name,Snow drift stage,3
+char245.bindoption20000.group,Snow drift stage,mustselect
+char245.bindgroup20000.default,1
+char245.bindgroup20000.name,Snow drift stage,0
+char245.bindgroup20001.name,Snow drift stage,1
+char245.bindgroup20002.name,Snow drift stage,2
+char245.bindgroup20003.name,Snow drift stage,3
+char246.bindoption20000.group,Snow drift stage,mustselect
+char246.bindgroup20000.default,1
+char246.bindgroup20000.name,Snow drift stage,0
+char246.bindgroup20001.name,Snow drift stage,1
+char246.bindgroup20002.name,Snow drift stage,2
+char246.bindgroup20003.name,Snow drift stage,3
+char247.bindoption20000.group,Snow drift stage,mustselect
+char247.bindgroup20000.default,1
+char247.bindgroup20000.name,Snow drift stage,0
+char247.bindgroup20001.name,Snow drift stage,1
+char247.bindgroup20002.name,Snow drift stage,2
+char247.bindgroup20003.name,Snow drift stage,3
+char248.bindoption20000.group,Snow drift stage,mustselect
+char248.bindgroup20000.default,1
+char248.bindgroup20000.name,Snow drift stage,0
+char248.bindgroup20001.name,Snow drift stage,1
+char248.bindgroup20002.name,Snow drift stage,2
+char248.bindgroup20003.name,Snow drift stage,3
+char249.bindoption20000.group,Snow drift stage,mustselect
+char249.bindgroup20000.default,1
+char249.bindgroup20000.name,Snow drift stage,0
+char249.bindgroup20001.name,Snow drift stage,1
+char249.bindgroup20002.name,Snow drift stage,2
+char249.bindgroup20003.name,Snow drift stage,3
+char250.bindoption20000.group,Snow drift stage,mustselect
+char250.bindgroup20000.default,1
+char250.bindgroup20000.name,Snow drift stage,0
+char250.bindgroup20001.name,Snow drift stage,1
+char250.bindgroup20002.name,Snow drift stage,2
+char250.bindgroup20003.name,Snow drift stage,3
+char251.bindoption20000.group,Snow drift stage,mustselect
+char251.bindgroup20000.default,1
+char251.bindgroup20000.name,Snow drift stage,0
+char251.bindgroup20001.name,Snow drift stage,1
+char251.bindgroup20002.name,Snow drift stage,2
+char251.bindgroup20003.name,Snow drift stage,3
+char252.bindoption20000.group,Snow drift stage,mustselect
+char252.bindgroup20000.default,1
+char252.bindgroup20000.name,Snow drift stage,0
+char252.bindgroup20001.name,Snow drift stage,1
+char252.bindgroup20002.name,Snow drift stage,2
+char252.bindgroup20003.name,Snow drift stage,3
+char253.bindoption20000.group,Snow drift stage,mustselect
+char253.bindgroup20000.default,1
+char253.bindgroup20000.name,Snow drift stage,0
+char253.bindgroup20001.name,Snow drift stage,1
+char253.bindgroup20002.name,Snow drift stage,2
+char253.bindgroup20003.name,Snow drift stage,3
+char254.bindoption20000.group,Snow drift stage,mustselect
+char254.bindgroup20000.default,1
+char254.bindgroup20000.name,Snow drift stage,0
+char254.bindgroup20001.name,Snow drift stage,1
+char254.bindgroup20002.name,Snow drift stage,2
+char254.bindgroup20003.name,Snow drift stage,3
+char255.bindoption20000.group,Snow drift stage,mustselect
+char255.bindgroup20000.default,1
+char255.bindgroup20000.name,Snow drift stage,0
+char255.bindgroup20001.name,Snow drift stage,1
+char255.bindgroup20002.name,Snow drift stage,2
+char255.bindgroup20003.name,Snow drift stage,3
+char256.bindoption20000.group,Snow drift stage,mustselect
+char256.bindgroup20000.default,1
+char256.bindgroup20000.name,Snow drift stage,0
+char256.bindgroup20001.name,Snow drift stage,1
+char256.bindgroup20002.name,Snow drift stage,2
+char256.bindgroup20003.name,Snow drift stage,3
+char257.bindoption20000.group,Snow drift stage,mustselect
+char257.bindgroup20000.default,1
+char257.bindgroup20000.name,Snow drift stage,0
+char257.bindgroup20001.name,Snow drift stage,1
+char257.bindgroup20002.name,Snow drift stage,2
+char257.bindgroup20003.name,Snow drift stage,3
+char258.bindoption20000.group,Snow drift stage,mustselect
+char258.bindgroup20000.default,1
+char258.bindgroup20000.name,Snow drift stage,0
+char258.bindgroup20001.name,Snow drift stage,1
+char258.bindgroup20002.name,Snow drift stage,2
+char258.bindgroup20003.name,Snow drift stage,3
+char259.bindoption20000.group,Snow drift stage,mustselect
+char259.bindgroup20000.default,1
+char259.bindgroup20000.name,Snow drift stage,0
+char259.bindgroup20001.name,Snow drift stage,1
+char259.bindgroup20002.name,Snow drift stage,2
+char259.bindgroup20003.name,Snow drift stage,3
+char260.bindoption20000.group,Snow drift stage,mustselect
+char260.bindgroup20000.default,1
+char260.bindgroup20000.name,Snow drift stage,0
+char260.bindgroup20001.name,Snow drift stage,1
+char260.bindgroup20002.name,Snow drift stage,2
+char260.bindgroup20003.name,Snow drift stage,3
+char261.bindoption20000.group,Snow drift stage,mustselect
+char261.bindgroup20000.default,1
+char261.bindgroup20000.name,Snow drift stage,0
+char261.bindgroup20001.name,Snow drift stage,1
+char261.bindgroup20002.name,Snow drift stage,2
+char261.bindgroup20003.name,Snow drift stage,3
+char262.bindoption20000.group,Snow drift stage,mustselect
+char262.bindgroup20000.default,1
+char262.bindgroup20000.name,Snow drift stage,0
+char262.bindgroup20001.name,Snow drift stage,1
+char262.bindgroup20002.name,Snow drift stage,2
+char262.bindgroup20003.name,Snow drift stage,3
+char263.bindoption20000.group,Snow drift stage,mustselect
+char263.bindgroup20000.default,1
+char263.bindgroup20000.name,Snow drift stage,0
+char263.bindgroup20001.name,Snow drift stage,1
+char263.bindgroup20002.name,Snow drift stage,2
+char263.bindgroup20003.name,Snow drift stage,3
+char264.bindoption20000.group,Snow drift stage,mustselect
+char264.bindgroup20000.default,1
+char264.bindgroup20000.name,Snow drift stage,0
+char264.bindgroup20001.name,Snow drift stage,1
+char264.bindgroup20002.name,Snow drift stage,2
+char264.bindgroup20003.name,Snow drift stage,3
+char265.bindoption20000.group,Snow drift stage,mustselect
+char265.bindgroup20000.default,1
+char265.bindgroup20000.name,Snow drift stage,0
+char265.bindgroup20001.name,Snow drift stage,1
+char265.bindgroup20002.name,Snow drift stage,2
+char265.bindgroup20003.name,Snow drift stage,3
+char266.bindoption20000.group,Snow drift stage,mustselect
+char266.bindgroup20000.default,1
+char266.bindgroup20000.name,Snow drift stage,0
+char266.bindgroup20001.name,Snow drift stage,1
+char266.bindgroup20002.name,Snow drift stage,2
+char266.bindgroup20003.name,Snow drift stage,3
+char267.bindoption20000.group,Snow drift stage,mustselect
+char267.bindgroup20000.default,1
+char267.bindgroup20000.name,Snow drift stage,0
+char267.bindgroup20001.name,Snow drift stage,1
+char267.bindgroup20002.name,Snow drift stage,2
+char267.bindgroup20003.name,Snow drift stage,3
+char268.bindoption20000.group,Snow drift stage,mustselect
+char268.bindgroup20000.default,1
+char268.bindgroup20000.name,Snow drift stage,0
+char268.bindgroup20001.name,Snow drift stage,1
+char268.bindgroup20002.name,Snow drift stage,2
+char268.bindgroup20003.name,Snow drift stage,3
+char269.bindoption20000.group,Snow drift stage,mustselect
+char269.bindgroup20000.default,1
+char269.bindgroup20000.name,Snow drift stage,0
+char269.bindgroup20001.name,Snow drift stage,1
+char269.bindgroup20002.name,Snow drift stage,2
+char269.bindgroup20003.name,Snow drift stage,3
+char270.bindoption20000.group,Snow drift stage,mustselect
+char270.bindgroup20000.default,1
+char270.bindgroup20000.name,Snow drift stage,0
+char270.bindgroup20001.name,Snow drift stage,1
+char270.bindgroup20002.name,Snow drift stage,2
+char270.bindgroup20003.name,Snow drift stage,3
+char271.bindoption20000.group,Snow drift stage,mustselect
+char271.bindgroup20000.default,1
+char271.bindgroup20000.name,Snow drift stage,0
+char271.bindgroup20001.name,Snow drift stage,1
+char271.bindgroup20002.name,Snow drift stage,2
+char271.bindgroup20003.name,Snow drift stage,3
+char272.bindoption20000.group,Snow drift stage,mustselect
+char272.bindgroup20000.default,1
+char272.bindgroup20000.name,Snow drift stage,0
+char272.bindgroup20001.name,Snow drift stage,1
+char272.bindgroup20002.name,Snow drift stage,2
+char272.bindgroup20003.name,Snow drift stage,3
+char273.bindoption20000.group,Snow drift stage,mustselect
+char273.bindgroup20000.default,1
+char273.bindgroup20000.name,Snow drift stage,0
+char273.bindgroup20001.name,Snow drift stage,1
+char273.bindgroup20002.name,Snow drift stage,2
+char273.bindgroup20003.name,Snow drift stage,3
+char274.bindoption20000.group,Snow drift stage,mustselect
+char274.bindgroup20000.default,1
+char274.bindgroup20000.name,Snow drift stage,0
+char274.bindgroup20001.name,Snow drift stage,1
+char274.bindgroup20002.name,Snow drift stage,2
+char274.bindgroup20003.name,Snow drift stage,3
+char275.bindoption20000.group,Snow drift stage,mustselect
+char275.bindgroup20000.default,1
+char275.bindgroup20000.name,Snow drift stage,0
+char275.bindgroup20001.name,Snow drift stage,1
+char275.bindgroup20002.name,Snow drift stage,2
+char275.bindgroup20003.name,Snow drift stage,3
+char276.bindoption20000.group,Snow drift stage,mustselect
+char276.bindgroup20000.default,1
+char276.bindgroup20000.name,Snow drift stage,0
+char276.bindgroup20001.name,Snow drift stage,1
+char276.bindgroup20002.name,Snow drift stage,2
+char276.bindgroup20003.name,Snow drift stage,3
+char277.bindoption20000.group,Snow drift stage,mustselect
+char277.bindgroup20000.default,1
+char277.bindgroup20000.name,Snow drift stage,0
+char277.bindgroup20001.name,Snow drift stage,1
+char277.bindgroup20002.name,Snow drift stage,2
+char277.bindgroup20003.name,Snow drift stage,3
+char278.bindoption20000.group,Snow drift stage,mustselect
+char278.bindgroup20000.default,1
+char278.bindgroup20000.name,Snow drift stage,0
+char278.bindgroup20001.name,Snow drift stage,1
+char278.bindgroup20002.name,Snow drift stage,2
+char278.bindgroup20003.name,Snow drift stage,3
+char279.bindoption20000.group,Snow drift stage,mustselect
+char279.bindgroup20000.default,1
+char279.bindgroup20000.name,Snow drift stage,0
+char279.bindgroup20001.name,Snow drift stage,1
+char279.bindgroup20002.name,Snow drift stage,2
+char279.bindgroup20003.name,Snow drift stage,3
+char280.bindoption20000.group,Snow drift stage,mustselect
+char280.bindgroup20000.default,1
+char280.bindgroup20000.name,Snow drift stage,0
+char280.bindgroup20001.name,Snow drift stage,1
+char280.bindgroup20002.name,Snow drift stage,2
+char280.bindgroup20003.name,Snow drift stage,3
+char281.bindoption20000.group,Snow drift stage,mustselect
+char281.bindgroup20000.default,1
+char281.bindgroup20000.name,Snow drift stage,0
+char281.bindgroup20001.name,Snow drift stage,1
+char281.bindgroup20002.name,Snow drift stage,2
+char281.bindgroup20003.name,Snow drift stage,3
+char282.bindoption20000.group,Snow drift stage,mustselect
+char282.bindgroup20000.default,1
+char282.bindgroup20000.name,Snow drift stage,0
+char282.bindgroup20001.name,Snow drift stage,1
+char282.bindgroup20002.name,Snow drift stage,2
+char282.bindgroup20003.name,Snow drift stage,3
+char283.bindoption20000.group,Snow drift stage,mustselect
+char283.bindgroup20000.default,1
+char283.bindgroup20000.name,Snow drift stage,0
+char283.bindgroup20001.name,Snow drift stage,1
+char283.bindgroup20002.name,Snow drift stage,2
+char283.bindgroup20003.name,Snow drift stage,3
+char284.bindoption20000.group,Snow drift stage,mustselect
+char284.bindgroup20000.default,1
+char284.bindgroup20000.name,Snow drift stage,0
+char284.bindgroup20001.name,Snow drift stage,1
+char284.bindgroup20002.name,Snow drift stage,2
+char284.bindgroup20003.name,Snow drift stage,3
+char285.bindoption20000.group,Snow drift stage,mustselect
+char285.bindgroup20000.default,1
+char285.bindgroup20000.name,Snow drift stage,0
+char285.bindgroup20001.name,Snow drift stage,1
+char285.bindgroup20002.name,Snow drift stage,2
+char285.bindgroup20003.name,Snow drift stage,3
+char286.bindoption20000.group,Snow drift stage,mustselect
+char286.bindgroup20000.default,1
+char286.bindgroup20000.name,Snow drift stage,0
+char286.bindgroup20001.name,Snow drift stage,1
+char286.bindgroup20002.name,Snow drift stage,2
+char286.bindgroup20003.name,Snow drift stage,3
+char287.bindoption20000.group,Snow drift stage,mustselect
+char287.bindgroup20000.default,1
+char287.bindgroup20000.name,Snow drift stage,0
+char287.bindgroup20001.name,Snow drift stage,1
+char287.bindgroup20002.name,Snow drift stage,2
+char287.bindgroup20003.name,Snow drift stage,3
+char288.bindoption20000.group,Snow drift stage,mustselect
+char288.bindgroup20000.default,1
+char288.bindgroup20000.name,Snow drift stage,0
+char288.bindgroup20001.name,Snow drift stage,1
+char288.bindgroup20002.name,Snow drift stage,2
+char288.bindgroup20003.name,Snow drift stage,3
+char289.bindoption20000.group,Snow drift stage,mustselect
+char289.bindgroup20000.default,1
+char289.bindgroup20000.name,Snow drift stage,0
+char289.bindgroup20001.name,Snow drift stage,1
+char289.bindgroup20002.name,Snow drift stage,2
+char289.bindgroup20003.name,Snow drift stage,3
+char290.bindoption20000.group,Snow drift stage,mustselect
+char290.bindgroup20000.default,1
+char290.bindgroup20000.name,Snow drift stage,0
+char290.bindgroup20001.name,Snow drift stage,1
+char290.bindgroup20002.name,Snow drift stage,2
+char290.bindgroup20003.name,Snow drift stage,3
+char291.bindoption20000.group,Snow drift stage,mustselect
+char291.bindgroup20000.default,1
+char291.bindgroup20000.name,Snow drift stage,0
+char291.bindgroup20001.name,Snow drift stage,1
+char291.bindgroup20002.name,Snow drift stage,2
+char291.bindgroup20003.name,Snow drift stage,3
+char292.bindoption20000.group,Snow drift stage,mustselect
+char292.bindgroup20000.default,1
+char292.bindgroup20000.name,Snow drift stage,0
+char292.bindgroup20001.name,Snow drift stage,1
+char292.bindgroup20002.name,Snow drift stage,2
+char292.bindgroup20003.name,Snow drift stage,3
+char293.bindoption20000.group,Snow drift stage,mustselect
+char293.bindgroup20000.default,1
+char293.bindgroup20000.name,Snow drift stage,0
+char293.bindgroup20001.name,Snow drift stage,1
+char293.bindgroup20002.name,Snow drift stage,2
+char293.bindgroup20003.name,Snow drift stage,3
+char294.bindoption20000.group,Snow drift stage,mustselect
+char294.bindgroup20000.default,1
+char294.bindgroup20000.name,Snow drift stage,0
+char294.bindgroup20001.name,Snow drift stage,1
+char294.bindgroup20002.name,Snow drift stage,2
+char294.bindgroup20003.name,Snow drift stage,3
+char295.bindoption20000.group,Snow drift stage,mustselect
+char295.bindgroup20000.default,1
+char295.bindgroup20000.name,Snow drift stage,0
+char295.bindgroup20001.name,Snow drift stage,1
+char295.bindgroup20002.name,Snow drift stage,2
+char295.bindgroup20003.name,Snow drift stage,3
+char296.bindoption20000.group,Snow drift stage,mustselect
+char296.bindgroup20000.default,1
+char296.bindgroup20000.name,Snow drift stage,0
+char296.bindgroup20001.name,Snow drift stage,1
+char296.bindgroup20002.name,Snow drift stage,2
+char296.bindgroup20003.name,Snow drift stage,3
+char297.bindoption20000.group,Snow drift stage,mustselect
+char297.bindgroup20000.default,1
+char297.bindgroup20000.name,Snow drift stage,0
+char297.bindgroup20001.name,Snow drift stage,1
+char297.bindgroup20002.name,Snow drift stage,2
+char297.bindgroup20003.name,Snow drift stage,3
+char298.bindoption20000.group,Snow drift stage,mustselect
+char298.bindgroup20000.default,1
+char298.bindgroup20000.name,Snow drift stage,0
+char298.bindgroup20001.name,Snow drift stage,1
+char298.bindgroup20002.name,Snow drift stage,2
+char298.bindgroup20003.name,Snow drift stage,3
+char299.bindoption20000.group,Snow drift stage,mustselect
+char299.bindgroup20000.default,1
+char299.bindgroup20000.name,Snow drift stage,0
+char299.bindgroup20001.name,Snow drift stage,1
+char299.bindgroup20002.name,Snow drift stage,2
+char299.bindgroup20003.name,Snow drift stage,3
 
 char0.bindoption30000.group,Snow ball variant,mustselect
 char0.bindgroup30000.default,1

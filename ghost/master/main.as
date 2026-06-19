@@ -62,6 +62,9 @@ function OnOverlap
 	local overlaps = []; //Temporary list of all the overlapping scopes
 	local scopes = []; //Final scopes to remove
 	
+	//Avoids a runtime error...
+	if (Shiori.Reference[0].length == 0) return;
+	
 	foreach (ref in reference)
 	{
 		local snowball = ref.Split("-");

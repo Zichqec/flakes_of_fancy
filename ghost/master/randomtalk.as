@@ -17,22 +17,22 @@ talk Chain_VolumeWarning2
 talk RandomTalk(p)
 {
 	%{ TalkTimer.RandomTalkQueue = [Chain_FaceThing]; }
-	\b[2]What's this thing on my face?\_q
+	\b[2]What's this thing on my face?\_q{ColorAnchorAsChoice}
 	
-	\__q[OnFaceThing1,{p}]\![*] Your eyes\__q\n[half]
-	\__q[OnFaceThing1,{p}]\![*] Your nose\__q\n[half]
-	\__q[OnFaceThing1,{p}]\![*] Your mouth\__q
+	\_a[OnFaceThing1,{p}]\![*] Your eyes\_a\n[half]
+	\_a[OnFaceThing1,{p}]\![*] Your nose\_a\n[half]
+	\_a[OnFaceThing1,{p}]\![*] Your mouth\_a
 }
 
 talk OnFaceThing1
 {
 	%{ TalkTimer.RandomTalkQueue = [Chain_FaceThing]; }
 	%{ local p = Shiori.Reference[0]; }
-	\p[{p}]\b[2]No, not that. The other thing.\_q
+	\p[{p}]\b[2]No, not that. The other thing.\_q{ColorAnchorAsChoice}
 	
-	\__q[OnFaceThing2,{p}]\![*] Your eyes\__q\n[half]
-	\__q[OnFaceThing2,{p}]\![*] Your nose\__q\n[half]
-	\__q[OnFaceThing2,{p}]\![*] Your mouth\__q
+	\_a[OnFaceThing2,{p}]\![*] Your eyes\_a\n[half]
+	\_a[OnFaceThing2,{p}]\![*] Your nose\_a\n[half]
+	\_a[OnFaceThing2,{p}]\![*] Your mouth\_a
 }
 
 talk OnFaceThing2

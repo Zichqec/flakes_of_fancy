@@ -135,6 +135,56 @@ surface1
 	animation99999.pattern4,reduce,19904,200,0,0
 }
 
+//Snow flake variants
+surface10000
+{
+	animation10000.interval,bind
+	animation10000.pattern0,replace,10000,0,0,0
+	
+	animation10100.interval,bind
+	animation10100.pattern0,replace,10100,0,0,0
+}
+
+surface10001
+{
+	animation10000.interval,bind
+	animation10000.pattern0,replace,10001,0,0,0
+	
+	animation10100.interval,bind
+	animation10100.pattern0,replace,10101,0,0,0
+}
+
+
+surface10002
+{
+	animation10000.interval,bind
+	animation10000.pattern0,replace,10002,0,0,0
+	
+	animation10100.interval,bind
+	animation10100.pattern0,replace,10102,0,0,0
+}
+
+
+surface10003
+{
+	animation10000.interval,bind
+	animation10000.pattern0,replace,10003,0,0,0
+	
+	animation10100.interval,bind
+	animation10100.pattern0,replace,10103,0,0,0
+}
+
+
+surface10004
+{
+	animation10000.interval,bind
+	animation10000.pattern0,replace,10004,0,0,0
+	
+	animation10100.interval,bind
+	animation10100.pattern0,replace,10104,0,0,0
+}
+
+
 //Snow drift
 surface2
 {
@@ -142,17 +192,53 @@ surface2
 	
 	point.basepos.y,90
 	
+	animation21000.interval,bind
+	animation21000.pattern0,replace,20000,0,0,0
+	
+	animation21001.interval,bind
+	animation21001.pattern0,replace,20001,0,0,0
+	
+	animation21002.interval,bind
+	animation21002.pattern0,replace,20002,0,0,0
+	
+	animation21003.interval,bind
+	animation21003.pattern0,replace,20003,0,0,0
+}
+
+surface20000
+{
 	animation20000.interval,bind
 	animation20000.pattern0,replace,20000,0,0,0
 	
-	animation20001.interval,bind
-	animation20001.pattern0,replace,20001,0,0,0
+	animation20100.interval,bind
+	animation20100.pattern0,replace,20100,0,0,0
+}
+
+surface20001
+{
+	animation20000.interval,bind
+	animation20000.pattern0,replace,20001,0,0,0
 	
-	animation20002.interval,bind
-	animation20002.pattern0,replace,20002,0,0,0
+	animation20100.interval,bind
+	animation20100.pattern0,replace,20101,0,0,0
+}
+
+surface20002
+{
+	animation20000.interval,bind
+	animation20000.pattern0,replace,20002,0,0,0
 	
-	animation20003.interval,bind
-	animation20003.pattern0,replace,20003,0,0,0
+	animation20100.interval,bind
+	animation20100.pattern0,replace,20102,0,0,0
+}
+
+surface20003
+{
+	animation20000.interval,bind
+	animation20000.pattern0,replace,20003,0,0,0
+	
+	animation20100.interval,bind
+	animation20100.pattern0,replace,20103,0,0,0
 }
 
 //Snow ball
@@ -162,6 +248,9 @@ surface3
 	
 	animation30000.interval,bind
 	animation30000.pattern0,replace,30000,0,0,0
+	
+	animation30100.interval,bind
+	animation30100.pattern0,replace,30100,0,0,0
 }
 
 //Snow man
@@ -171,6 +260,9 @@ surface4
 	
 	animation40000.interval,bind
 	animation40000.pattern0,replace,40000,0,0,0
+	
+	animation40100.interval,bind
+	animation40100.pattern0,replace,40100,0,0,0
 }
 
 surface10

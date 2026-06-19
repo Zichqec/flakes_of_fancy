@@ -40,7 +40,7 @@ function OnInitialize
 //NOTE: chain talks don't come through this function............. or at least not if i prompt them
 function OnTimedTalk
 {
-	if (SnowmanScopes().length() > 0)
+	if (SnowmanScopes().length > 0)
 	{
 		TalkLatch = 1;
 		local scopes = SnowmanScopes();
@@ -329,9 +329,14 @@ function OnSpawnSnowflake@ActiveCheck
 	
 	if (scope != -1)
 	{
+		local rand = Random.GetIndex(0,SnowFlakeVariants.length);
+		local variant = SnowFlakeVariants[rand];
+		
 		local output = "";
 		if (BalloonIsOpen()) output += "\C";
-		output += "\p[{scope}]\![set,alpha,0]\s[1]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![embed,OnSpawnSnowflake@ChoosePosition,{scope},1]";
+		output += "\p[{scope}]\![set,alpha,0]\s[1]\![bind,Snowflake variant,{variant},1]";
+		output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
+		output += "\![embed,OnSpawnSnowflake@ChoosePosition,{scope},1]";
 		return output;
 	}
 }
@@ -381,9 +386,14 @@ function OnSpawnSnowdrift
 	
 	if (scope != -1)
 	{
+		local rand = Random.GetIndex(0,SnowDriftVariants.length);
+		local variant = SnowDriftVariants[rand];
+	
 		local output = "";
 		if (BalloonIsOpen()) output += "\C";
-		output += "\p[{scope}]\![set,alpha,0]\s[2]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![embed,OnSpawnSnowflake@ChoosePosition,{scope},2]";
+		output += "\p[{scope}]\![set,alpha,0]\s[2]\![bind,Snow drift variant,{variant},1]\![bind,Snow drift stage,0,1]";
+		output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
+		output += "\![embed,OnSpawnSnowflake@ChoosePosition,{scope},2]";
 		return output;
 	}
 }
@@ -422,9 +432,14 @@ function OnMakeSnowBall
 	
 	if (scope != -1)
 	{
+		local rand = Random.GetIndex(0,SnowBallVariants.length);
+		local variant = SnowBallVariants[rand];
+	
 		local output = "";
 		if (BalloonIsOpen()) output += "\C";
-		output += "\p[{scope}]\![set,alpha,0]\s[3]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![embed,OnSpawnSnowBall@ChoosePosition,{scope},{Shiori.Reference[0]}]";
+		output += "\p[{scope}]\![set,alpha,0]\s[3]\![bind,Snow ball variant,{variant},1]";
+		output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
+		output += "\![embed,OnSpawnSnowBall@ChoosePosition,{scope},{Shiori.Reference[0]}]";
 		return output;
 	}
 }
@@ -454,9 +469,15 @@ function OnSpawnSnowman(p)
 		}
 	}
 	
+	local rand = Random.GetIndex(0,SnowManVariants.length);
+	local variant = SnowManVariants[rand];
+	
 	local output = "";
 	if (BalloonIsOpen()) output += "\C";
-	output += "\p[{scope}]\![set,alpha,0]\s[4]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![get,property,OnSpawnSnowman@WidthCheck,currentghost.scope({p[0]}).rect,currentghost.scope({p[1]}).rect,currentghost.scope({p[2]}).rect]\![embed,OnSpawnSnowman@Move,{p[0]},{p[1]},{p[2]},{scope}]";
+	output += "\p[{scope}]\![set,alpha,0]\s[4]\![bind,Snowman variant,{variant},1]";
+	output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
+	output += "\![get,property,OnSpawnSnowman@WidthCheck,currentghost.scope({p[0]}).rect,currentghost.scope({p[1]}).rect,currentghost.scope({p[2]}).rect]";
+	output += "\![embed,OnSpawnSnowman@Move,{p[0]},{p[1]},{p[2]},{scope}]";
 	return output;
 }
 
@@ -502,14 +523,40 @@ function Chain
 
 function OnNotifyDressupInfo
 {
+	SnowFlakeVariants = [];
+	SnowDriftVariants = [];
+	SnowBallVariants = [];
+	SnowManVariants = [];
+	
 	SnowDriftHeight = {};
+	
 	for (local i = 0; i < Shiori.Reference.length; i++)
 	{
 		local dressup = Shiori.Reference[i].Split((1).ToAscii());
 		
-		if (dressup[4] == "0") continue;
+		//I could make these single if checks, but it's just so long and cumbersome to read...
+		//I don't want these to be associative, but I can't find a basic array search function...
+		if (dressup[1] == "Snowflake variant")
+		{
+			if (asearch(dressup[2],SnowFlakeVariants)) SnowFlakeVariants.Add(dressup[2]);
+		}
+		if (dressup[1] == "Snow drift variant")
+		{
+			if (asearch(dressup[2],SnowDriftVariants)) SnowDriftVariants.Add(dressup[2]);
+		}
+		if (dressup[1] == "Snow ball variant")
+		{
+			if (asearch(dressup[2],SnowBallVariants)) SnowBallVariants.Add(dressup[2]);
+		}
+		if (dressup[1] == "Snowman variant")
+		{
+			if (asearch(dressup[2],SnowManVariants) != -1) SnowManVariants.Add(dressup[2]);
+		}
 		
+		//Get snow drift height
+		if (dressup[4] == "0") continue;
 		local character = dressup[0].ToNumber();
+		
 		//[character ID, category name, part name, option, on-1/off-0, thumbnail path]
 		if (character >= 200 && character < 300) //Snow drifts
 		{
@@ -519,3 +566,12 @@ function OnNotifyDressupInfo
 	}
 }
 
+//there must be a better way... but i'm head empty......
+function asearch(key, array)
+{
+	for (local i = 0; i < array.length; i++)
+	{
+		if (key == array[i]) return 1;
+	}
+	return -1;
+}

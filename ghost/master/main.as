@@ -8,6 +8,9 @@ function OnAosoraDefaultSaveData
 	Save.Data.SnowRate = 10;
 	Monitor = [];
 	Surfaces = {};
+	Save.Data.TalkInterval = 180;
+	LastScope = -1;
+	TalkScope = -1;
 }
 
 function OnAosoraLoad
@@ -17,6 +20,77 @@ function OnAosoraLoad
 	Monitor = [];
 	Surfaces = {};
 	stroke = 0;
+	TalkTimer.RandomTalkIntervalSeconds = Save.Data.TalkInterval;
+	TalkTimer.RandomTalk = OnTimedTalk;
+	LastScope = -1;
+	TalkScope = -1;
+}
+
+function OnInitialize
+{
+	if (Shiori.Reference[0] != "reload")
+	{
+		Surfaces.Clear();
+	}
+}
+
+//IIRC the below calls this one, and this one does the actual call to randomtalk...
+//NOTE: chain talks don't come through this function............. or at least not if i prompt them
+function OnTimedTalk
+{
+	if (SnowmanCount() > 0)
+	{
+		local scopes = SnowmanScopes();
+		local rand = Random.GetIndex(0,scopes.length);
+		local scope = scopes[rand];
+		
+		//If a scope has been sent by the mouse click event
+		if (TalkScope != -1) scope = TalkScope;
+		LastScope = scope;
+		
+		local dialogue = Reflection.Get("RandomTalk")(scope);
+		dialogue = dialogue.Replace("\0","\p[{scope}]");
+		
+		LastTalk = dialogue;
+		return LastTalk;
+	}
+	TalkScope = -1;
+}
+
+function OnAITalk(scope)
+{
+	if (!scope.IsNull()) TalkScope = scope;
+	else TalkScope = -1;
+	LastTalk = TalkTimer.CallRandomTalk();
+	return LastTalk;
+}
+
+function SnowmanCount
+{
+	return SnowmanScopes().length;
+}
+
+function OnSnowScopes
+{
+	local output = "";
+	foreach (scope in SnowmanScopes())
+	{
+		output += "{scope},";
+	}
+	return output;
+}
+
+function SnowmanScopes
+{
+	local scopes = [];
+	for (local i = 400; i < 500; i++)
+	{
+		if (Surfaces.Contains("{i}") && Surfaces["{i}"] != -1)
+		{
+			scopes.Add("{i}");
+		}
+	}
+	return scopes;
 }
 
 function OnKeyPress
@@ -30,12 +104,21 @@ function OnKeyPress
 		}
 		return display;
 	}
+	else if (Shiori.Reference[0] == "t")
+	{
+		return OnAITalk;
+	}
 }
 
 function OnMouseDoubleClick
 {
 	if (Shiori.Reference[3] == 0 && Shiori.Reference[5] == 0) return OnMainMenu;
 	else if (Shiori.Reference[3] >= 200 && Shiori.Reference[3] < 400) return "\p[{Shiori.Reference[3]}]\s[-1]"; //Remove snow drift/snow ball
+	else if (Shiori.Reference[3] >= 400 && Shiori.Reference[3] < 500)
+	{
+		if (Shiori.Reference[3] != LastScope) TalkTimer.RandomTalkQueue.Clear();
+		return OnAITalk(Shiori.Reference[3]);
+	}
 }
 
 function OnMouseMove, OnMouseWheel

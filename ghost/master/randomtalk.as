@@ -1,4 +1,4 @@
-talk RandomTalk
+talk RandomTalk(p)
 {
 	%{ TalkTimer.RandomTalkQueue = [Chain_VolumeWarning1, Chain_VolumeWarning2]; }
 	\b[0]HELLO!! ARE YOU THERE!! MY EYES DON'T WORK!! I NEED NEW ONES!!
@@ -6,65 +6,66 @@ talk RandomTalk
 
 talk Chain_VolumeWarning1
 {
-	\b[0]THIS IS A JOKE!! MY EYES HAVE NOT CHANGED IN FORM OR FUNCTION!! DID YOU LAUGH!!
+	\p[{LastScope}]\b[0]THIS IS A JOKE!! MY EYES HAVE NOT CHANGED IN FORM OR FUNCTION!! DID YOU LAUGH!!
 }
 
 talk Chain_VolumeWarning2
 {
-	\b[0]HOW DO I TURN THE VOLUME BACK DOWN!!
+	\p[{LastScope}]\b[0]HOW DO I TURN THE VOLUME BACK DOWN!!
 }
 
-talk RandomTalk
+talk RandomTalk(p)
 {
 	%{ TalkTimer.RandomTalkQueue = [Chain_FaceThing]; }
-	\b[2]What's this thing on my face?
+	\b[2]What's this thing on my face?\_q
 	
-	\__q[OnFaceThing1]\![*] Your eyes\__q\n[half]
-	\__q[OnFaceThing1]\![*] Your nose\__q\n[half]
-	\__q[OnFaceThing1]\![*] Your mouth\__q
+	\__q[OnFaceThing1,{p}]\![*] Your eyes\__q\n[half]
+	\__q[OnFaceThing1,{p}]\![*] Your nose\__q\n[half]
+	\__q[OnFaceThing1,{p}]\![*] Your mouth\__q
 }
 
 talk OnFaceThing1
 {
 	%{ TalkTimer.RandomTalkQueue = [Chain_FaceThing]; }
-	\b[2]No, not that. The other thing.
+	%{ local p = Shiori.Reference[0]; }
+	\p[{p}]\b[2]No, not that. The other thing.\_q
 	
-	\__q[OnFaceThing2]\![*] Your eyes\__q\n[half]
-	\__q[OnFaceThing2]\![*] Your nose\__q\n[half]
-	\__q[OnFaceThing2]\![*] Your mouth\__q
+	\__q[OnFaceThing2,{p}]\![*] Your eyes\__q\n[half]
+	\__q[OnFaceThing2,{p}]\![*] Your nose\__q\n[half]
+	\__q[OnFaceThing2,{p}]\![*] Your mouth\__q
 }
 
 talk OnFaceThing2
 {
 	%{ TalkTimer.RandomTalkQueue.Clear(); }
-	\b[0]I don't like that name. Make a new one.
+	\p[{Shiori.Reference[0]}]\b[0]I don't like that name. Make a new one.
 }
 
 talk OnFaceThing2
 {
 	%{ TalkTimer.RandomTalkQueue.Clear(); }
-	\b[0]Oh. Ew. I want something different.
+	\p[{Shiori.Reference[0]}]\b[0]Oh. Ew. I want something different.
 }
 
 talk OnFaceThing2
 {
 	%{ TalkTimer.RandomTalkQueue.Clear(); }
-	\b[0]Are you sure? I think that's my {notface}.
+	\p[{Shiori.Reference[0]}]\b[0]Are you sure? I think that's my {notface}.
 }
 
 talk OnFaceThing2
 {
 	%{ TalkTimer.RandomTalkQueue.Clear(); }
-	\b[0]... I knew that.
+	\p[{Shiori.Reference[0]}]\b[0]... I knew that.
 }
 
 talk OnFaceThing2
 {
 	%{ TalkTimer.RandomTalkQueue.Clear(); }
-	\b[0]Nice. You should get a few for yourself.
+	\p[{Shiori.Reference[0]}]\b[0]Nice. You should get a few for yourself.
 }
 
 talk Chain_FaceThing
 {
-	\b[0]Fine, don't tell me! I was just testing you anyways. I know what all of my face things are.
+	\p[{LastScope}]\b[0]Fine, don't tell me! I was just testing you anyways. I know what all of my face things are.
 }

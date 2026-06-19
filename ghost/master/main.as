@@ -5,13 +5,13 @@ talk OnBoot
 
 function OnAosoraDefaultSaveData
 {
-	Config@SnowRate = 10;
+	Save.Data.SnowRate = 10;
 	Monitor = [];
 }
 
 function OnAosoraLoad
 {
-	LastFlakeTime = Time.GetNowUnixEpoch() - Config@SnowRate;
+	LastFlakeTime = Time.GetNowUnixEpoch() - Save.Data.SnowRate;
 	Monitor = [];
 }
 
@@ -21,6 +21,49 @@ function OnKeyPress
 	{
 		return "{Monitor[0].left} | {Monitor[0].right} | {Monitor[0].width}\n{Monitor[1].left} | {Monitor[1].right} | {Monitor[1].width}\n{Monitor[2].left} | {Monitor[2].right} | {Monitor[2].width}\n";
 	}
+}
+
+function OnMouseDoubleClick
+{
+	if (Shiori.Reference[3] == 0 && Shiori.Reference[5] == 0) return OnMainMenu;
+}
+
+function OnMainMenu
+{
+	local m = "\0\b[2]\![quicksection,1]\![set,autoscroll,disable]";
+	
+	local snowrates = [
+		{label: "None", time: -1},
+		{label: "Light", time: 10},
+		{label: "Medium", time: 5},
+		{label: "Heavy", time: 2},
+		{label: "Blizzard", time: 1},
+	];
+	
+	m += "Snow amount:\n";
+	
+	foreach (local rate in snowrates)
+	{
+		if (rate.time == Save.Data.SnowRate)
+		{
+			m += "\f[underline,1]\_a[OnChangeSnowRate,{rate.time}]{rate.label}\_a\f[underline,0]  ";
+		}
+		else
+		{
+			m += "\__q[OnChangeSnowRate,{rate.time}]{rate.label}\__q  ";
+		}
+	}
+	m += "\n\n";
+	
+	m += "\![*]\__q[blank]Done\__q";
+	
+	return m;
+}
+
+function OnChangeSnowRate
+{
+	Save.Data.SnowRate = Shiori.Reference[0].ToNumber();
+	return OnMainMenu;
 }
 
 function OnDisplayChangeEx
@@ -47,12 +90,15 @@ function abs(num)
 
 function OnSecondChange
 {
-	local currenttime = Time.GetNowUnixEpoch();
-	if (currenttime - LastFlakeTime >= Config@SnowRate && Shiori.Reference[3] == 1)
+	if (Save.Data.SnowRate != -1)
 	{
-		LastFlakeTime = Time.GetNowUnixEpoch();
-		
-		return OnSpawnSnowflake();
+		local currenttime = Time.GetNowUnixEpoch();
+		if (currenttime - LastFlakeTime >= Save.Data.SnowRate && Shiori.Reference[3] == 1)
+		{
+			LastFlakeTime = Time.GetNowUnixEpoch();
+			
+			return OnSpawnSnowflake();
+		}
 	}
 }
 

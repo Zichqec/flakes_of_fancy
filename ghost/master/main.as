@@ -128,7 +128,10 @@ function OnMouseMove, OnMouseWheel
 		stroke++;
 		if (stroke % 40 == 0)
 		{
-			return "\![get,property,OnSnowDriftPos,currentghost.scope({Shiori.Reference[3]}).rect]\![embed,OnMakeSnowBall,{Shiori.Reference[3]}]";
+			local output = "";
+			if (BalloonIsOpen()) output += "\C";
+			output += "\![get,property,OnSnowDriftPos,currentghost.scope({Shiori.Reference[3]}).rect]\![embed,OnMakeSnowBall,{Shiori.Reference[3]}]";
+			return output;
 		}
 	}
 }
@@ -183,6 +186,14 @@ function OnSurfaceChange
 {
 	local ref = Shiori.Reference[2].Split(",");
 	Surfaces["{ref[0]}"] = ref[1].ToNumber();
+}
+
+//Don't forget the ()!!!!!!
+function BalloonIsOpen
+{
+	local status = Shiori.Headers.Status.ToString();
+	if (status.Contains("balloon")) return 1;
+	return 0;
 }
 
 function OnMainMenu
@@ -251,12 +262,15 @@ function OnSecondChange
 	{
 		local currenttime = Time.GetNowUnixEpoch();
 		
+		local C = "";
+		if (BalloonIsOpen()) C = "\C";
+		
 		//Snow drifts
 		if (currenttime - LastDriftTime >= (Save.Data.SnowRate * 10) && Shiori.Reference[3] == 1)
 		{
 			LastDriftTime = Time.GetNowUnixEpoch();
 			
-			return OnSpawnSnowdrift();
+			return C + OnSpawnSnowdrift();
 		}
 		
 		//Snowflakes
@@ -264,7 +278,7 @@ function OnSecondChange
 		{
 			LastFlakeTime = Time.GetNowUnixEpoch();
 			
-			return OnSpawnSnowflake();
+			return C + OnSpawnSnowflake();
 		}
 	}
 }
@@ -277,7 +291,10 @@ function OnSpawnSnowflake
 		cmd += ",currentghost.scope({i}).animation.num";
 	}
 	
-	return "\![get,property,OnSpawnSnowflake@ActiveCheck" + cmd + "]";
+	local output = "";
+	if (BalloonIsOpen()) output += "\C";
+	output += "\![get,property,OnSpawnSnowflake@ActiveCheck" + cmd + "]";
+	return output;
 }
 
 function OnSpawnSnowflake@ActiveCheck
@@ -294,8 +311,10 @@ function OnSpawnSnowflake@ActiveCheck
 	
 	if (scope != -1)
 	{
-		//TODO need to set up something to make sure it doesn't interrupt balloons
-		return "\p[{scope}]\![set,alpha,0]\s[1]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![embed,OnSpawnSnowflake@ChoosePosition,{scope},1]";
+		local output = "";
+		if (BalloonIsOpen()) output += "\C";
+		output += "\p[{scope}]\![set,alpha,0]\s[1]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![embed,OnSpawnSnowflake@ChoosePosition,{scope},1]";
+		return output;
 	}
 }
 
@@ -324,7 +343,10 @@ function OnSpawnSnowflake@ChoosePosition
 	
 	local X = leftbound + position;
 	
-	return "\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[{Shiori.Reference[1]}]\![set,alpha,100]";
+	local output = "";
+	if (BalloonIsOpen()) output += "\C";
+	output += "\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[{Shiori.Reference[1]}]\![set,alpha,100]";
+	return output;
 }
 
 function OnSpawnSnowdrift
@@ -341,7 +363,10 @@ function OnSpawnSnowdrift
 	
 	if (scope != -1)
 	{
-		return "\p[{scope}]\![set,alpha,0]\s[2]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![embed,OnSpawnSnowflake@ChoosePosition,{scope},2]";
+		local output = "";
+		if (BalloonIsOpen()) output += "\C";
+		output += "\p[{scope}]\![set,alpha,0]\s[2]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![embed,OnSpawnSnowflake@ChoosePosition,{scope},2]";
+		return output;
 	}
 }
 
@@ -359,7 +384,10 @@ function OnMakeSnowBall
 	
 	if (scope != -1)
 	{
-		return "\p[{scope}]\![set,alpha,0]\s[3]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![embed,OnSpawnSnowBall@ChoosePosition,{scope},{Shiori.Reference[0]}]";
+		local output = "";
+		if (BalloonIsOpen()) output += "\C";
+		output += "\p[{scope}]\![set,alpha,0]\s[3]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![embed,OnSpawnSnowBall@ChoosePosition,{scope},{Shiori.Reference[0]}]";
+		return output;
 	}
 }
 
@@ -370,7 +398,10 @@ function OnSpawnSnowBall@ChoosePosition
 	
 	local X = SnowDriftPos.center - (FlakeWidth / 2).Floor();
 	
-	return "\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[3]\![set,alpha,100]";
+	local output = "";
+	if (BalloonIsOpen()) output += "\C";
+	output += "\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[3]\![set,alpha,100]";
+	return output;
 }
 
 function OnSpawnSnowman(p)
@@ -385,7 +416,10 @@ function OnSpawnSnowman(p)
 		}
 	}
 	
-	return "\p[{scope}]\![set,alpha,0]\s[4]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![get,property,OnSpawnSnowman@WidthCheck,currentghost.scope({p[0]}).rect,currentghost.scope({p[1]}).rect,currentghost.scope({p[2]}).rect]\![embed,OnSpawnSnowman@Move,{p[0]},{p[1]},{p[2]},{scope}]";
+	local output = "";
+	if (BalloonIsOpen()) output += "\C";
+	output += "\p[{scope}]\![set,alpha,0]\s[4]\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]\![get,property,OnSpawnSnowman@WidthCheck,currentghost.scope({p[0]}).rect,currentghost.scope({p[1]}).rect,currentghost.scope({p[2]}).rect]\![embed,OnSpawnSnowman@Move,{p[0]},{p[1]},{p[2]},{scope}]";
+	return output;
 }
 
 function OnSpawnSnowman@WidthCheck
@@ -410,5 +444,9 @@ function OnSpawnSnowman@Move
 {
 	//TODO for some reason the snowman doesn't appear in the center of the snowballs properly like it should even though i have triple checked... I'll come back to this
 	local X = AllTogetherCenter - (FlakeWidth / 2).Floor();
-	return "\p[{Shiori.Reference[3]}]\![move,--X={X}]\s[4]\![set,alpha,100]\p[{Shiori.Reference[0]}]\s[-1]\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[2]}]\s[-1]" + "{AllTogetherCenter}, {FlakeWidth} / 2 = {(FlakeWidth / 2).Floor()}, together {X}";
+	
+	local output = "";
+	if (BalloonIsOpen()) output += "\C";
+	output += "\p[{Shiori.Reference[3]}]\![move,--X={X}]\s[4]\![set,alpha,100]\p[{Shiori.Reference[0]}]\s[-1]\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[2]}]\s[-1]" + "{AllTogetherCenter}, {FlakeWidth} / 2 = {(FlakeWidth / 2).Floor()}, together {X}";
+	return output;
 }

@@ -139,7 +139,8 @@ function OnMouseMove, OnMouseWheel
 		{
 			local output = "";
 			if (BalloonIsOpen()) output += "\C";
-			output += "\![get,property,OnSnowDriftPos,currentghost.scope({Shiori.Reference[3]}).rect]\![embed,OnMakeSnowBall,{Shiori.Reference[3]}]";
+			output += "\![get,property,OnSnowDriftPos,currentghost.scope({Shiori.Reference[3]}).rect]";
+			output += "\![embed,OnMakeSnowBall,{Shiori.Reference[3]}]";
 			return output;
 		}
 	}

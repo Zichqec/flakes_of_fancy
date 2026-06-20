@@ -16,6 +16,11 @@ talk OnClose
 	\![embed,OnSendStats]
 }
 
+function homeurl
+{
+	return "https://raw.githubusercontent.com/Zichqec/flakes_of_fancy/refs/heads/main/";
+}
+
 //I don't know which i need to hit so i'm just gonna hit em all!!!!!!
 function OnOtherGhostBooted, OnOtherGhostChanged, OnGhostCalled, OnGhostCallComplete
 {

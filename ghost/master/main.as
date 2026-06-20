@@ -449,6 +449,7 @@ function OnSpawnSnowflake@WidthCheck
 }
 
 //This is separate because I think the different types of spawning are overlapping and causing a bug...
+//Update: actually it was probably unnecessary to split this but i don't have time to undo that and test aaaaaa
 function OnSpawning@WidthCheck
 {
 	local rect = Shiori.Reference[0].Split(",");
@@ -478,7 +479,7 @@ function OnSpawnSnowflake@ChoosePosition
 	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
 	else if (BalloonIsOpen()) output += "\C";
 	//TODO there's an issue where sometimes it spawns a flake and repeatedly fades it in... but that might be because I was messing with timerraise
-	output += "\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[{Shiori.Reference[1]}]\![set,alpha,100,500]";
+	output += "\p[{Shiori.Reference[0]}]\![move,--X={X},--base=primaryscreen]\s[{Shiori.Reference[1]}]\![set,alpha,100,500]";
 	return output;
 }
 
@@ -566,6 +567,7 @@ function OnSpawnSnowBall@ChoosePosition
 	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
 	else if (BalloonIsOpen()) output += "\C";
 	output += "\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[3]\![set,alpha,100]";
+	output += "\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[0]}]\![move,--X={X},--base=primaryscreen]\s[3]\![set,alpha,100]";
 	return output;
 }
 
@@ -620,7 +622,7 @@ function OnSpawnSnowman@Move
 	local output = "";
 	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
 	else if (BalloonIsOpen()) output += "\C";
-	output += "\p[{Shiori.Reference[3]}]\![move,--X={X}]\s[4]\![set,alpha,100]\p[{Shiori.Reference[0]}]\s[-1]\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[2]}]\s[-1]"; // + "{AllTogetherCenter}, {NonFlakeWidth} / 2 = {(NonFlakeWidth / 2).Floor()}, together {X}";
+	output += "\p[{Shiori.Reference[3]}]\![move,--X={X},--base=primaryscreen]\s[4]\![set,alpha,100]\p[{Shiori.Reference[0]}]\s[-1]\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[2]}]\s[-1]"; // + "{AllTogetherCenter}, {NonFlakeWidth} / 2 = {(NonFlakeWidth / 2).Floor()}, together {X}";
 	return output;
 }
 

@@ -443,6 +443,13 @@ function OnSpawnSnowflake@WidthCheck
 	FlakeWidth = abs(rect[2].ToNumber() - rect[0].ToNumber());
 }
 
+//This is separate because I think the different types of spawning are overlapping and causing a bug...
+function OnSpawning@WidthCheck
+{
+	local rect = Shiori.Reference[0].Split(",");
+	NonFlakeWidth = abs(rect[2].ToNumber() - rect[0].ToNumber());
+}
+
 function OnSnowDriftPos
 {
 	local rect = Shiori.Reference[0].Split(",");
@@ -491,7 +498,7 @@ function OnSpawnSnowdrift
 		if (InMainMenu) output += "\C\![__MAIN_MENU__]";
 		else if (BalloonIsOpen()) output += "\C";
 		output += "\p[{scope}]\![set,alpha,0]\s[2]\![bind,Snow drift variant,{variant},1]\![bind,Snow drift stage,0,1]";
-		output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
+		output += "\![get,property,OnSpawning@WidthCheck,currentghost.scope({scope}).rect]";
 		output += "\![embed,OnSpawnSnowflake@ChoosePosition,{scope},2]";
 		return output;
 	}
@@ -518,6 +525,7 @@ function OnIncreaseSnowdrift
 	return output;
 }
 
+//TODO there was an odd bug here for a bit where i rolled up snowballs but they appeared in the wrong places... no idea why, investigate later?
 function OnMakeSnowBall
 {
 	local scope = -1;
@@ -539,7 +547,7 @@ function OnMakeSnowBall
 		if (InMainMenu) output += "\C\![__MAIN_MENU__]";
 		else if (BalloonIsOpen()) output += "\C";
 		output += "\p[{scope}]\![set,alpha,0]\s[3]\![bind,Snow ball variant,{variant},1]";
-		output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
+		output += "\![get,property,OnSpawning@WidthCheck,currentghost.scope({scope}).rect]";
 		output += "\![embed,OnSpawnSnowBall@ChoosePosition,{scope},{Shiori.Reference[0]}]";
 		return output;
 	}
@@ -547,10 +555,7 @@ function OnMakeSnowBall
 
 function OnSpawnSnowBall@ChoosePosition
 {
-	//FlakeWidth
-	//SnowDriftPos
-	
-	local X = SnowDriftPos.center - (FlakeWidth / 2).Floor();
+	local X = SnowDriftPos.center - (NonFlakeWidth / 2).Floor();
 	
 	local output = "";
 	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
@@ -578,7 +583,7 @@ function OnSpawnSnowman(p)
 	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
 	else if (BalloonIsOpen()) output += "\C";
 	output += "\p[{scope}]\![set,alpha,0]\s[4]\![bind,Snowman variant,{variant},1]";
-	output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
+	output += "\![get,property,OnSpawning@WidthCheck,currentghost.scope({scope}).rect]";
 	output += "\![get,property,OnSpawnSnowman@WidthCheck,currentghost.scope({p[0]}).rect,currentghost.scope({p[1]}).rect,currentghost.scope({p[2]}).rect]";
 	output += "\![embed,OnSpawnSnowman@Move,{p[0]},{p[1]},{p[2]},{scope}]";
 	return output;
@@ -605,12 +610,12 @@ function OnSpawnSnowman@WidthCheck
 function OnSpawnSnowman@Move
 {
 	//TODO for some reason the snowman doesn't appear in the center of the snowballs properly like it should even though i have triple checked... I'll come back to this
-	local X = AllTogetherCenter - (FlakeWidth / 2).Floor();
+	local X = AllTogetherCenter - (NonFlakeWidth / 2).Floor();
 	
 	local output = "";
 	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
 	else if (BalloonIsOpen()) output += "\C";
-	output += "\p[{Shiori.Reference[3]}]\![move,--X={X}]\s[4]\![set,alpha,100]\p[{Shiori.Reference[0]}]\s[-1]\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[2]}]\s[-1]"; // + "{AllTogetherCenter}, {FlakeWidth} / 2 = {(FlakeWidth / 2).Floor()}, together {X}";
+	output += "\p[{Shiori.Reference[3]}]\![move,--X={X}]\s[4]\![set,alpha,100]\p[{Shiori.Reference[0]}]\s[-1]\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[2]}]\s[-1]"; // + "{AllTogetherCenter}, {NonFlakeWidth} / 2 = {(NonFlakeWidth / 2).Floor()}, together {X}";
 	return output;
 }
 

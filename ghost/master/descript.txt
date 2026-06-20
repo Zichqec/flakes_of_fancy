@@ -8,3 +8,8 @@ craftmanw,Blue & Galla & Zichqec
 craftmanurl,https://github.com/Zichqec/flakes_of_fancy
 
 shiori,aosora.dll
+
+balloon,Thaw
+balloon,Ice Cream Cone
+balloon,Ye Olde Soul Spell
+balloon,Weather Cloud

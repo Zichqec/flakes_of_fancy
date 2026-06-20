@@ -41,7 +41,7 @@ function OnAosoraLoad
 	LastScope = -1;
 	TalkScope = -1;
 	TalkEndTime = Time.GetNowUnixEpoch();
-	TalkLatch = 0;
+	TalkLatch = false;
 	InMainMenu = true;
 	//TalkBuilder.Default.AutoLineBreak = "\n\w8";
 }
@@ -60,7 +60,7 @@ function OnTimedTalk
 {
 	if (SnowmanScopes().length > 0)
 	{
-		TalkLatch = 1;
+		TalkLatch = true;
 		local scopes = SnowmanScopes();
 		local rand = Random.GetIndex(0,scopes.length);
 		local scope = scopes[rand];
@@ -76,7 +76,7 @@ function OnTimedTalk
 		return LastTalk;
 	}
 	TalkScope = -1;
-	TalkLatch = 0;
+	TalkLatch = false;
 }
 
 function OnAITalk(scope)
@@ -325,8 +325,8 @@ function OnSecondChange
 	local cantalk = true;
 	if (Shiori.Reference[3] == "0") cantalk = false;
 	//TODO I don't know why I have to write out the == false here and can't just write !cantalk...... i'm losing my mind a bit right now, i'll revisit this. can't get the debugging functions working either
-	if (cantalk == false && TalkLatch == 1) TalkEndTime = Time.GetNowUnixEpoch();
-	else TalkLatch = 0;
+	if (cantalk == false && TalkLatch == true) TalkEndTime = Time.GetNowUnixEpoch();
+	else TalkLatch = false;
 	
 	if (Save.Data.SnowRate != -1)
 	{
@@ -595,7 +595,7 @@ function UnColorAnchorAsChoice
 
 function Chain
 {
-	TalkLatch = 1;
+	TalkLatch = true;
 	return "\p[{LastScope}]";
 }
 

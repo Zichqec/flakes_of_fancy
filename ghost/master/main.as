@@ -132,7 +132,7 @@ function OnKeyPress
 
 function OnMouseDoubleClick
 {
-	if (Shiori.Reference[3] == 0 && Shiori.Reference[5] == 0) return OnMainMenu;
+	if (Shiori.Reference[3] == 0 && Shiori.Reference[5] == 0) return OnMainMenu("new");
 	else if (Shiori.Reference[3] >= 200 && Shiori.Reference[3] < 500) return "\p[{Shiori.Reference[3]}]\s[-1]"; //Remove item
 }
 
@@ -221,10 +221,10 @@ function BalloonIsOpen
 	return 0;
 }
 
-function OnMainMenu
+function OnMainMenu(indicator)
 {
 	local m = "";
-	if (BalloonIsOpen()) m += "\C\![lock,balloonrepaint]\c";
+	if (BalloonIsOpen() && indicator != "new") m += "\C\![lock,balloonrepaint]\c";
 	
 	m += "\0\b[2]\![quicksection,1]\![set,autoscroll,disable]";
 	m += "\![__MAIN_MENU__]"; //Don't have SHIORI3FW.LastTalk in Aosora, so trying this...

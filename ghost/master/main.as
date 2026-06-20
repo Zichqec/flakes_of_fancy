@@ -17,17 +17,16 @@ function OnTranslate
 		talkstr = talkstr.Replace("; ",";\w8\w8 ");
 	}
 	
+	InMainMenu = false;
+	if (talkstr.Contains("\![__MAIN_MENU__]")) InMainMenu = true;
+	
 	return talkstr;
 }
 
 function OnAosoraDefaultSaveData
 {
 	Save.Data.SnowRate = 10;
-	Monitor = [];
-	Surfaces = {};
 	Save.Data.TalkInterval = 180;
-	LastScope = -1;
-	TalkScope = -1;
 }
 
 function OnAosoraLoad
@@ -43,6 +42,7 @@ function OnAosoraLoad
 	TalkScope = -1;
 	TalkEndTime = Time.GetNowUnixEpoch();
 	TalkLatch = 0;
+	InMainMenu = true;
 	//TalkBuilder.Default.AutoLineBreak = "\n\w8";
 }
 
@@ -212,7 +212,11 @@ function BalloonIsOpen
 
 function OnMainMenu
 {
-	local m = "\0\b[2]\![quicksection,1]\![set,autoscroll,disable]";
+	local m = "";
+	if (BalloonIsOpen()) m += "\C\![lock,balloonrepaint]\c";
+	
+	m += "\0\b[2]\![quicksection,1]\![set,autoscroll,disable]";
+	m += "\![__MAIN_MENU__]"; //Don't have SHIORI3FW.LastTalk in Aosora, so trying this...
 	
 	local snowrates = [
 		{label: "None", time: -1},
@@ -222,22 +226,48 @@ function OnMainMenu
 		{label: "Blizzard", time: 1},
 	];
 	
-	m += "Snow amount:\n";
+	m += "Snow amount:\n{ColorAnchorAsChoice}";
 	
 	foreach (local rate in snowrates)
 	{
 		if (rate.time == Save.Data.SnowRate)
 		{
-			m += "\f[underline,1]\_a[OnChangeSnowRate,{rate.time}]{rate.label}\_a\f[underline,0]  ";
+			m += "{UnColorAnchorAsChoice}\f[underline,1]\_a[OnChangeSnowRate,{rate.time}]{rate.label}\_a\f[underline,0]{ColorAnchorAsChoice}  ";
 		}
 		else
 		{
-			m += "\__q[OnChangeSnowRate,{rate.time}]{rate.label}\__q  ";
+			m += "\_a[OnChangeSnowRate,{rate.time}]{rate.label}\_a  ";
 		}
 	}
 	m += "\n\n";
 	
-	m += "\![*]\__q[blank]Done\__q";
+	local talkrates = [
+		{label: "Off", time: 0},
+		{label: "1m", time: 60},
+		{label: "3m", time: 180},
+		{label: "5m", time: 300},
+		{label: "10m", time: 600},
+		{label: "15m", time: 900},
+	];
+	
+	m += "Talk rate:\n{ColorAnchorAsChoice}";
+	
+	foreach (local rate in talkrates)
+	{
+		if (rate.time == Save.Data.TalkInterval)
+		{
+			m += "{UnColorAnchorAsChoice}\f[underline,1]\_a[OnChangeTalkInterval,{rate.time}]{rate.label}\_a\f[underline,0]{ColorAnchorAsChoice}  ";
+		}
+		else
+		{
+			m += "\_a[OnChangeTalkInterval,{rate.time}]{rate.label}\_a  ";
+		}
+	}
+	m += "\n\n";
+	
+	m += "\![*]\_a[OnCloseMainMenu]Done\_a";
+	
+	m += "\![unlock,balloonrepaint]";
 	
 	return m;
 }
@@ -246,6 +276,26 @@ function OnChangeSnowRate
 {
 	Save.Data.SnowRate = Shiori.Reference[0].ToNumber();
 	return OnMainMenu;
+}
+
+function OnChangeTalkInterval
+{
+	Save.Data.TalkInterval = Shiori.Reference[0];
+	TalkTimer.RandomTalkIntervalSeconds = Save.Data.TalkInterval;
+	TalkTimer.RandomTalkElapsedSeconds = 0;
+	
+	return OnMainMenu;
+}
+
+function OnCloseMainMenu
+{
+	return "\0\b[-1]";
+}
+
+//It's a little janky, but since the main menu uses anchors instead of choices, this avoids having it be really touchy and closing if you miss clicking a choice...
+function OnBalloonBreak, OnBalloonClose
+{
+	if (Shiori.Reference[0].Contains("\![__MAIN_MENU__]")) return "\C\![__MAIN_MENU__] \c[char,1]";
 }
 
 function OnDisplayChangeEx
@@ -285,7 +335,8 @@ function OnSecondChange
 		local C = "";
 		//Hoping that by checking for when the last dialogue ended, we can avoid the problem of the balloon staying open forever...
 		//TODO ugh... this is gonna be weird when flakes don't fall every second. But maybe it's okay...?
-		if (BalloonIsOpen() && currenttime - TalkEndTime < 15) C = "\C";
+		if (InMainMenu) C = "\C\![__MAIN_MENU__]";
+		else if (BalloonIsOpen() && currenttime - TalkEndTime < 15) C = "\C";
 		
 		//Snow drifts
 		if (currenttime - LastDriftTime >= (Save.Data.SnowRate * 60) && cantalk == true)
@@ -322,7 +373,8 @@ function OnSpawnSnowflake
 	}
 	
 	local output = "";
-	if (BalloonIsOpen()) output += "\C";
+	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
+	else if (BalloonIsOpen()) output += "\C";
 	output += "\![get,property,OnSpawnSnowflake@ActiveCheck" + cmd + "]";
 	return output;
 }
@@ -345,7 +397,8 @@ function OnSpawnSnowflake@ActiveCheck
 		local variant = SnowFlakeVariants[rand];
 		
 		local output = "";
-		if (BalloonIsOpen()) output += "\C";
+		if (InMainMenu) output += "\C\![__MAIN_MENU__]";
+		else if (BalloonIsOpen()) output += "\C";
 		output += "\p[{scope}]\![set,alpha,0]\s[1]\![bind,Snowflake variant,{variant},1]";
 		output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
 		output += "\![embed,OnSpawnSnowflake@ChoosePosition,{scope},1]";
@@ -379,7 +432,8 @@ function OnSpawnSnowflake@ChoosePosition
 	local X = leftbound + position;
 	
 	local output = "";
-	if (BalloonIsOpen()) output += "\C";
+	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
+	else if (BalloonIsOpen()) output += "\C";
 	output += "\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[{Shiori.Reference[1]}]\![set,alpha,100,500]";
 	return output;
 }
@@ -402,7 +456,8 @@ function OnSpawnSnowdrift
 		local variant = SnowDriftVariants[rand];
 	
 		local output = "";
-		if (BalloonIsOpen()) output += "\C";
+		if (InMainMenu) output += "\C\![__MAIN_MENU__]";
+		else if (BalloonIsOpen()) output += "\C";
 		output += "\p[{scope}]\![set,alpha,0]\s[2]\![bind,Snow drift variant,{variant},1]\![bind,Snow drift stage,0,1]";
 		output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
 		output += "\![embed,OnSpawnSnowflake@ChoosePosition,{scope},2]";
@@ -425,7 +480,8 @@ function OnIncreaseSnowdrift
 	local height = SnowDriftHeight["{character}"];
 	
 	local output = "";
-	if (BalloonIsOpen()) output += "\C";
+	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
+	else if (BalloonIsOpen()) output += "\C";
 	output += "\p[{character}]\![bind,Snow drift stage,{height + 1},1]";
 	return output;
 }
@@ -448,7 +504,8 @@ function OnMakeSnowBall
 		local variant = SnowBallVariants[rand];
 	
 		local output = "";
-		if (BalloonIsOpen()) output += "\C";
+		if (InMainMenu) output += "\C\![__MAIN_MENU__]";
+		else if (BalloonIsOpen()) output += "\C";
 		output += "\p[{scope}]\![set,alpha,0]\s[3]\![bind,Snow ball variant,{variant},1]";
 		output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
 		output += "\![embed,OnSpawnSnowBall@ChoosePosition,{scope},{Shiori.Reference[0]}]";
@@ -464,7 +521,8 @@ function OnSpawnSnowBall@ChoosePosition
 	local X = SnowDriftPos.center - (FlakeWidth / 2).Floor();
 	
 	local output = "";
-	if (BalloonIsOpen()) output += "\C";
+	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
+	else if (BalloonIsOpen()) output += "\C";
 	output += "\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[3]\![set,alpha,100]";
 	return output;
 }
@@ -485,7 +543,8 @@ function OnSpawnSnowman(p)
 	local variant = SnowManVariants[rand];
 	
 	local output = "";
-	if (BalloonIsOpen()) output += "\C";
+	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
+	else if (BalloonIsOpen()) output += "\C";
 	output += "\p[{scope}]\![set,alpha,0]\s[4]\![bind,Snowman variant,{variant},1]";
 	output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
 	output += "\![get,property,OnSpawnSnowman@WidthCheck,currentghost.scope({p[0]}).rect,currentghost.scope({p[1]}).rect,currentghost.scope({p[2]}).rect]";
@@ -517,14 +576,20 @@ function OnSpawnSnowman@Move
 	local X = AllTogetherCenter - (FlakeWidth / 2).Floor();
 	
 	local output = "";
-	if (BalloonIsOpen()) output += "\C";
+	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
+	else if (BalloonIsOpen()) output += "\C";
 	output += "\p[{Shiori.Reference[3]}]\![move,--X={X}]\s[4]\![set,alpha,100]\p[{Shiori.Reference[0]}]\s[-1]\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[2]}]\s[-1]"; // + "{AllTogetherCenter}, {FlakeWidth} / 2 = {(FlakeWidth / 2).Floor()}, together {X}";
 	return output;
 }
 
 function ColorAnchorAsChoice
 {
-	return "\f[anchor.font.color,default.cursor]";
+	return "\f[anchor.font.color,default.cursor]\f[anchor.visited.font.color,default.cursor]";
+}
+
+function UnColorAnchorAsChoice
+{
+	return "\f[anchor.font.color,default]\f[anchor.visited.font.color,default]";
 }
 
 function Chain

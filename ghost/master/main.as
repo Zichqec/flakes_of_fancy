@@ -3,9 +3,12 @@
 //please don't judge me by this i swear i can write clean code
 //look at hydrate... so clean...
 
-talk OnBoot
+function OnBoot
 {
-	\1\s[-1]\0\s[0]\![embed,OnSendStats]
+	local output = "";
+	if (Save.Data.ProgrammerArtUnlocked == false) output += "\![set,property,currentghost.shelllist(Programmer art).menu,hidden]";
+	output += "\1\s[-1]\0\s[0]\![embed,OnSendStats]";
+	return output;
 }
 
 talk OnClose
@@ -66,6 +69,7 @@ function OnAosoraDefaultSaveData
 {
 	Save.Data.SnowAmount = 1;
 	Save.Data.TalkInterval = 300;
+	Save.Data.ProgrammerArtUnlocked = false;
 }
 
 function OnAosoraLoad
@@ -83,6 +87,7 @@ function OnAosoraLoad
 	TalkLatch = false;
 	InMainMenu = false;
 	ShellChangeStatsLatch = false;
+	Save.Data.ProgrammerArtUnlocked = false;
 	//TalkBuilder.Default.AutoLineBreak = "\n\w8";
 }
 
@@ -276,7 +281,7 @@ function OnMainMenu(indicator)
 	if (BalloonIsOpen() && indicator != "new") m += "\C\![lock,balloonrepaint]\c";
 	
 	m += "\0\b[2]\![quicksection,1]\![set,autoscroll,disable]";
-	m += "\![__MAIN_MENU__]"; //Don't have SHIORI3FW.LastTalk in Aosora, so trying this...
+	m += "\![__MAIN_MENU__]{refnum}"; //Don't have SHIORI3FW.LastTalk in Aosora, so trying this...
 	
 	local snowamounts = SnowAmounts();
 	
@@ -304,21 +309,23 @@ function OnMainMenu(indicator)
 		{label: "15m", time: 900},
 	];
 	
-	m += "Talk rate:\n{ColorAnchorAsChoice}";
-	
-	foreach (local rate in talkrates)
+	if (SnowmanScopes().length > 0)
 	{
-		if (rate.time == Save.Data.TalkInterval)
+		m += "Talk rate:\n{ColorAnchorAsChoice}";
+		
+		foreach (local rate in talkrates)
 		{
-			m += "{UnColorAnchorAsChoice}\f[underline,1]\_a[OnChangeTalkInterval,{rate.time}]{rate.label}\_a\f[underline,0]{ColorAnchorAsChoice}  ";
+			if (rate.time == Save.Data.TalkInterval)
+			{
+				m += "{UnColorAnchorAsChoice}\f[underline,1]\_a[OnChangeTalkInterval,{rate.time}]{rate.label}\_a\f[underline,0]{ColorAnchorAsChoice}  ";
+			}
+			else
+			{
+				m += "\_a[OnChangeTalkInterval,{rate.time}]{rate.label}\_a  ";
+			}
 		}
-		else
-		{
-			m += "\_a[OnChangeTalkInterval,{rate.time}]{rate.label}\_a  ";
-		}
+		m += "\n\n";
 	}
-	m += "\n\n";
-	
 	m += "\![*]\_a[OnCloseMainMenu]Done\_a";
 	
 	m += "\![unlock,balloonrepaint]";
@@ -660,6 +667,11 @@ function OnSpawnSnowman(p)
 	output += "\![get,property,OnSpawning@WidthCheck,currentghost.scope({scope}).rect]";
 	output += "\![get,property,OnSpawnSnowman@WidthCheck,currentghost.scope({p[0]}).rect,currentghost.scope({p[1]}).rect,currentghost.scope({p[2]}).rect]";
 	output += "\![embed,OnSpawnSnowman@Move,{p[0]},{p[1]},{p[2]},{scope}]";
+	if (SnowmanScopes().length >= 12 && Save.Data.ProgrammerArtUnlocked == false)
+	{
+		Save.Data.ProgrammerArtUnlocked = true;
+		output += "\![set,property,currentghost.shelllist(Programmer art).menu,menu]";
+	}
 	return output;
 }
 
@@ -728,29 +740,34 @@ function OnNotifyDressupInfo
 	
 	SnowDriftHeight = {};
 	
+	refnum = Shiori.Reference.length;
+	
 	for (local i = 0; i < Shiori.Reference.length; i++)
 	{
 		local dressup = Shiori.Reference[i].Split((1).ToAscii());
+		if (dressup[0] == 100 || dressup[0] == 200 || dressup[0] == 300 || dressup[0] == 400)
+		{
+			//I could make these single if checks, but it's just so long and cumbersome to read...
+			//I don't want these to be associative, but I can't find a basic array search function...
+			if (dressup[1].Contains("variant") == "Snowflake variant")
+			{
+				if (InArray(dressup[2],SnowFlakeVariants) == 0) SnowFlakeVariants.Add(dressup[2]);
+			}
+			else if (dressup[1] == "Snow drift variant")
+			{
+				if (InArray(dressup[2],SnowDriftVariants) == 0) SnowDriftVariants.Add(dressup[2]);
+			}
+			else if (dressup[1] == "Snow ball variant")
+			{
+				if (InArray(dressup[2],SnowBallVariants) == 0) SnowBallVariants.Add(dressup[2]);
+			}
+			else if (dressup[1] == "Snowman variant")
+			{
+				if (InArray(dressup[2],SnowManVariants) == 0) SnowManVariants.Add(dressup[2]);
+			}
+		}
 		
-		//I could make these single if checks, but it's just so long and cumbersome to read...
-		//I don't want these to be associative, but I can't find a basic array search function...
-		if (dressup[1] == "Snowflake variant")
-		{
-			if (InArray(dressup[2],SnowFlakeVariants) == 0) SnowFlakeVariants.Add(dressup[2]);
-		}
-		if (dressup[1] == "Snow drift variant")
-		{
-			if (InArray(dressup[2],SnowDriftVariants) == 0) SnowDriftVariants.Add(dressup[2]);
-		}
-		if (dressup[1] == "Snow ball variant")
-		{
-			if (InArray(dressup[2],SnowBallVariants) == 0) SnowBallVariants.Add(dressup[2]);
-		}
-		if (dressup[1] == "Snowman variant")
-		{
-			if (InArray(dressup[2],SnowManVariants) == 0) SnowManVariants.Add(dressup[2]);
-		}
-		
+		//TODO this really needs infinite loop protection lol
 		//Get snow drift height
 		if (dressup[4] == "0") continue;
 		local character = dressup[0].ToNumber();

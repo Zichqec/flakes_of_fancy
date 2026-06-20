@@ -672,3 +672,8 @@ function InArray(key, array)
 	}
 	return 0;
 }
+
+//Communication event:
+//How hard it's snowing, Wind speed, Wind direction, How many snow drifts, How many snow balls, How many snowmen, Snow drift depth dressups
+//OnFlakesOfFancyStateNotify
+//OnFOFSnowStateNotify

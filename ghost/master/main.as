@@ -53,7 +53,7 @@ function OnAosoraLoad
 	TalkScope = -1;
 	TalkEndTime = Time.GetNowUnixEpoch();
 	TalkLatch = false;
-	InMainMenu = true;
+	InMainMenu = false;
 	//TalkBuilder.Default.AutoLineBreak = "\n\w8";
 }
 

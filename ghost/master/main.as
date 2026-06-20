@@ -5,7 +5,29 @@
 
 talk OnBoot
 {
-	\1\s[-1]\0\s[0]
+	\1\s[-1]\0\s[0]\![embed,OnSendStats]
+}
+
+talk OnClose
+{
+	\![embed,OnSendStats]
+}
+
+//I don't know which i need to hit so i'm just gonna hit em all!!!!!!
+function OnOtherGhostBooted, OnOtherGhostChanged, OnGhostCalled, OnGhostCallComplete
+{
+	return "\![embed,OnSendStats]";
+}
+
+function OnHourTimeSignal
+{
+	return "\![embed,OnSendStats]";
+}
+
+function OnShellChanged
+{
+	//return "\![embed,OnSendStats]";
+	ShellChangeStatsLatch = true;
 }
 
 //These have to be cleared when restoring, otherwise they get stuck
@@ -60,6 +82,7 @@ function OnAosoraLoad
 	TalkEndTime = Time.GetNowUnixEpoch();
 	TalkLatch = false;
 	InMainMenu = false;
+	ShellChangeStatsLatch = false;
 	//TalkBuilder.Default.AutoLineBreak = "\n\w8";
 }
 
@@ -118,6 +141,19 @@ function SnowmanScopes
 	return scopes;
 }
 
+function SnowballScopes
+{
+	local scopes = [];
+	for (local i = 300; i < 400; i++)
+	{
+		if (Surfaces.Contains("{i}") && Surfaces["{i}"] != -1)
+		{
+			scopes.Add("{i}");
+		}
+	}
+	return scopes;
+}
+
 function SnowdriftScopes
 {
 	local scopes = [];
@@ -144,7 +180,7 @@ function OnMouseDoubleClick
 	{
 		if (Shiori.Reference[3] == LastScope) TalkTimer.RandomTalkQueue.Clear();
 		
-		return "\p[{Shiori.Reference[3]}]\s[-1]"; //Remove item
+		return "\p[{Shiori.Reference[3]}]\s[-1]\![embed,OnSendStats]"; //Remove item
 	}
 }
 
@@ -242,13 +278,7 @@ function OnMainMenu(indicator)
 	m += "\0\b[2]\![quicksection,1]\![set,autoscroll,disable]";
 	m += "\![__MAIN_MENU__]"; //Don't have SHIORI3FW.LastTalk in Aosora, so trying this...
 	
-	local snowamounts = [
-		{label: "None", amount: -1},
-		{label: "Light", amount: 1},
-		{label: "Medium", amount: 3},
-		{label: "Heavy", amount: 5},
-		{label: "Blizzard", amount: 7},
-	];
+	local snowamounts = SnowAmounts();
 	
 	m += "Snow amount:\n{ColorAnchorAsChoice}";
 	
@@ -294,6 +324,17 @@ function OnMainMenu(indicator)
 	m += "\![unlock,balloonrepaint]";
 	
 	return m;
+}
+
+function SnowAmounts
+{
+	return [
+		{label: "None", amount: 0},
+		{label: "Light", amount: 1},
+		{label: "Medium", amount: 3},
+		{label: "Heavy", amount: 5},
+		{label: "Blizzard", amount: 7},
+	];
 }
 
 function OnChangeSnowRate
@@ -354,13 +395,19 @@ function OnSecondChange
 	if (Shiori.Reference[3] == "0") cantalk = false;
 	//TODO I don't know why I have to write out the == false here and can't just write !cantalk...... i'm losing my mind a bit right now, i'll revisit this. can't get the debugging functions working either
 	//TalkLatch is a latch that makes it get the TalkEndTime *one* time after a dialogue ends (without this latch it just constantly updates)
+	if (ShellChangeStatsLatch == true)
+	{
+		ShellChangeStatsLatch = false;
+		return "\![embed,OnSendStats]";
+	}
+	
 	if (cantalk == false && TalkLatch == true) TalkEndTime = Time.GetNowUnixEpoch();
 	else TalkLatch = false;
 	
 	//This check is the conditions for a randomtalk happening. This is necessary because otherwise snowflake spawns block the talking... oopsie
 	if (TalkTimer.RandomTalkElapsedSeconds >= TalkTimer.RandomTalkIntervalSeconds && cantalk == true) return;
 	
-	if (Save.Data.SnowAmount != -1)
+	if (Save.Data.SnowAmount > 0)
 	{
 		local currenttime = Time.GetNowUnixEpoch();
 		
@@ -487,6 +534,23 @@ function OnSpawnSnowflake@ChoosePosition
 	return output;
 }
 
+//split this so i can embed stats thing
+function OnSpawnSnowdrift@ChoosePosition
+{
+	local monitor = Monitor[Random.GetIndex(0,Monitor.length)];
+	local leftbound = monitor.left;
+	local position = Random.GetIndex(0,monitor.width - FlakeWidth);
+	
+	local X = leftbound + position;
+	
+	local output = "";
+	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
+	else if (BalloonIsOpen()) output += "\C";
+	//TODO there's an issue where sometimes it spawns a flake and repeatedly fades it in... but that might be because I was messing with timerraise
+	output += "\p[{Shiori.Reference[0]}]\![move,--X={X},--base=primaryscreen]\s[{Shiori.Reference[1]}]\![set,alpha,100,500]\![embed,OnSendStats]";
+	return output;
+}
+
 function OnSpawnSnowdrift
 {
 	local scope = -1;
@@ -509,7 +573,7 @@ function OnSpawnSnowdrift
 		else if (BalloonIsOpen()) output += "\C";
 		output += "\p[{scope}]\![set,alpha,0]\s[2]\![bind,Snow drift variant,{variant},1]\![bind,Snow drift stage,0,1]";
 		output += "\![get,property,OnSpawning@WidthCheck,currentghost.scope({scope}).rect]";
-		output += "\![embed,OnSpawnSnowflake@ChoosePosition,{scope},2]";
+		output += "\![embed,OnSpawnSnowdrift@ChoosePosition,{scope},2]";
 		return output;
 	}
 }
@@ -531,7 +595,7 @@ function OnIncreaseSnowdrift
 	local output = "";
 	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
 	else if (BalloonIsOpen()) output += "\C";
-	output += "\p[{character}]\![bind,Snow drift stage,{height + 1},1]";
+	output += "\p[{character}]\![bind,Snow drift stage,{height + 1},1]\![embed,OnSendStats]";
 	return output;
 }
 
@@ -570,8 +634,7 @@ function OnSpawnSnowBall@ChoosePosition
 	local output = "";
 	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
 	else if (BalloonIsOpen()) output += "\C";
-	output += "\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[3]\![set,alpha,100]";
-	output += "\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[0]}]\![move,--X={X},--base=primaryscreen]\s[3]\![set,alpha,100]";
+	output += "\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[0]}]\![move,--X={X},--base=primaryscreen]\s[3]\![set,alpha,100]\![embed,OnSendStats]";
 	return output;
 }
 
@@ -626,7 +689,7 @@ function OnSpawnSnowman@Move
 	local output = "";
 	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
 	else if (BalloonIsOpen()) output += "\C";
-	output += "\p[{Shiori.Reference[3]}]\![move,--X={X},--base=primaryscreen]\s[4]\![set,alpha,100]\p[{Shiori.Reference[0]}]\s[-1]\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[2]}]\s[-1]"; // + "{AllTogetherCenter}, {NonFlakeWidth} / 2 = {(NonFlakeWidth / 2).Floor()}, together {X}";
+	output += "\p[{Shiori.Reference[3]}]\![move,--X={X},--base=primaryscreen]\s[4]\![set,alpha,100]\p[{Shiori.Reference[0]}]\s[-1]\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[2]}]\s[-1]\![embed,OnSendStats]"; // + "{AllTogetherCenter}, {NonFlakeWidth} / 2 = {(NonFlakeWidth / 2).Floor()}, together {X}";
 	return output;
 }
 
@@ -712,6 +775,45 @@ function InArray(key, array)
 }
 
 //Communication event:
-//How hard it's snowing, Wind speed, Wind direction, How many snow drifts, How many snow balls, How many snowmen, Snow drift depth dressups
+//How hard it's snowing, How many snow drifts, How many snow balls, How many snowmen, Snow drift depth dressups, Wind speed, Wind direction,
 //OnFlakesOfFancyStateNotify
-//OnFOFSnowStateNotify
+
+//!!! THIS IS UNFINISHED AND MAY CHANGE AFTER JAM !!! THIS IS NOT SET IN STONE, IMPLEMENT AT YOUR OWN RISK !!!
+function OnSendStats
+{
+	local snowlevel = 0;
+	local snowamounts = SnowAmounts();
+	for (local i = 0; i < snowamounts.length; i++)
+	{
+		if (snowamounts[i].amount == Save.Data.SnowAmount) snowlevel = i;
+	}
+	
+	local driftheights = "";
+	local drifts = SnowDriftHeight.Keys();
+	for (local i = 0; i < drifts.length; i++)
+	{
+		local p = i + 200;
+		if (Surfaces.Contains("{p}") && Surfaces["{p}"] != -1)
+		{
+			if (i > 0) driftheights += ",";
+			driftheights += SnowDriftHeight["{drifts[i]}"];
+		}
+	}
+	
+	local shellname = CurrentShell.Replace('"','""');
+	local output = "";
+	output += "\![notifyother,OnFlakesOfFancyStateNotify";
+	output += `,{snowlevel}`;
+	output += `,"{shellname}"`;
+	output += `,{SnowdriftScopes.length}`;
+	output += `,{SnowballScopes.length}`;
+	output += `,{SnowmanScopes.length}`;
+	output += `,"{driftheights}"`;
+	output += "]";
+	return output;
+}
+
+function OnNotifyShellInfo
+{
+	CurrentShell = Shiori.Reference[0];
+}

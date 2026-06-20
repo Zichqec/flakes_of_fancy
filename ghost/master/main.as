@@ -281,7 +281,7 @@ function OnMainMenu(indicator)
 	if (BalloonIsOpen() && indicator != "new") m += "\C\![lock,balloonrepaint]\c";
 	
 	m += "\0\b[2]\![quicksection,1]\![set,autoscroll,disable]";
-	m += "\![__MAIN_MENU__]{refnum}"; //Don't have SHIORI3FW.LastTalk in Aosora, so trying this...
+	m += "\![__MAIN_MENU__]"; //Don't have SHIORI3FW.LastTalk in Aosora, so trying this...
 	
 	local snowamounts = SnowAmounts();
 	
@@ -739,8 +739,6 @@ function OnNotifyDressupInfo
 	SnowManVariants = [];
 	
 	SnowDriftHeight = {};
-	
-	refnum = Shiori.Reference.length;
 	
 	for (local i = 0; i < Shiori.Reference.length; i++)
 	{

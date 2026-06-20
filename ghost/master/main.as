@@ -667,7 +667,7 @@ function OnSpawnSnowman(p)
 	output += "\![get,property,OnSpawning@WidthCheck,currentghost.scope({scope}).rect]";
 	output += "\![get,property,OnSpawnSnowman@WidthCheck,currentghost.scope({p[0]}).rect,currentghost.scope({p[1]}).rect,currentghost.scope({p[2]}).rect]";
 	output += "\![embed,OnSpawnSnowman@Move,{p[0]},{p[1]},{p[2]},{scope}]";
-	if (SnowmanScopes().length >= 12 && Save.Data.ProgrammerArtUnlocked == false)
+	if (SnowmanScopes().length >= 11 && Save.Data.ProgrammerArtUnlocked == false)
 	{
 		Save.Data.ProgrammerArtUnlocked = true;
 		output += "\![set,property,currentghost.shelllist(Programmer art).menu,menu]";

@@ -17,7 +17,7 @@ talk Chain_VolumeWarning2
 talk RandomTalk(p)
 {
 	%{ TalkTimer.RandomTalkQueue = [Chain_FaceThing]; }
-	\b[2]What's this thing on my face?\_q{ColorAnchorAsChoice}
+	\b[2]What's this thing on my face?\_q{ColorAnchorAsChoice}{Choices}
 	
 	\_a[OnFaceThing1,{p}]\![*] Your eyes\_a\n[half]
 	\_a[OnFaceThing1,{p}]\![*] Your nose\_a\n[half]
@@ -28,7 +28,7 @@ talk OnFaceThing1
 {
 	%{ TalkTimer.RandomTalkQueue = [Chain_FaceThing]; }
 	%{ local p = Shiori.Reference[0]; }
-	\p[{p}]\b[2]No, not that. The other thing.\_q{ColorAnchorAsChoice}{ResetBalloonTimeout}
+	\p[{p}]\b[2]No, not that. The other thing.\_q{ColorAnchorAsChoice}{Choices}{ResetBalloonTimeout}
 	
 	\_a[OnFaceThing2,{p}]\![*] Your eyes\_a\n[half]
 	\_a[OnFaceThing2,{p}]\![*] Your nose\_a\n[half]
@@ -72,7 +72,7 @@ talk Chain_FaceThing
 
 talk RandomTalk(p)
 {
-	\b[2]I want to go to {thebeach}.\_q{ColorAnchorAsChoice}{ResetBalloonTimeout}
+	\b[2]I want to go to {thebeach}.\_q{ColorAnchorAsChoice}{Choices}{ResetBalloonTimeout}
 	
 	\_a[OnGoBeach1,{p}]\![*] That sounds nice\_a\n[half]
 	\_a[OnGoBeach2,{p}]\![*] That's not a good idea\_a
@@ -104,7 +104,7 @@ talk RandomTalk
 
 talk RandomTalk(p)
 {
-	\b[2]I'm hungry.\_q{ColorAnchorAsChoice}{ResetBalloonTimeout}
+	\b[2]I'm hungry.\_q{ColorAnchorAsChoice}{Choices}{ResetBalloonTimeout}
 	
 	\_a[OnHungry1,{p}]\![*] You don't have a stomach\_a\n[half]
 	\_a[OnHungry2,{p}]\![*] What do you want to eat?\_a

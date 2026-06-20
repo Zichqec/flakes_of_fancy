@@ -323,6 +323,7 @@ function OnCloseMainMenu
 function OnBalloonBreak, OnBalloonClose
 {
 	if (Shiori.Reference[0].Contains("\![__MAIN_MENU__]")) return "\C\![__MAIN_MENU__] \c[char,1]";
+	else if (Shiori.Reference[0].Contains("\![__CHOICES__]")) return "\C\p[{LastScope}]\![__CHOICES__] \c[char,1]";
 }
 
 function OnDisplayChangeEx
@@ -648,6 +649,11 @@ function Chain
 function ResetBalloonTimeout
 {
 	TalkLatch = true;
+}
+
+function Choices
+{
+	return "\![__CHOICES__]";
 }
 
 function OnNotifyDressupInfo

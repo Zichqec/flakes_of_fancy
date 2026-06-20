@@ -336,8 +336,12 @@ function OnSecondChange
 	local cantalk = true;
 	if (Shiori.Reference[3] == "0") cantalk = false;
 	//TODO I don't know why I have to write out the == false here and can't just write !cantalk...... i'm losing my mind a bit right now, i'll revisit this. can't get the debugging functions working either
+	//TalkLatch is a latch that makes it get the TalkEndTime *one* time after a dialogue ends (without this latch it just constantly updates)
 	if (cantalk == false && TalkLatch == true) TalkEndTime = Time.GetNowUnixEpoch();
 	else TalkLatch = false;
+	
+	//This check is the conditions for a randomtalk happening. This is necessary because otherwise snowflake spawns block the talking... oopsie
+	if (TalkTimer.RandomTalkElapsedSeconds >= TalkTimer.RandomTalkIntervalSeconds && cantalk == true) return;
 	
 	if (Save.Data.SnowAmount != -1)
 	{

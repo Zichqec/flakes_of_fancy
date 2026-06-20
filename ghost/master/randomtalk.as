@@ -252,3 +252,26 @@ talk Chain_GoSleep5
 {
 	{Chain}\b[0]OK I'm awake now.
 }
+talk RandomTalk(p)
+{
+	\b[0]Where does snow come from anyway...
+}
+
+talk RandomTalk(p)
+{
+	\b[2]Shh I'm counting snowflakes.
+	
+	1... 2... 3... 4... 5... 6... 7... 8... 9... 10... 11... 12...
+	
+	... Yep, that's all of them.
+}
+
+talk RandomTalk(p)
+{
+	\b[0]Sometimes I wonder if I have a doppelganger out there, plotting against me.
+}
+
+talk RandomTalk(p)
+{
+	\b[0]Where does the snowman end and the snowdrifts begin?
+}

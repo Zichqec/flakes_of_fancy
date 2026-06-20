@@ -347,7 +347,8 @@ function OnSecondChange
 			
 			local count = SnowdriftScopes().length;
 			local action = "new";
-			if (count >= 100) action = "increase";
+			//TODO it might be nice to have the option to change the snow drift limit... for now, 25 is enough to prevent Problems™
+			if (count >= 25) action = "increase";
 			else if (count >= 5 && Random.GetIndex(0,3) == 0) action = "increase";
 			
 			if (action == "increase") return C + "\![raise,OnIncreaseSnowdrift]";

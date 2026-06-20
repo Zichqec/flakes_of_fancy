@@ -1,10 +1,10 @@
 charset,UTF-8
 type,shell
-name,Blue frost
+name,Programmer art
 
-craftman,Blue & Zichqec
-craftmanw,Blue & Zichqec
-craftmanurl,https://www.tumblr.com/bluetheanimator
+craftman,Zichqec
+craftmanw,Zichqec
+craftmanurl,https://ukagaka.zichqec.com/
 
 seriko.use_self_alpha,1
 
@@ -14,501 +14,601 @@ char200.bindgroup21000.default,1
 char200.bindgroup21000.name,Snow drift stage,0
 char200.bindgroup21001.name,Snow drift stage,1
 char200.bindgroup21002.name,Snow drift stage,2
+char200.bindgroup21003.name,Snow drift stage,3
 char201.bindoption20000.group,Snow drift stage,mustselect
 char201.bindgroup21000.default,1
 char201.bindgroup21000.name,Snow drift stage,0
 char201.bindgroup21001.name,Snow drift stage,1
 char201.bindgroup21002.name,Snow drift stage,2
+char201.bindgroup21003.name,Snow drift stage,3
 char202.bindoption20000.group,Snow drift stage,mustselect
 char202.bindgroup21000.default,1
 char202.bindgroup21000.name,Snow drift stage,0
 char202.bindgroup21001.name,Snow drift stage,1
 char202.bindgroup21002.name,Snow drift stage,2
+char202.bindgroup21003.name,Snow drift stage,3
 char203.bindoption20000.group,Snow drift stage,mustselect
 char203.bindgroup21000.default,1
 char203.bindgroup21000.name,Snow drift stage,0
 char203.bindgroup21001.name,Snow drift stage,1
 char203.bindgroup21002.name,Snow drift stage,2
+char203.bindgroup21003.name,Snow drift stage,3
 char204.bindoption20000.group,Snow drift stage,mustselect
 char204.bindgroup21000.default,1
 char204.bindgroup21000.name,Snow drift stage,0
 char204.bindgroup21001.name,Snow drift stage,1
 char204.bindgroup21002.name,Snow drift stage,2
+char204.bindgroup21003.name,Snow drift stage,3
 char205.bindoption20000.group,Snow drift stage,mustselect
 char205.bindgroup21000.default,1
 char205.bindgroup21000.name,Snow drift stage,0
 char205.bindgroup21001.name,Snow drift stage,1
 char205.bindgroup21002.name,Snow drift stage,2
+char205.bindgroup21003.name,Snow drift stage,3
 char206.bindoption20000.group,Snow drift stage,mustselect
 char206.bindgroup21000.default,1
 char206.bindgroup21000.name,Snow drift stage,0
 char206.bindgroup21001.name,Snow drift stage,1
 char206.bindgroup21002.name,Snow drift stage,2
+char206.bindgroup21003.name,Snow drift stage,3
 char207.bindoption20000.group,Snow drift stage,mustselect
 char207.bindgroup21000.default,1
 char207.bindgroup21000.name,Snow drift stage,0
 char207.bindgroup21001.name,Snow drift stage,1
 char207.bindgroup21002.name,Snow drift stage,2
+char207.bindgroup21003.name,Snow drift stage,3
 char208.bindoption20000.group,Snow drift stage,mustselect
 char208.bindgroup21000.default,1
 char208.bindgroup21000.name,Snow drift stage,0
 char208.bindgroup21001.name,Snow drift stage,1
 char208.bindgroup21002.name,Snow drift stage,2
+char208.bindgroup21003.name,Snow drift stage,3
 char209.bindoption20000.group,Snow drift stage,mustselect
 char209.bindgroup21000.default,1
 char209.bindgroup21000.name,Snow drift stage,0
 char209.bindgroup21001.name,Snow drift stage,1
 char209.bindgroup21002.name,Snow drift stage,2
+char209.bindgroup21003.name,Snow drift stage,3
 char210.bindoption20000.group,Snow drift stage,mustselect
 char210.bindgroup21000.default,1
 char210.bindgroup21000.name,Snow drift stage,0
 char210.bindgroup21001.name,Snow drift stage,1
 char210.bindgroup21002.name,Snow drift stage,2
+char210.bindgroup21003.name,Snow drift stage,3
 char211.bindoption20000.group,Snow drift stage,mustselect
 char211.bindgroup21000.default,1
 char211.bindgroup21000.name,Snow drift stage,0
 char211.bindgroup21001.name,Snow drift stage,1
 char211.bindgroup21002.name,Snow drift stage,2
+char211.bindgroup21003.name,Snow drift stage,3
 char212.bindoption20000.group,Snow drift stage,mustselect
 char212.bindgroup21000.default,1
 char212.bindgroup21000.name,Snow drift stage,0
 char212.bindgroup21001.name,Snow drift stage,1
 char212.bindgroup21002.name,Snow drift stage,2
+char212.bindgroup21003.name,Snow drift stage,3
 char213.bindoption20000.group,Snow drift stage,mustselect
 char213.bindgroup21000.default,1
 char213.bindgroup21000.name,Snow drift stage,0
 char213.bindgroup21001.name,Snow drift stage,1
 char213.bindgroup21002.name,Snow drift stage,2
+char213.bindgroup21003.name,Snow drift stage,3
 char214.bindoption20000.group,Snow drift stage,mustselect
 char214.bindgroup21000.default,1
 char214.bindgroup21000.name,Snow drift stage,0
 char214.bindgroup21001.name,Snow drift stage,1
 char214.bindgroup21002.name,Snow drift stage,2
+char214.bindgroup21003.name,Snow drift stage,3
 char215.bindoption20000.group,Snow drift stage,mustselect
 char215.bindgroup21000.default,1
 char215.bindgroup21000.name,Snow drift stage,0
 char215.bindgroup21001.name,Snow drift stage,1
 char215.bindgroup21002.name,Snow drift stage,2
+char215.bindgroup21003.name,Snow drift stage,3
 char216.bindoption20000.group,Snow drift stage,mustselect
 char216.bindgroup21000.default,1
 char216.bindgroup21000.name,Snow drift stage,0
 char216.bindgroup21001.name,Snow drift stage,1
 char216.bindgroup21002.name,Snow drift stage,2
+char216.bindgroup21003.name,Snow drift stage,3
 char217.bindoption20000.group,Snow drift stage,mustselect
 char217.bindgroup21000.default,1
 char217.bindgroup21000.name,Snow drift stage,0
 char217.bindgroup21001.name,Snow drift stage,1
 char217.bindgroup21002.name,Snow drift stage,2
+char217.bindgroup21003.name,Snow drift stage,3
 char218.bindoption20000.group,Snow drift stage,mustselect
 char218.bindgroup21000.default,1
 char218.bindgroup21000.name,Snow drift stage,0
 char218.bindgroup21001.name,Snow drift stage,1
 char218.bindgroup21002.name,Snow drift stage,2
+char218.bindgroup21003.name,Snow drift stage,3
 char219.bindoption20000.group,Snow drift stage,mustselect
 char219.bindgroup21000.default,1
 char219.bindgroup21000.name,Snow drift stage,0
 char219.bindgroup21001.name,Snow drift stage,1
 char219.bindgroup21002.name,Snow drift stage,2
+char219.bindgroup21003.name,Snow drift stage,3
 char220.bindoption20000.group,Snow drift stage,mustselect
 char220.bindgroup21000.default,1
 char220.bindgroup21000.name,Snow drift stage,0
 char220.bindgroup21001.name,Snow drift stage,1
 char220.bindgroup21002.name,Snow drift stage,2
+char220.bindgroup21003.name,Snow drift stage,3
 char221.bindoption20000.group,Snow drift stage,mustselect
 char221.bindgroup21000.default,1
 char221.bindgroup21000.name,Snow drift stage,0
 char221.bindgroup21001.name,Snow drift stage,1
 char221.bindgroup21002.name,Snow drift stage,2
+char221.bindgroup21003.name,Snow drift stage,3
 char222.bindoption20000.group,Snow drift stage,mustselect
 char222.bindgroup21000.default,1
 char222.bindgroup21000.name,Snow drift stage,0
 char222.bindgroup21001.name,Snow drift stage,1
 char222.bindgroup21002.name,Snow drift stage,2
+char222.bindgroup21003.name,Snow drift stage,3
 char223.bindoption20000.group,Snow drift stage,mustselect
 char223.bindgroup21000.default,1
 char223.bindgroup21000.name,Snow drift stage,0
 char223.bindgroup21001.name,Snow drift stage,1
 char223.bindgroup21002.name,Snow drift stage,2
+char223.bindgroup21003.name,Snow drift stage,3
 char224.bindoption20000.group,Snow drift stage,mustselect
 char224.bindgroup21000.default,1
 char224.bindgroup21000.name,Snow drift stage,0
 char224.bindgroup21001.name,Snow drift stage,1
 char224.bindgroup21002.name,Snow drift stage,2
+char224.bindgroup21003.name,Snow drift stage,3
 char225.bindoption20000.group,Snow drift stage,mustselect
 char225.bindgroup21000.default,1
 char225.bindgroup21000.name,Snow drift stage,0
 char225.bindgroup21001.name,Snow drift stage,1
 char225.bindgroup21002.name,Snow drift stage,2
+char225.bindgroup21003.name,Snow drift stage,3
 char226.bindoption20000.group,Snow drift stage,mustselect
 char226.bindgroup21000.default,1
 char226.bindgroup21000.name,Snow drift stage,0
 char226.bindgroup21001.name,Snow drift stage,1
 char226.bindgroup21002.name,Snow drift stage,2
+char226.bindgroup21003.name,Snow drift stage,3
 char227.bindoption20000.group,Snow drift stage,mustselect
 char227.bindgroup21000.default,1
 char227.bindgroup21000.name,Snow drift stage,0
 char227.bindgroup21001.name,Snow drift stage,1
 char227.bindgroup21002.name,Snow drift stage,2
+char227.bindgroup21003.name,Snow drift stage,3
 char228.bindoption20000.group,Snow drift stage,mustselect
 char228.bindgroup21000.default,1
 char228.bindgroup21000.name,Snow drift stage,0
 char228.bindgroup21001.name,Snow drift stage,1
 char228.bindgroup21002.name,Snow drift stage,2
+char228.bindgroup21003.name,Snow drift stage,3
 char229.bindoption20000.group,Snow drift stage,mustselect
 char229.bindgroup21000.default,1
 char229.bindgroup21000.name,Snow drift stage,0
 char229.bindgroup21001.name,Snow drift stage,1
 char229.bindgroup21002.name,Snow drift stage,2
+char229.bindgroup21003.name,Snow drift stage,3
 char230.bindoption20000.group,Snow drift stage,mustselect
 char230.bindgroup21000.default,1
 char230.bindgroup21000.name,Snow drift stage,0
 char230.bindgroup21001.name,Snow drift stage,1
 char230.bindgroup21002.name,Snow drift stage,2
+char230.bindgroup21003.name,Snow drift stage,3
 char231.bindoption20000.group,Snow drift stage,mustselect
 char231.bindgroup21000.default,1
 char231.bindgroup21000.name,Snow drift stage,0
 char231.bindgroup21001.name,Snow drift stage,1
 char231.bindgroup21002.name,Snow drift stage,2
+char231.bindgroup21003.name,Snow drift stage,3
 char232.bindoption20000.group,Snow drift stage,mustselect
 char232.bindgroup21000.default,1
 char232.bindgroup21000.name,Snow drift stage,0
 char232.bindgroup21001.name,Snow drift stage,1
 char232.bindgroup21002.name,Snow drift stage,2
+char232.bindgroup21003.name,Snow drift stage,3
 char233.bindoption20000.group,Snow drift stage,mustselect
 char233.bindgroup21000.default,1
 char233.bindgroup21000.name,Snow drift stage,0
 char233.bindgroup21001.name,Snow drift stage,1
 char233.bindgroup21002.name,Snow drift stage,2
+char233.bindgroup21003.name,Snow drift stage,3
 char234.bindoption20000.group,Snow drift stage,mustselect
 char234.bindgroup21000.default,1
 char234.bindgroup21000.name,Snow drift stage,0
 char234.bindgroup21001.name,Snow drift stage,1
 char234.bindgroup21002.name,Snow drift stage,2
+char234.bindgroup21003.name,Snow drift stage,3
 char235.bindoption20000.group,Snow drift stage,mustselect
 char235.bindgroup21000.default,1
 char235.bindgroup21000.name,Snow drift stage,0
 char235.bindgroup21001.name,Snow drift stage,1
 char235.bindgroup21002.name,Snow drift stage,2
+char235.bindgroup21003.name,Snow drift stage,3
 char236.bindoption20000.group,Snow drift stage,mustselect
 char236.bindgroup21000.default,1
 char236.bindgroup21000.name,Snow drift stage,0
 char236.bindgroup21001.name,Snow drift stage,1
 char236.bindgroup21002.name,Snow drift stage,2
+char236.bindgroup21003.name,Snow drift stage,3
 char237.bindoption20000.group,Snow drift stage,mustselect
 char237.bindgroup21000.default,1
 char237.bindgroup21000.name,Snow drift stage,0
 char237.bindgroup21001.name,Snow drift stage,1
 char237.bindgroup21002.name,Snow drift stage,2
+char237.bindgroup21003.name,Snow drift stage,3
 char238.bindoption20000.group,Snow drift stage,mustselect
 char238.bindgroup21000.default,1
 char238.bindgroup21000.name,Snow drift stage,0
 char238.bindgroup21001.name,Snow drift stage,1
 char238.bindgroup21002.name,Snow drift stage,2
+char238.bindgroup21003.name,Snow drift stage,3
 char239.bindoption20000.group,Snow drift stage,mustselect
 char239.bindgroup21000.default,1
 char239.bindgroup21000.name,Snow drift stage,0
 char239.bindgroup21001.name,Snow drift stage,1
 char239.bindgroup21002.name,Snow drift stage,2
+char239.bindgroup21003.name,Snow drift stage,3
 char240.bindoption20000.group,Snow drift stage,mustselect
 char240.bindgroup21000.default,1
 char240.bindgroup21000.name,Snow drift stage,0
 char240.bindgroup21001.name,Snow drift stage,1
 char240.bindgroup21002.name,Snow drift stage,2
+char240.bindgroup21003.name,Snow drift stage,3
 char241.bindoption20000.group,Snow drift stage,mustselect
 char241.bindgroup21000.default,1
 char241.bindgroup21000.name,Snow drift stage,0
 char241.bindgroup21001.name,Snow drift stage,1
 char241.bindgroup21002.name,Snow drift stage,2
+char241.bindgroup21003.name,Snow drift stage,3
 char242.bindoption20000.group,Snow drift stage,mustselect
 char242.bindgroup21000.default,1
 char242.bindgroup21000.name,Snow drift stage,0
 char242.bindgroup21001.name,Snow drift stage,1
 char242.bindgroup21002.name,Snow drift stage,2
+char242.bindgroup21003.name,Snow drift stage,3
 char243.bindoption20000.group,Snow drift stage,mustselect
 char243.bindgroup21000.default,1
 char243.bindgroup21000.name,Snow drift stage,0
 char243.bindgroup21001.name,Snow drift stage,1
 char243.bindgroup21002.name,Snow drift stage,2
+char243.bindgroup21003.name,Snow drift stage,3
 char244.bindoption20000.group,Snow drift stage,mustselect
 char244.bindgroup21000.default,1
 char244.bindgroup21000.name,Snow drift stage,0
 char244.bindgroup21001.name,Snow drift stage,1
 char244.bindgroup21002.name,Snow drift stage,2
+char244.bindgroup21003.name,Snow drift stage,3
 char245.bindoption20000.group,Snow drift stage,mustselect
 char245.bindgroup21000.default,1
 char245.bindgroup21000.name,Snow drift stage,0
 char245.bindgroup21001.name,Snow drift stage,1
 char245.bindgroup21002.name,Snow drift stage,2
+char245.bindgroup21003.name,Snow drift stage,3
 char246.bindoption20000.group,Snow drift stage,mustselect
 char246.bindgroup21000.default,1
 char246.bindgroup21000.name,Snow drift stage,0
 char246.bindgroup21001.name,Snow drift stage,1
 char246.bindgroup21002.name,Snow drift stage,2
+char246.bindgroup21003.name,Snow drift stage,3
 char247.bindoption20000.group,Snow drift stage,mustselect
 char247.bindgroup21000.default,1
 char247.bindgroup21000.name,Snow drift stage,0
 char247.bindgroup21001.name,Snow drift stage,1
 char247.bindgroup21002.name,Snow drift stage,2
+char247.bindgroup21003.name,Snow drift stage,3
 char248.bindoption20000.group,Snow drift stage,mustselect
 char248.bindgroup21000.default,1
 char248.bindgroup21000.name,Snow drift stage,0
 char248.bindgroup21001.name,Snow drift stage,1
 char248.bindgroup21002.name,Snow drift stage,2
+char248.bindgroup21003.name,Snow drift stage,3
 char249.bindoption20000.group,Snow drift stage,mustselect
 char249.bindgroup21000.default,1
 char249.bindgroup21000.name,Snow drift stage,0
 char249.bindgroup21001.name,Snow drift stage,1
 char249.bindgroup21002.name,Snow drift stage,2
+char249.bindgroup21003.name,Snow drift stage,3
 char250.bindoption20000.group,Snow drift stage,mustselect
 char250.bindgroup21000.default,1
 char250.bindgroup21000.name,Snow drift stage,0
 char250.bindgroup21001.name,Snow drift stage,1
 char250.bindgroup21002.name,Snow drift stage,2
+char250.bindgroup21003.name,Snow drift stage,3
 char251.bindoption20000.group,Snow drift stage,mustselect
 char251.bindgroup21000.default,1
 char251.bindgroup21000.name,Snow drift stage,0
 char251.bindgroup21001.name,Snow drift stage,1
 char251.bindgroup21002.name,Snow drift stage,2
+char251.bindgroup21003.name,Snow drift stage,3
 char252.bindoption20000.group,Snow drift stage,mustselect
 char252.bindgroup21000.default,1
 char252.bindgroup21000.name,Snow drift stage,0
 char252.bindgroup21001.name,Snow drift stage,1
 char252.bindgroup21002.name,Snow drift stage,2
+char252.bindgroup21003.name,Snow drift stage,3
 char253.bindoption20000.group,Snow drift stage,mustselect
 char253.bindgroup21000.default,1
 char253.bindgroup21000.name,Snow drift stage,0
 char253.bindgroup21001.name,Snow drift stage,1
 char253.bindgroup21002.name,Snow drift stage,2
+char253.bindgroup21003.name,Snow drift stage,3
 char254.bindoption20000.group,Snow drift stage,mustselect
 char254.bindgroup21000.default,1
 char254.bindgroup21000.name,Snow drift stage,0
 char254.bindgroup21001.name,Snow drift stage,1
 char254.bindgroup21002.name,Snow drift stage,2
+char254.bindgroup21003.name,Snow drift stage,3
 char255.bindoption20000.group,Snow drift stage,mustselect
 char255.bindgroup21000.default,1
 char255.bindgroup21000.name,Snow drift stage,0
 char255.bindgroup21001.name,Snow drift stage,1
 char255.bindgroup21002.name,Snow drift stage,2
+char255.bindgroup21003.name,Snow drift stage,3
 char256.bindoption20000.group,Snow drift stage,mustselect
 char256.bindgroup21000.default,1
 char256.bindgroup21000.name,Snow drift stage,0
 char256.bindgroup21001.name,Snow drift stage,1
 char256.bindgroup21002.name,Snow drift stage,2
+char256.bindgroup21003.name,Snow drift stage,3
 char257.bindoption20000.group,Snow drift stage,mustselect
 char257.bindgroup21000.default,1
 char257.bindgroup21000.name,Snow drift stage,0
 char257.bindgroup21001.name,Snow drift stage,1
 char257.bindgroup21002.name,Snow drift stage,2
+char257.bindgroup21003.name,Snow drift stage,3
 char258.bindoption20000.group,Snow drift stage,mustselect
 char258.bindgroup21000.default,1
 char258.bindgroup21000.name,Snow drift stage,0
 char258.bindgroup21001.name,Snow drift stage,1
 char258.bindgroup21002.name,Snow drift stage,2
+char258.bindgroup21003.name,Snow drift stage,3
 char259.bindoption20000.group,Snow drift stage,mustselect
 char259.bindgroup21000.default,1
 char259.bindgroup21000.name,Snow drift stage,0
 char259.bindgroup21001.name,Snow drift stage,1
 char259.bindgroup21002.name,Snow drift stage,2
+char259.bindgroup21003.name,Snow drift stage,3
 char260.bindoption20000.group,Snow drift stage,mustselect
 char260.bindgroup21000.default,1
 char260.bindgroup21000.name,Snow drift stage,0
 char260.bindgroup21001.name,Snow drift stage,1
 char260.bindgroup21002.name,Snow drift stage,2
+char260.bindgroup21003.name,Snow drift stage,3
 char261.bindoption20000.group,Snow drift stage,mustselect
 char261.bindgroup21000.default,1
 char261.bindgroup21000.name,Snow drift stage,0
 char261.bindgroup21001.name,Snow drift stage,1
 char261.bindgroup21002.name,Snow drift stage,2
+char261.bindgroup21003.name,Snow drift stage,3
 char262.bindoption20000.group,Snow drift stage,mustselect
 char262.bindgroup21000.default,1
 char262.bindgroup21000.name,Snow drift stage,0
 char262.bindgroup21001.name,Snow drift stage,1
 char262.bindgroup21002.name,Snow drift stage,2
+char262.bindgroup21003.name,Snow drift stage,3
 char263.bindoption20000.group,Snow drift stage,mustselect
 char263.bindgroup21000.default,1
 char263.bindgroup21000.name,Snow drift stage,0
 char263.bindgroup21001.name,Snow drift stage,1
 char263.bindgroup21002.name,Snow drift stage,2
+char263.bindgroup21003.name,Snow drift stage,3
 char264.bindoption20000.group,Snow drift stage,mustselect
 char264.bindgroup21000.default,1
 char264.bindgroup21000.name,Snow drift stage,0
 char264.bindgroup21001.name,Snow drift stage,1
 char264.bindgroup21002.name,Snow drift stage,2
+char264.bindgroup21003.name,Snow drift stage,3
 char265.bindoption20000.group,Snow drift stage,mustselect
 char265.bindgroup21000.default,1
 char265.bindgroup21000.name,Snow drift stage,0
 char265.bindgroup21001.name,Snow drift stage,1
 char265.bindgroup21002.name,Snow drift stage,2
+char265.bindgroup21003.name,Snow drift stage,3
 char266.bindoption20000.group,Snow drift stage,mustselect
 char266.bindgroup21000.default,1
 char266.bindgroup21000.name,Snow drift stage,0
 char266.bindgroup21001.name,Snow drift stage,1
 char266.bindgroup21002.name,Snow drift stage,2
+char266.bindgroup21003.name,Snow drift stage,3
 char267.bindoption20000.group,Snow drift stage,mustselect
 char267.bindgroup21000.default,1
 char267.bindgroup21000.name,Snow drift stage,0
 char267.bindgroup21001.name,Snow drift stage,1
 char267.bindgroup21002.name,Snow drift stage,2
+char267.bindgroup21003.name,Snow drift stage,3
 char268.bindoption20000.group,Snow drift stage,mustselect
 char268.bindgroup21000.default,1
 char268.bindgroup21000.name,Snow drift stage,0
 char268.bindgroup21001.name,Snow drift stage,1
 char268.bindgroup21002.name,Snow drift stage,2
+char268.bindgroup21003.name,Snow drift stage,3
 char269.bindoption20000.group,Snow drift stage,mustselect
 char269.bindgroup21000.default,1
 char269.bindgroup21000.name,Snow drift stage,0
 char269.bindgroup21001.name,Snow drift stage,1
 char269.bindgroup21002.name,Snow drift stage,2
+char269.bindgroup21003.name,Snow drift stage,3
 char270.bindoption20000.group,Snow drift stage,mustselect
 char270.bindgroup21000.default,1
 char270.bindgroup21000.name,Snow drift stage,0
 char270.bindgroup21001.name,Snow drift stage,1
 char270.bindgroup21002.name,Snow drift stage,2
+char270.bindgroup21003.name,Snow drift stage,3
 char271.bindoption20000.group,Snow drift stage,mustselect
 char271.bindgroup21000.default,1
 char271.bindgroup21000.name,Snow drift stage,0
 char271.bindgroup21001.name,Snow drift stage,1
 char271.bindgroup21002.name,Snow drift stage,2
+char271.bindgroup21003.name,Snow drift stage,3
 char272.bindoption20000.group,Snow drift stage,mustselect
 char272.bindgroup21000.default,1
 char272.bindgroup21000.name,Snow drift stage,0
 char272.bindgroup21001.name,Snow drift stage,1
 char272.bindgroup21002.name,Snow drift stage,2
+char272.bindgroup21003.name,Snow drift stage,3
 char273.bindoption20000.group,Snow drift stage,mustselect
 char273.bindgroup21000.default,1
 char273.bindgroup21000.name,Snow drift stage,0
 char273.bindgroup21001.name,Snow drift stage,1
 char273.bindgroup21002.name,Snow drift stage,2
+char273.bindgroup21003.name,Snow drift stage,3
 char274.bindoption20000.group,Snow drift stage,mustselect
 char274.bindgroup21000.default,1
 char274.bindgroup21000.name,Snow drift stage,0
 char274.bindgroup21001.name,Snow drift stage,1
 char274.bindgroup21002.name,Snow drift stage,2
+char274.bindgroup21003.name,Snow drift stage,3
 char275.bindoption20000.group,Snow drift stage,mustselect
 char275.bindgroup21000.default,1
 char275.bindgroup21000.name,Snow drift stage,0
 char275.bindgroup21001.name,Snow drift stage,1
 char275.bindgroup21002.name,Snow drift stage,2
+char275.bindgroup21003.name,Snow drift stage,3
 char276.bindoption20000.group,Snow drift stage,mustselect
 char276.bindgroup21000.default,1
 char276.bindgroup21000.name,Snow drift stage,0
 char276.bindgroup21001.name,Snow drift stage,1
 char276.bindgroup21002.name,Snow drift stage,2
+char276.bindgroup21003.name,Snow drift stage,3
 char277.bindoption20000.group,Snow drift stage,mustselect
 char277.bindgroup21000.default,1
 char277.bindgroup21000.name,Snow drift stage,0
 char277.bindgroup21001.name,Snow drift stage,1
 char277.bindgroup21002.name,Snow drift stage,2
+char277.bindgroup21003.name,Snow drift stage,3
 char278.bindoption20000.group,Snow drift stage,mustselect
 char278.bindgroup21000.default,1
 char278.bindgroup21000.name,Snow drift stage,0
 char278.bindgroup21001.name,Snow drift stage,1
 char278.bindgroup21002.name,Snow drift stage,2
+char278.bindgroup21003.name,Snow drift stage,3
 char279.bindoption20000.group,Snow drift stage,mustselect
 char279.bindgroup21000.default,1
 char279.bindgroup21000.name,Snow drift stage,0
 char279.bindgroup21001.name,Snow drift stage,1
 char279.bindgroup21002.name,Snow drift stage,2
+char279.bindgroup21003.name,Snow drift stage,3
 char280.bindoption20000.group,Snow drift stage,mustselect
 char280.bindgroup21000.default,1
 char280.bindgroup21000.name,Snow drift stage,0
 char280.bindgroup21001.name,Snow drift stage,1
 char280.bindgroup21002.name,Snow drift stage,2
+char280.bindgroup21003.name,Snow drift stage,3
 char281.bindoption20000.group,Snow drift stage,mustselect
 char281.bindgroup21000.default,1
 char281.bindgroup21000.name,Snow drift stage,0
 char281.bindgroup21001.name,Snow drift stage,1
 char281.bindgroup21002.name,Snow drift stage,2
+char281.bindgroup21003.name,Snow drift stage,3
 char282.bindoption20000.group,Snow drift stage,mustselect
 char282.bindgroup21000.default,1
 char282.bindgroup21000.name,Snow drift stage,0
 char282.bindgroup21001.name,Snow drift stage,1
 char282.bindgroup21002.name,Snow drift stage,2
+char282.bindgroup21003.name,Snow drift stage,3
 char283.bindoption20000.group,Snow drift stage,mustselect
 char283.bindgroup21000.default,1
 char283.bindgroup21000.name,Snow drift stage,0
 char283.bindgroup21001.name,Snow drift stage,1
 char283.bindgroup21002.name,Snow drift stage,2
+char283.bindgroup21003.name,Snow drift stage,3
 char284.bindoption20000.group,Snow drift stage,mustselect
 char284.bindgroup21000.default,1
 char284.bindgroup21000.name,Snow drift stage,0
 char284.bindgroup21001.name,Snow drift stage,1
 char284.bindgroup21002.name,Snow drift stage,2
+char284.bindgroup21003.name,Snow drift stage,3
 char285.bindoption20000.group,Snow drift stage,mustselect
 char285.bindgroup21000.default,1
 char285.bindgroup21000.name,Snow drift stage,0
 char285.bindgroup21001.name,Snow drift stage,1
 char285.bindgroup21002.name,Snow drift stage,2
+char285.bindgroup21003.name,Snow drift stage,3
 char286.bindoption20000.group,Snow drift stage,mustselect
 char286.bindgroup21000.default,1
 char286.bindgroup21000.name,Snow drift stage,0
 char286.bindgroup21001.name,Snow drift stage,1
 char286.bindgroup21002.name,Snow drift stage,2
+char286.bindgroup21003.name,Snow drift stage,3
 char287.bindoption20000.group,Snow drift stage,mustselect
 char287.bindgroup21000.default,1
 char287.bindgroup21000.name,Snow drift stage,0
 char287.bindgroup21001.name,Snow drift stage,1
 char287.bindgroup21002.name,Snow drift stage,2
+char287.bindgroup21003.name,Snow drift stage,3
 char288.bindoption20000.group,Snow drift stage,mustselect
 char288.bindgroup21000.default,1
 char288.bindgroup21000.name,Snow drift stage,0
 char288.bindgroup21001.name,Snow drift stage,1
 char288.bindgroup21002.name,Snow drift stage,2
+char288.bindgroup21003.name,Snow drift stage,3
 char289.bindoption20000.group,Snow drift stage,mustselect
 char289.bindgroup21000.default,1
 char289.bindgroup21000.name,Snow drift stage,0
 char289.bindgroup21001.name,Snow drift stage,1
 char289.bindgroup21002.name,Snow drift stage,2
+char289.bindgroup21003.name,Snow drift stage,3
 char290.bindoption20000.group,Snow drift stage,mustselect
 char290.bindgroup21000.default,1
 char290.bindgroup21000.name,Snow drift stage,0
 char290.bindgroup21001.name,Snow drift stage,1
 char290.bindgroup21002.name,Snow drift stage,2
+char290.bindgroup21003.name,Snow drift stage,3
 char291.bindoption20000.group,Snow drift stage,mustselect
 char291.bindgroup21000.default,1
 char291.bindgroup21000.name,Snow drift stage,0
 char291.bindgroup21001.name,Snow drift stage,1
 char291.bindgroup21002.name,Snow drift stage,2
+char291.bindgroup21003.name,Snow drift stage,3
 char292.bindoption20000.group,Snow drift stage,mustselect
 char292.bindgroup21000.default,1
 char292.bindgroup21000.name,Snow drift stage,0
 char292.bindgroup21001.name,Snow drift stage,1
 char292.bindgroup21002.name,Snow drift stage,2
+char292.bindgroup21003.name,Snow drift stage,3
 char293.bindoption20000.group,Snow drift stage,mustselect
 char293.bindgroup21000.default,1
 char293.bindgroup21000.name,Snow drift stage,0
 char293.bindgroup21001.name,Snow drift stage,1
 char293.bindgroup21002.name,Snow drift stage,2
+char293.bindgroup21003.name,Snow drift stage,3
 char294.bindoption20000.group,Snow drift stage,mustselect
 char294.bindgroup21000.default,1
 char294.bindgroup21000.name,Snow drift stage,0
 char294.bindgroup21001.name,Snow drift stage,1
 char294.bindgroup21002.name,Snow drift stage,2
+char294.bindgroup21003.name,Snow drift stage,3
 char295.bindoption20000.group,Snow drift stage,mustselect
 char295.bindgroup21000.default,1
 char295.bindgroup21000.name,Snow drift stage,0
 char295.bindgroup21001.name,Snow drift stage,1
 char295.bindgroup21002.name,Snow drift stage,2
+char295.bindgroup21003.name,Snow drift stage,3
 char296.bindoption20000.group,Snow drift stage,mustselect
 char296.bindgroup21000.default,1
 char296.bindgroup21000.name,Snow drift stage,0
 char296.bindgroup21001.name,Snow drift stage,1
 char296.bindgroup21002.name,Snow drift stage,2
+char296.bindgroup21003.name,Snow drift stage,3
 char297.bindoption20000.group,Snow drift stage,mustselect
 char297.bindgroup21000.default,1
 char297.bindgroup21000.name,Snow drift stage,0
 char297.bindgroup21001.name,Snow drift stage,1
 char297.bindgroup21002.name,Snow drift stage,2
+char297.bindgroup21003.name,Snow drift stage,3
 char298.bindoption20000.group,Snow drift stage,mustselect
 char298.bindgroup21000.default,1
 char298.bindgroup21000.name,Snow drift stage,0
 char298.bindgroup21001.name,Snow drift stage,1
 char298.bindgroup21002.name,Snow drift stage,2
+char298.bindgroup21003.name,Snow drift stage,3
 char299.bindoption20000.group,Snow drift stage,mustselect
 char299.bindgroup21000.default,1
 char299.bindgroup21000.name,Snow drift stage,0
 char299.bindgroup21001.name,Snow drift stage,1
 char299.bindgroup21002.name,Snow drift stage,2
+char299.bindgroup21003.name,Snow drift stage,3
 
 char100.bindoption10000.group,Snowflake variant,mustselect
 char100.bindgroup10000.default,1
@@ -718,310 +818,610 @@ char200.bindoption20000.group,Snow drift variant,mustselect
 char200.bindgroup20000.default,1
 
 char200.bindgroup20000.name,Snow drift variant,0
+char200.bindgroup20100.name,Snow drift variant,1
 char201.bindgroup20000.name,Snow drift variant,0
+char201.bindgroup20100.name,Snow drift variant,1
 char202.bindgroup20000.name,Snow drift variant,0
+char202.bindgroup20100.name,Snow drift variant,1
 char203.bindgroup20000.name,Snow drift variant,0
+char203.bindgroup20100.name,Snow drift variant,1
 char204.bindgroup20000.name,Snow drift variant,0
+char204.bindgroup20100.name,Snow drift variant,1
 char205.bindgroup20000.name,Snow drift variant,0
+char205.bindgroup20100.name,Snow drift variant,1
 char206.bindgroup20000.name,Snow drift variant,0
+char206.bindgroup20100.name,Snow drift variant,1
 char207.bindgroup20000.name,Snow drift variant,0
+char207.bindgroup20100.name,Snow drift variant,1
 char208.bindgroup20000.name,Snow drift variant,0
+char208.bindgroup20100.name,Snow drift variant,1
 char209.bindgroup20000.name,Snow drift variant,0
+char209.bindgroup20100.name,Snow drift variant,1
 char210.bindgroup20000.name,Snow drift variant,0
+char210.bindgroup20100.name,Snow drift variant,1
 char211.bindgroup20000.name,Snow drift variant,0
+char211.bindgroup20100.name,Snow drift variant,1
 char212.bindgroup20000.name,Snow drift variant,0
+char212.bindgroup20100.name,Snow drift variant,1
 char213.bindgroup20000.name,Snow drift variant,0
+char213.bindgroup20100.name,Snow drift variant,1
 char214.bindgroup20000.name,Snow drift variant,0
+char214.bindgroup20100.name,Snow drift variant,1
 char215.bindgroup20000.name,Snow drift variant,0
+char215.bindgroup20100.name,Snow drift variant,1
 char216.bindgroup20000.name,Snow drift variant,0
+char216.bindgroup20100.name,Snow drift variant,1
 char217.bindgroup20000.name,Snow drift variant,0
+char217.bindgroup20100.name,Snow drift variant,1
 char218.bindgroup20000.name,Snow drift variant,0
+char218.bindgroup20100.name,Snow drift variant,1
 char219.bindgroup20000.name,Snow drift variant,0
+char219.bindgroup20100.name,Snow drift variant,1
 char220.bindgroup20000.name,Snow drift variant,0
+char220.bindgroup20100.name,Snow drift variant,1
 char221.bindgroup20000.name,Snow drift variant,0
+char221.bindgroup20100.name,Snow drift variant,1
 char222.bindgroup20000.name,Snow drift variant,0
+char222.bindgroup20100.name,Snow drift variant,1
 char223.bindgroup20000.name,Snow drift variant,0
+char223.bindgroup20100.name,Snow drift variant,1
 char224.bindgroup20000.name,Snow drift variant,0
+char224.bindgroup20100.name,Snow drift variant,1
 char225.bindgroup20000.name,Snow drift variant,0
+char225.bindgroup20100.name,Snow drift variant,1
 char226.bindgroup20000.name,Snow drift variant,0
+char226.bindgroup20100.name,Snow drift variant,1
 char227.bindgroup20000.name,Snow drift variant,0
+char227.bindgroup20100.name,Snow drift variant,1
 char228.bindgroup20000.name,Snow drift variant,0
+char228.bindgroup20100.name,Snow drift variant,1
 char229.bindgroup20000.name,Snow drift variant,0
+char229.bindgroup20100.name,Snow drift variant,1
 char230.bindgroup20000.name,Snow drift variant,0
+char230.bindgroup20100.name,Snow drift variant,1
 char231.bindgroup20000.name,Snow drift variant,0
+char231.bindgroup20100.name,Snow drift variant,1
 char232.bindgroup20000.name,Snow drift variant,0
+char232.bindgroup20100.name,Snow drift variant,1
 char233.bindgroup20000.name,Snow drift variant,0
+char233.bindgroup20100.name,Snow drift variant,1
 char234.bindgroup20000.name,Snow drift variant,0
+char234.bindgroup20100.name,Snow drift variant,1
 char235.bindgroup20000.name,Snow drift variant,0
+char235.bindgroup20100.name,Snow drift variant,1
 char236.bindgroup20000.name,Snow drift variant,0
+char236.bindgroup20100.name,Snow drift variant,1
 char237.bindgroup20000.name,Snow drift variant,0
+char237.bindgroup20100.name,Snow drift variant,1
 char238.bindgroup20000.name,Snow drift variant,0
+char238.bindgroup20100.name,Snow drift variant,1
 char239.bindgroup20000.name,Snow drift variant,0
+char239.bindgroup20100.name,Snow drift variant,1
 char240.bindgroup20000.name,Snow drift variant,0
+char240.bindgroup20100.name,Snow drift variant,1
 char241.bindgroup20000.name,Snow drift variant,0
+char241.bindgroup20100.name,Snow drift variant,1
 char242.bindgroup20000.name,Snow drift variant,0
+char242.bindgroup20100.name,Snow drift variant,1
 char243.bindgroup20000.name,Snow drift variant,0
+char243.bindgroup20100.name,Snow drift variant,1
 char244.bindgroup20000.name,Snow drift variant,0
+char244.bindgroup20100.name,Snow drift variant,1
 char245.bindgroup20000.name,Snow drift variant,0
+char245.bindgroup20100.name,Snow drift variant,1
 char246.bindgroup20000.name,Snow drift variant,0
+char246.bindgroup20100.name,Snow drift variant,1
 char247.bindgroup20000.name,Snow drift variant,0
+char247.bindgroup20100.name,Snow drift variant,1
 char248.bindgroup20000.name,Snow drift variant,0
+char248.bindgroup20100.name,Snow drift variant,1
 char249.bindgroup20000.name,Snow drift variant,0
+char249.bindgroup20100.name,Snow drift variant,1
 char250.bindgroup20000.name,Snow drift variant,0
+char250.bindgroup20100.name,Snow drift variant,1
 char251.bindgroup20000.name,Snow drift variant,0
+char251.bindgroup20100.name,Snow drift variant,1
 char252.bindgroup20000.name,Snow drift variant,0
+char252.bindgroup20100.name,Snow drift variant,1
 char253.bindgroup20000.name,Snow drift variant,0
+char253.bindgroup20100.name,Snow drift variant,1
 char254.bindgroup20000.name,Snow drift variant,0
+char254.bindgroup20100.name,Snow drift variant,1
 char255.bindgroup20000.name,Snow drift variant,0
+char255.bindgroup20100.name,Snow drift variant,1
 char256.bindgroup20000.name,Snow drift variant,0
+char256.bindgroup20100.name,Snow drift variant,1
 char257.bindgroup20000.name,Snow drift variant,0
+char257.bindgroup20100.name,Snow drift variant,1
 char258.bindgroup20000.name,Snow drift variant,0
+char258.bindgroup20100.name,Snow drift variant,1
 char259.bindgroup20000.name,Snow drift variant,0
+char259.bindgroup20100.name,Snow drift variant,1
 char260.bindgroup20000.name,Snow drift variant,0
+char260.bindgroup20100.name,Snow drift variant,1
 char261.bindgroup20000.name,Snow drift variant,0
+char261.bindgroup20100.name,Snow drift variant,1
 char262.bindgroup20000.name,Snow drift variant,0
+char262.bindgroup20100.name,Snow drift variant,1
 char263.bindgroup20000.name,Snow drift variant,0
+char263.bindgroup20100.name,Snow drift variant,1
 char264.bindgroup20000.name,Snow drift variant,0
+char264.bindgroup20100.name,Snow drift variant,1
 char265.bindgroup20000.name,Snow drift variant,0
+char265.bindgroup20100.name,Snow drift variant,1
 char266.bindgroup20000.name,Snow drift variant,0
+char266.bindgroup20100.name,Snow drift variant,1
 char267.bindgroup20000.name,Snow drift variant,0
+char267.bindgroup20100.name,Snow drift variant,1
 char268.bindgroup20000.name,Snow drift variant,0
+char268.bindgroup20100.name,Snow drift variant,1
 char269.bindgroup20000.name,Snow drift variant,0
+char269.bindgroup20100.name,Snow drift variant,1
 char270.bindgroup20000.name,Snow drift variant,0
+char270.bindgroup20100.name,Snow drift variant,1
 char271.bindgroup20000.name,Snow drift variant,0
+char271.bindgroup20100.name,Snow drift variant,1
 char272.bindgroup20000.name,Snow drift variant,0
+char272.bindgroup20100.name,Snow drift variant,1
 char273.bindgroup20000.name,Snow drift variant,0
+char273.bindgroup20100.name,Snow drift variant,1
 char274.bindgroup20000.name,Snow drift variant,0
+char274.bindgroup20100.name,Snow drift variant,1
 char275.bindgroup20000.name,Snow drift variant,0
+char275.bindgroup20100.name,Snow drift variant,1
 char276.bindgroup20000.name,Snow drift variant,0
+char276.bindgroup20100.name,Snow drift variant,1
 char277.bindgroup20000.name,Snow drift variant,0
+char277.bindgroup20100.name,Snow drift variant,1
 char278.bindgroup20000.name,Snow drift variant,0
+char278.bindgroup20100.name,Snow drift variant,1
 char279.bindgroup20000.name,Snow drift variant,0
+char279.bindgroup20100.name,Snow drift variant,1
 char280.bindgroup20000.name,Snow drift variant,0
+char280.bindgroup20100.name,Snow drift variant,1
 char281.bindgroup20000.name,Snow drift variant,0
+char281.bindgroup20100.name,Snow drift variant,1
 char282.bindgroup20000.name,Snow drift variant,0
+char282.bindgroup20100.name,Snow drift variant,1
 char283.bindgroup20000.name,Snow drift variant,0
+char283.bindgroup20100.name,Snow drift variant,1
 char284.bindgroup20000.name,Snow drift variant,0
+char284.bindgroup20100.name,Snow drift variant,1
 char285.bindgroup20000.name,Snow drift variant,0
+char285.bindgroup20100.name,Snow drift variant,1
 char286.bindgroup20000.name,Snow drift variant,0
+char286.bindgroup20100.name,Snow drift variant,1
 char287.bindgroup20000.name,Snow drift variant,0
+char287.bindgroup20100.name,Snow drift variant,1
 char288.bindgroup20000.name,Snow drift variant,0
+char288.bindgroup20100.name,Snow drift variant,1
 char289.bindgroup20000.name,Snow drift variant,0
+char289.bindgroup20100.name,Snow drift variant,1
 char290.bindgroup20000.name,Snow drift variant,0
+char290.bindgroup20100.name,Snow drift variant,1
 char291.bindgroup20000.name,Snow drift variant,0
+char291.bindgroup20100.name,Snow drift variant,1
 char292.bindgroup20000.name,Snow drift variant,0
+char292.bindgroup20100.name,Snow drift variant,1
 char293.bindgroup20000.name,Snow drift variant,0
+char293.bindgroup20100.name,Snow drift variant,1
 char294.bindgroup20000.name,Snow drift variant,0
+char294.bindgroup20100.name,Snow drift variant,1
 char295.bindgroup20000.name,Snow drift variant,0
+char295.bindgroup20100.name,Snow drift variant,1
 char296.bindgroup20000.name,Snow drift variant,0
+char296.bindgroup20100.name,Snow drift variant,1
 char297.bindgroup20000.name,Snow drift variant,0
+char297.bindgroup20100.name,Snow drift variant,1
 char298.bindgroup20000.name,Snow drift variant,0
+char298.bindgroup20100.name,Snow drift variant,1
 char299.bindgroup20000.name,Snow drift variant,0
+char299.bindgroup20100.name,Snow drift variant,1
 
 char300.bindoption30000.group,Snow ball variant,mustselect
 char300.bindgroup30000.default,1
 
 char300.bindgroup30000.name,Snow ball variant,0
+char300.bindgroup30100.name,Snow ball variant,1
 char301.bindgroup30000.name,Snow ball variant,0
+char301.bindgroup30100.name,Snow ball variant,1
 char302.bindgroup30000.name,Snow ball variant,0
+char302.bindgroup30100.name,Snow ball variant,1
 char303.bindgroup30000.name,Snow ball variant,0
+char303.bindgroup30100.name,Snow ball variant,1
 char304.bindgroup30000.name,Snow ball variant,0
+char304.bindgroup30100.name,Snow ball variant,1
 char305.bindgroup30000.name,Snow ball variant,0
+char305.bindgroup30100.name,Snow ball variant,1
 char306.bindgroup30000.name,Snow ball variant,0
+char306.bindgroup30100.name,Snow ball variant,1
 char307.bindgroup30000.name,Snow ball variant,0
+char307.bindgroup30100.name,Snow ball variant,1
 char308.bindgroup30000.name,Snow ball variant,0
+char308.bindgroup30100.name,Snow ball variant,1
 char309.bindgroup30000.name,Snow ball variant,0
+char309.bindgroup30100.name,Snow ball variant,1
 char310.bindgroup30000.name,Snow ball variant,0
+char310.bindgroup30100.name,Snow ball variant,1
 char311.bindgroup30000.name,Snow ball variant,0
+char311.bindgroup30100.name,Snow ball variant,1
 char312.bindgroup30000.name,Snow ball variant,0
+char312.bindgroup30100.name,Snow ball variant,1
 char313.bindgroup30000.name,Snow ball variant,0
+char313.bindgroup30100.name,Snow ball variant,1
 char314.bindgroup30000.name,Snow ball variant,0
+char314.bindgroup30100.name,Snow ball variant,1
 char315.bindgroup30000.name,Snow ball variant,0
+char315.bindgroup30100.name,Snow ball variant,1
 char316.bindgroup30000.name,Snow ball variant,0
+char316.bindgroup30100.name,Snow ball variant,1
 char317.bindgroup30000.name,Snow ball variant,0
+char317.bindgroup30100.name,Snow ball variant,1
 char318.bindgroup30000.name,Snow ball variant,0
+char318.bindgroup30100.name,Snow ball variant,1
 char319.bindgroup30000.name,Snow ball variant,0
+char319.bindgroup30100.name,Snow ball variant,1
 char320.bindgroup30000.name,Snow ball variant,0
+char320.bindgroup30100.name,Snow ball variant,1
 char321.bindgroup30000.name,Snow ball variant,0
+char321.bindgroup30100.name,Snow ball variant,1
 char322.bindgroup30000.name,Snow ball variant,0
+char322.bindgroup30100.name,Snow ball variant,1
 char323.bindgroup30000.name,Snow ball variant,0
+char323.bindgroup30100.name,Snow ball variant,1
 char324.bindgroup30000.name,Snow ball variant,0
+char324.bindgroup30100.name,Snow ball variant,1
 char325.bindgroup30000.name,Snow ball variant,0
+char325.bindgroup30100.name,Snow ball variant,1
 char326.bindgroup30000.name,Snow ball variant,0
+char326.bindgroup30100.name,Snow ball variant,1
 char327.bindgroup30000.name,Snow ball variant,0
+char327.bindgroup30100.name,Snow ball variant,1
 char328.bindgroup30000.name,Snow ball variant,0
+char328.bindgroup30100.name,Snow ball variant,1
 char329.bindgroup30000.name,Snow ball variant,0
+char329.bindgroup30100.name,Snow ball variant,1
 char330.bindgroup30000.name,Snow ball variant,0
+char330.bindgroup30100.name,Snow ball variant,1
 char331.bindgroup30000.name,Snow ball variant,0
+char331.bindgroup30100.name,Snow ball variant,1
 char332.bindgroup30000.name,Snow ball variant,0
+char332.bindgroup30100.name,Snow ball variant,1
 char333.bindgroup30000.name,Snow ball variant,0
+char333.bindgroup30100.name,Snow ball variant,1
 char334.bindgroup30000.name,Snow ball variant,0
+char334.bindgroup30100.name,Snow ball variant,1
 char335.bindgroup30000.name,Snow ball variant,0
+char335.bindgroup30100.name,Snow ball variant,1
 char336.bindgroup30000.name,Snow ball variant,0
+char336.bindgroup30100.name,Snow ball variant,1
 char337.bindgroup30000.name,Snow ball variant,0
+char337.bindgroup30100.name,Snow ball variant,1
 char338.bindgroup30000.name,Snow ball variant,0
+char338.bindgroup30100.name,Snow ball variant,1
 char339.bindgroup30000.name,Snow ball variant,0
+char339.bindgroup30100.name,Snow ball variant,1
 char340.bindgroup30000.name,Snow ball variant,0
+char340.bindgroup30100.name,Snow ball variant,1
 char341.bindgroup30000.name,Snow ball variant,0
+char341.bindgroup30100.name,Snow ball variant,1
 char342.bindgroup30000.name,Snow ball variant,0
+char342.bindgroup30100.name,Snow ball variant,1
 char343.bindgroup30000.name,Snow ball variant,0
+char343.bindgroup30100.name,Snow ball variant,1
 char344.bindgroup30000.name,Snow ball variant,0
+char344.bindgroup30100.name,Snow ball variant,1
 char345.bindgroup30000.name,Snow ball variant,0
+char345.bindgroup30100.name,Snow ball variant,1
 char346.bindgroup30000.name,Snow ball variant,0
+char346.bindgroup30100.name,Snow ball variant,1
 char347.bindgroup30000.name,Snow ball variant,0
+char347.bindgroup30100.name,Snow ball variant,1
 char348.bindgroup30000.name,Snow ball variant,0
+char348.bindgroup30100.name,Snow ball variant,1
 char349.bindgroup30000.name,Snow ball variant,0
+char349.bindgroup30100.name,Snow ball variant,1
 char350.bindgroup30000.name,Snow ball variant,0
+char350.bindgroup30100.name,Snow ball variant,1
 char351.bindgroup30000.name,Snow ball variant,0
+char351.bindgroup30100.name,Snow ball variant,1
 char352.bindgroup30000.name,Snow ball variant,0
+char352.bindgroup30100.name,Snow ball variant,1
 char353.bindgroup30000.name,Snow ball variant,0
+char353.bindgroup30100.name,Snow ball variant,1
 char354.bindgroup30000.name,Snow ball variant,0
+char354.bindgroup30100.name,Snow ball variant,1
 char355.bindgroup30000.name,Snow ball variant,0
+char355.bindgroup30100.name,Snow ball variant,1
 char356.bindgroup30000.name,Snow ball variant,0
+char356.bindgroup30100.name,Snow ball variant,1
 char357.bindgroup30000.name,Snow ball variant,0
+char357.bindgroup30100.name,Snow ball variant,1
 char358.bindgroup30000.name,Snow ball variant,0
+char358.bindgroup30100.name,Snow ball variant,1
 char359.bindgroup30000.name,Snow ball variant,0
+char359.bindgroup30100.name,Snow ball variant,1
 char360.bindgroup30000.name,Snow ball variant,0
+char360.bindgroup30100.name,Snow ball variant,1
 char361.bindgroup30000.name,Snow ball variant,0
+char361.bindgroup30100.name,Snow ball variant,1
 char362.bindgroup30000.name,Snow ball variant,0
+char362.bindgroup30100.name,Snow ball variant,1
 char363.bindgroup30000.name,Snow ball variant,0
+char363.bindgroup30100.name,Snow ball variant,1
 char364.bindgroup30000.name,Snow ball variant,0
+char364.bindgroup30100.name,Snow ball variant,1
 char365.bindgroup30000.name,Snow ball variant,0
+char365.bindgroup30100.name,Snow ball variant,1
 char366.bindgroup30000.name,Snow ball variant,0
+char366.bindgroup30100.name,Snow ball variant,1
 char367.bindgroup30000.name,Snow ball variant,0
+char367.bindgroup30100.name,Snow ball variant,1
 char368.bindgroup30000.name,Snow ball variant,0
+char368.bindgroup30100.name,Snow ball variant,1
 char369.bindgroup30000.name,Snow ball variant,0
+char369.bindgroup30100.name,Snow ball variant,1
 char370.bindgroup30000.name,Snow ball variant,0
+char370.bindgroup30100.name,Snow ball variant,1
 char371.bindgroup30000.name,Snow ball variant,0
+char371.bindgroup30100.name,Snow ball variant,1
 char372.bindgroup30000.name,Snow ball variant,0
+char372.bindgroup30100.name,Snow ball variant,1
 char373.bindgroup30000.name,Snow ball variant,0
+char373.bindgroup30100.name,Snow ball variant,1
 char374.bindgroup30000.name,Snow ball variant,0
+char374.bindgroup30100.name,Snow ball variant,1
 char375.bindgroup30000.name,Snow ball variant,0
+char375.bindgroup30100.name,Snow ball variant,1
 char376.bindgroup30000.name,Snow ball variant,0
+char376.bindgroup30100.name,Snow ball variant,1
 char377.bindgroup30000.name,Snow ball variant,0
+char377.bindgroup30100.name,Snow ball variant,1
 char378.bindgroup30000.name,Snow ball variant,0
+char378.bindgroup30100.name,Snow ball variant,1
 char379.bindgroup30000.name,Snow ball variant,0
+char379.bindgroup30100.name,Snow ball variant,1
 char380.bindgroup30000.name,Snow ball variant,0
+char380.bindgroup30100.name,Snow ball variant,1
 char381.bindgroup30000.name,Snow ball variant,0
+char381.bindgroup30100.name,Snow ball variant,1
 char382.bindgroup30000.name,Snow ball variant,0
+char382.bindgroup30100.name,Snow ball variant,1
 char383.bindgroup30000.name,Snow ball variant,0
+char383.bindgroup30100.name,Snow ball variant,1
 char384.bindgroup30000.name,Snow ball variant,0
+char384.bindgroup30100.name,Snow ball variant,1
 char385.bindgroup30000.name,Snow ball variant,0
+char385.bindgroup30100.name,Snow ball variant,1
 char386.bindgroup30000.name,Snow ball variant,0
+char386.bindgroup30100.name,Snow ball variant,1
 char387.bindgroup30000.name,Snow ball variant,0
+char387.bindgroup30100.name,Snow ball variant,1
 char388.bindgroup30000.name,Snow ball variant,0
+char388.bindgroup30100.name,Snow ball variant,1
 char389.bindgroup30000.name,Snow ball variant,0
+char389.bindgroup30100.name,Snow ball variant,1
 char390.bindgroup30000.name,Snow ball variant,0
+char390.bindgroup30100.name,Snow ball variant,1
 char391.bindgroup30000.name,Snow ball variant,0
+char391.bindgroup30100.name,Snow ball variant,1
 char392.bindgroup30000.name,Snow ball variant,0
+char392.bindgroup30100.name,Snow ball variant,1
 char393.bindgroup30000.name,Snow ball variant,0
+char393.bindgroup30100.name,Snow ball variant,1
 char394.bindgroup30000.name,Snow ball variant,0
+char394.bindgroup30100.name,Snow ball variant,1
 char395.bindgroup30000.name,Snow ball variant,0
+char395.bindgroup30100.name,Snow ball variant,1
 char396.bindgroup30000.name,Snow ball variant,0
+char396.bindgroup30100.name,Snow ball variant,1
 char397.bindgroup30000.name,Snow ball variant,0
+char397.bindgroup30100.name,Snow ball variant,1
 char398.bindgroup30000.name,Snow ball variant,0
+char398.bindgroup30100.name,Snow ball variant,1
 char399.bindgroup30000.name,Snow ball variant,0
+char399.bindgroup30100.name,Snow ball variant,1
 
 char400.bindoption40000.group,Snowman variant,mustselect
 char400.bindgroup40000.default,1
 
 char400.bindgroup40000.name,Snowman variant,0
+char400.bindgroup40100.name,Snowman variant,1
 char401.bindgroup40000.name,Snowman variant,0
+char401.bindgroup40100.name,Snowman variant,1
 char402.bindgroup40000.name,Snowman variant,0
+char402.bindgroup40100.name,Snowman variant,1
 char403.bindgroup40000.name,Snowman variant,0
+char403.bindgroup40100.name,Snowman variant,1
 char404.bindgroup40000.name,Snowman variant,0
+char404.bindgroup40100.name,Snowman variant,1
 char405.bindgroup40000.name,Snowman variant,0
+char405.bindgroup40100.name,Snowman variant,1
 char406.bindgroup40000.name,Snowman variant,0
+char406.bindgroup40100.name,Snowman variant,1
 char407.bindgroup40000.name,Snowman variant,0
+char407.bindgroup40100.name,Snowman variant,1
 char408.bindgroup40000.name,Snowman variant,0
+char408.bindgroup40100.name,Snowman variant,1
 char409.bindgroup40000.name,Snowman variant,0
+char409.bindgroup40100.name,Snowman variant,1
 char410.bindgroup40000.name,Snowman variant,0
+char410.bindgroup40100.name,Snowman variant,1
 char411.bindgroup40000.name,Snowman variant,0
+char411.bindgroup40100.name,Snowman variant,1
 char412.bindgroup40000.name,Snowman variant,0
+char412.bindgroup40100.name,Snowman variant,1
 char413.bindgroup40000.name,Snowman variant,0
+char413.bindgroup40100.name,Snowman variant,1
 char414.bindgroup40000.name,Snowman variant,0
+char414.bindgroup40100.name,Snowman variant,1
 char415.bindgroup40000.name,Snowman variant,0
+char415.bindgroup40100.name,Snowman variant,1
 char416.bindgroup40000.name,Snowman variant,0
+char416.bindgroup40100.name,Snowman variant,1
 char417.bindgroup40000.name,Snowman variant,0
+char417.bindgroup40100.name,Snowman variant,1
 char418.bindgroup40000.name,Snowman variant,0
+char418.bindgroup40100.name,Snowman variant,1
 char419.bindgroup40000.name,Snowman variant,0
+char419.bindgroup40100.name,Snowman variant,1
 char420.bindgroup40000.name,Snowman variant,0
+char420.bindgroup40100.name,Snowman variant,1
 char421.bindgroup40000.name,Snowman variant,0
+char421.bindgroup40100.name,Snowman variant,1
 char422.bindgroup40000.name,Snowman variant,0
+char422.bindgroup40100.name,Snowman variant,1
 char423.bindgroup40000.name,Snowman variant,0
+char423.bindgroup40100.name,Snowman variant,1
 char424.bindgroup40000.name,Snowman variant,0
+char424.bindgroup40100.name,Snowman variant,1
 char425.bindgroup40000.name,Snowman variant,0
+char425.bindgroup40100.name,Snowman variant,1
 char426.bindgroup40000.name,Snowman variant,0
+char426.bindgroup40100.name,Snowman variant,1
 char427.bindgroup40000.name,Snowman variant,0
+char427.bindgroup40100.name,Snowman variant,1
 char428.bindgroup40000.name,Snowman variant,0
+char428.bindgroup40100.name,Snowman variant,1
 char429.bindgroup40000.name,Snowman variant,0
+char429.bindgroup40100.name,Snowman variant,1
 char430.bindgroup40000.name,Snowman variant,0
+char430.bindgroup40100.name,Snowman variant,1
 char431.bindgroup40000.name,Snowman variant,0
+char431.bindgroup40100.name,Snowman variant,1
 char432.bindgroup40000.name,Snowman variant,0
+char432.bindgroup40100.name,Snowman variant,1
 char433.bindgroup40000.name,Snowman variant,0
+char433.bindgroup40100.name,Snowman variant,1
 char434.bindgroup40000.name,Snowman variant,0
+char434.bindgroup40100.name,Snowman variant,1
 char435.bindgroup40000.name,Snowman variant,0
+char435.bindgroup40100.name,Snowman variant,1
 char436.bindgroup40000.name,Snowman variant,0
+char436.bindgroup40100.name,Snowman variant,1
 char437.bindgroup40000.name,Snowman variant,0
+char437.bindgroup40100.name,Snowman variant,1
 char438.bindgroup40000.name,Snowman variant,0
+char438.bindgroup40100.name,Snowman variant,1
 char439.bindgroup40000.name,Snowman variant,0
+char439.bindgroup40100.name,Snowman variant,1
 char440.bindgroup40000.name,Snowman variant,0
+char440.bindgroup40100.name,Snowman variant,1
 char441.bindgroup40000.name,Snowman variant,0
+char441.bindgroup40100.name,Snowman variant,1
 char442.bindgroup40000.name,Snowman variant,0
+char442.bindgroup40100.name,Snowman variant,1
 char443.bindgroup40000.name,Snowman variant,0
+char443.bindgroup40100.name,Snowman variant,1
 char444.bindgroup40000.name,Snowman variant,0
+char444.bindgroup40100.name,Snowman variant,1
 char445.bindgroup40000.name,Snowman variant,0
+char445.bindgroup40100.name,Snowman variant,1
 char446.bindgroup40000.name,Snowman variant,0
+char446.bindgroup40100.name,Snowman variant,1
 char447.bindgroup40000.name,Snowman variant,0
+char447.bindgroup40100.name,Snowman variant,1
 char448.bindgroup40000.name,Snowman variant,0
+char448.bindgroup40100.name,Snowman variant,1
 char449.bindgroup40000.name,Snowman variant,0
+char449.bindgroup40100.name,Snowman variant,1
 char450.bindgroup40000.name,Snowman variant,0
+char450.bindgroup40100.name,Snowman variant,1
 char451.bindgroup40000.name,Snowman variant,0
+char451.bindgroup40100.name,Snowman variant,1
 char452.bindgroup40000.name,Snowman variant,0
+char452.bindgroup40100.name,Snowman variant,1
 char453.bindgroup40000.name,Snowman variant,0
+char453.bindgroup40100.name,Snowman variant,1
 char454.bindgroup40000.name,Snowman variant,0
+char454.bindgroup40100.name,Snowman variant,1
 char455.bindgroup40000.name,Snowman variant,0
+char455.bindgroup40100.name,Snowman variant,1
 char456.bindgroup40000.name,Snowman variant,0
+char456.bindgroup40100.name,Snowman variant,1
 char457.bindgroup40000.name,Snowman variant,0
+char457.bindgroup40100.name,Snowman variant,1
 char458.bindgroup40000.name,Snowman variant,0
+char458.bindgroup40100.name,Snowman variant,1
 char459.bindgroup40000.name,Snowman variant,0
+char459.bindgroup40100.name,Snowman variant,1
 char460.bindgroup40000.name,Snowman variant,0
+char460.bindgroup40100.name,Snowman variant,1
 char461.bindgroup40000.name,Snowman variant,0
+char461.bindgroup40100.name,Snowman variant,1
 char462.bindgroup40000.name,Snowman variant,0
+char462.bindgroup40100.name,Snowman variant,1
 char463.bindgroup40000.name,Snowman variant,0
+char463.bindgroup40100.name,Snowman variant,1
 char464.bindgroup40000.name,Snowman variant,0
+char464.bindgroup40100.name,Snowman variant,1
 char465.bindgroup40000.name,Snowman variant,0
+char465.bindgroup40100.name,Snowman variant,1
 char466.bindgroup40000.name,Snowman variant,0
+char466.bindgroup40100.name,Snowman variant,1
 char467.bindgroup40000.name,Snowman variant,0
+char467.bindgroup40100.name,Snowman variant,1
 char468.bindgroup40000.name,Snowman variant,0
+char468.bindgroup40100.name,Snowman variant,1
 char469.bindgroup40000.name,Snowman variant,0
+char469.bindgroup40100.name,Snowman variant,1
 char470.bindgroup40000.name,Snowman variant,0
+char470.bindgroup40100.name,Snowman variant,1
 char471.bindgroup40000.name,Snowman variant,0
+char471.bindgroup40100.name,Snowman variant,1
 char472.bindgroup40000.name,Snowman variant,0
+char472.bindgroup40100.name,Snowman variant,1
 char473.bindgroup40000.name,Snowman variant,0
+char473.bindgroup40100.name,Snowman variant,1
 char474.bindgroup40000.name,Snowman variant,0
+char474.bindgroup40100.name,Snowman variant,1
 char475.bindgroup40000.name,Snowman variant,0
+char475.bindgroup40100.name,Snowman variant,1
 char476.bindgroup40000.name,Snowman variant,0
+char476.bindgroup40100.name,Snowman variant,1
 char477.bindgroup40000.name,Snowman variant,0
+char477.bindgroup40100.name,Snowman variant,1
 char478.bindgroup40000.name,Snowman variant,0
+char478.bindgroup40100.name,Snowman variant,1
 char479.bindgroup40000.name,Snowman variant,0
+char479.bindgroup40100.name,Snowman variant,1
 char480.bindgroup40000.name,Snowman variant,0
+char480.bindgroup40100.name,Snowman variant,1
 char481.bindgroup40000.name,Snowman variant,0
+char481.bindgroup40100.name,Snowman variant,1
 char482.bindgroup40000.name,Snowman variant,0
+char482.bindgroup40100.name,Snowman variant,1
 char483.bindgroup40000.name,Snowman variant,0
+char483.bindgroup40100.name,Snowman variant,1
 char484.bindgroup40000.name,Snowman variant,0
+char484.bindgroup40100.name,Snowman variant,1
 char485.bindgroup40000.name,Snowman variant,0
+char485.bindgroup40100.name,Snowman variant,1
 char486.bindgroup40000.name,Snowman variant,0
+char486.bindgroup40100.name,Snowman variant,1
 char487.bindgroup40000.name,Snowman variant,0
+char487.bindgroup40100.name,Snowman variant,1
 char488.bindgroup40000.name,Snowman variant,0
+char488.bindgroup40100.name,Snowman variant,1
 char489.bindgroup40000.name,Snowman variant,0
+char489.bindgroup40100.name,Snowman variant,1
 char490.bindgroup40000.name,Snowman variant,0
+char490.bindgroup40100.name,Snowman variant,1
 char491.bindgroup40000.name,Snowman variant,0
+char491.bindgroup40100.name,Snowman variant,1
 char492.bindgroup40000.name,Snowman variant,0
+char492.bindgroup40100.name,Snowman variant,1
 char493.bindgroup40000.name,Snowman variant,0
+char493.bindgroup40100.name,Snowman variant,1
 char494.bindgroup40000.name,Snowman variant,0
+char494.bindgroup40100.name,Snowman variant,1
 char495.bindgroup40000.name,Snowman variant,0
+char495.bindgroup40100.name,Snowman variant,1
 char496.bindgroup40000.name,Snowman variant,0
+char496.bindgroup40100.name,Snowman variant,1
 char497.bindgroup40000.name,Snowman variant,0
+char497.bindgroup40100.name,Snowman variant,1
 char498.bindgroup40000.name,Snowman variant,0
+char498.bindgroup40100.name,Snowman variant,1
 char499.bindgroup40000.name,Snowman variant,0
+char499.bindgroup40100.name,Snowman variant,1

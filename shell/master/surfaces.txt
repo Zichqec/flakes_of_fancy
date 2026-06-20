@@ -6,7 +6,7 @@ descript
 //Menu blob
 surface0
 {
-	point.basepos.y,43
+	
 }
 
 //Snowflake

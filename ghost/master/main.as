@@ -435,6 +435,7 @@ function OnSpawnSnowflake@ChoosePosition
 	local output = "";
 	if (InMainMenu) output += "\C\![__MAIN_MENU__]";
 	else if (BalloonIsOpen()) output += "\C";
+	//TODO there's an issue where sometimes it spawns a flake and repeatedly fades it in... but that might be because I was messing with timerraise
 	output += "\p[{Shiori.Reference[0]}]\![move,--X={X}]\s[{Shiori.Reference[1]}]\![set,alpha,100,500]";
 	return output;
 }

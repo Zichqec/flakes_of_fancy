@@ -299,6 +299,9 @@ function OnMainMenu(indicator)
 function OnChangeSnowRate
 {
 	Save.Data.SnowAmount = Shiori.Reference[0].ToNumber();
+	local time = Time.GetNowUnixEpoch();
+	LastFlakeTime = time;
+	LastDriftTime = time;
 	return OnMainMenu;
 }
 

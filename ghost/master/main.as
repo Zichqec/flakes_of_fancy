@@ -3,6 +3,17 @@ talk OnBoot
 	\1\s[-1]\0\s[0]
 }
 
+//These have to be cleared when restoring, otherwise they get stuck
+function OnWindowStateRestore
+{
+	local snowflakes = "";
+	for (local i = 100; i < 200; i++)
+	{
+		snowflakes += "\p[{i}]\s[-1]";
+	}
+	return snowflakes + "\1\s[-1]\0\s[0]";
+}
+
 function OnTranslate
 {
 	local talkstr = Shiori.Reference[0];
@@ -25,14 +36,14 @@ function OnTranslate
 
 function OnAosoraDefaultSaveData
 {
-	Save.Data.SnowRate = 10;
+	Save.Data.SnowAmount = 3;
 	Save.Data.TalkInterval = 180;
 }
 
 function OnAosoraLoad
 {
-	LastFlakeTime = Time.GetNowUnixEpoch() - Save.Data.SnowRate;
-	LastDriftTime = Time.GetNowUnixEpoch() - Save.Data.SnowRate;
+	LastFlakeTime = Time.GetNowUnixEpoch();
+	LastDriftTime = Time.GetNowUnixEpoch();
 	Monitor = [];
 	Surfaces = {};
 	stroke = 0;
@@ -218,25 +229,25 @@ function OnMainMenu
 	m += "\0\b[2]\![quicksection,1]\![set,autoscroll,disable]";
 	m += "\![__MAIN_MENU__]"; //Don't have SHIORI3FW.LastTalk in Aosora, so trying this...
 	
-	local snowrates = [
-		{label: "None", time: -1},
-		{label: "Light", time: 10},
-		{label: "Medium", time: 5},
-		{label: "Heavy", time: 2},
-		{label: "Blizzard", time: 1},
+	local snowamounts = [
+		{label: "None", amount: -1},
+		{label: "Light", amount: 1},
+		{label: "Medium", amount: 3},
+		{label: "Heavy", amount: 5},
+		{label: "Blizzard", amount: 7},
 	];
 	
 	m += "Snow amount:\n{ColorAnchorAsChoice}";
 	
-	foreach (local rate in snowrates)
+	foreach (local snow in snowamounts)
 	{
-		if (rate.time == Save.Data.SnowRate)
+		if (snow.amount == Save.Data.SnowAmount)
 		{
-			m += "{UnColorAnchorAsChoice}\f[underline,1]\_a[OnChangeSnowRate,{rate.time}]{rate.label}\_a\f[underline,0]{ColorAnchorAsChoice}  ";
+			m += "{UnColorAnchorAsChoice}\f[underline,1]\_a[OnChangeSnowRate,{snow.amount}]{snow.label}\_a\f[underline,0]{ColorAnchorAsChoice}  ";
 		}
 		else
 		{
-			m += "\_a[OnChangeSnowRate,{rate.time}]{rate.label}\_a  ";
+			m += "\_a[OnChangeSnowRate,{snow.amount}]{snow.label}\_a  ";
 		}
 	}
 	m += "\n\n";
@@ -274,7 +285,7 @@ function OnMainMenu
 
 function OnChangeSnowRate
 {
-	Save.Data.SnowRate = Shiori.Reference[0].ToNumber();
+	Save.Data.SnowAmount = Shiori.Reference[0].ToNumber();
 	return OnMainMenu;
 }
 
@@ -328,7 +339,7 @@ function OnSecondChange
 	if (cantalk == false && TalkLatch == true) TalkEndTime = Time.GetNowUnixEpoch();
 	else TalkLatch = false;
 	
-	if (Save.Data.SnowRate != -1)
+	if (Save.Data.SnowAmount != -1)
 	{
 		local currenttime = Time.GetNowUnixEpoch();
 		
@@ -339,7 +350,8 @@ function OnSecondChange
 		else if (BalloonIsOpen() && currenttime - TalkEndTime < 15) C = "\C";
 		
 		//Snow drifts
-		if (currenttime - LastDriftTime >= (Save.Data.SnowRate * 60) && cantalk == true)
+		//TODO i want increased flake amount to decrease the time it takes to spawn a drift...
+		if (currenttime - LastDriftTime >= (60) && cantalk == true)
 		{
 			LastDriftTime = Time.GetNowUnixEpoch();
 			
@@ -356,7 +368,8 @@ function OnSecondChange
 		}
 		
 		//Snowflakes
-		if (currenttime - LastFlakeTime >= Save.Data.SnowRate && cantalk == true)
+		//currenttime - LastFlakeTime >= Save.Data.SnowRate && 
+		else if (cantalk == true)
 		{
 			LastFlakeTime = Time.GetNowUnixEpoch();
 			
@@ -382,27 +395,32 @@ function OnSpawnSnowflake
 
 function OnSpawnSnowflake@ActiveCheck
 {
-	local scope = -1;
+	local scopes = [];
 	for (local i = 0; i < Shiori.Reference.length; i++)
 	{
 		if (Shiori.Reference[i] == "")
 		{
-			scope = i + 100;
-			break;
+			scopes.Add(i + 100);
+			if (scopes.length >= Save.Data.SnowAmount) break;
 		}
 	}
 	
-	if (scope != -1)
+	if (scopes.length > 0)
 	{
-		local rand = Random.GetIndex(0,SnowFlakeVariants.length);
-		local variant = SnowFlakeVariants[rand];
-		
 		local output = "";
 		if (InMainMenu) output += "\C\![__MAIN_MENU__]";
 		else if (BalloonIsOpen()) output += "\C";
-		output += "\p[{scope}]\![set,alpha,0]\s[1]\![bind,Snowflake variant,{variant},1]";
-		output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
-		output += "\![embed,OnSpawnSnowflake@ChoosePosition,{scope},1]";
+		
+		for (local i = 0; i < scopes.length; i++)
+		{
+			local rand = Random.GetIndex(0,SnowFlakeVariants.length);
+			local variant = SnowFlakeVariants[rand];
+		
+			local scope = scopes[i];
+			output += "\p[{scope}]\![set,alpha,0]\s[1]\![bind,Snowflake variant,{variant},1]";
+			output += "\![get,property,OnSpawnSnowflake@WidthCheck,currentghost.scope({scope}).rect]";
+			output += "\![embed,OnSpawnSnowflake@ChoosePosition,{scope},1]";
+		}
 		return output;
 	}
 }

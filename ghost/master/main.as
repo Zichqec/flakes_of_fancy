@@ -71,6 +71,7 @@ function OnTimedTalk
 {
 	if (SnowmanScopes().length > 0)
 	{
+		TalkEndTime = Time.GetNowUnixEpoch(); //Set this here too to prevent possible leakage if dialogues happen at just the wrong time...
 		TalkLatch = true;
 		local scopes = SnowmanScopes();
 		local rand = Random.GetIndex(0,scopes.length);

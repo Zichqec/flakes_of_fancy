@@ -65,7 +65,7 @@ function OnTranslate
 function OnAosoraDefaultSaveData
 {
 	Save.Data.SnowAmount = 1;
-	Save.Data.TalkInterval = 180;
+	Save.Data.TalkInterval = 300;
 }
 
 function OnAosoraLoad

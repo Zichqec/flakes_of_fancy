@@ -1,6 +1,6 @@
 Winter has come to your desktop! Watch the flakes fall, see the snow pile up, maybe make some snowballs... what a wonderful wintery time!
 
-To make a snowball, stroke back and forth (or scroll with the mouse wheel) on top of a snow drift. Stack a few of them together, and you might just make a friend...
+To make a snowball, stroke back and forth (or scroll with the mouse wheel) on top of a snow drift. Stack a few of them together, and have a magical time~
 
 Note: this ghost is very intense to run on higher snow settings. It's recommended not to go above the "medium" setting unless you have a powerful computer (and maybe not even then! This ghost will eat your CPU alive...)
 

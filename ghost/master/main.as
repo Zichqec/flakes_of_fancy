@@ -635,6 +635,11 @@ function Chain
 	return "\p[{LastScope}]";
 }
 
+function ResetBalloonTimeout
+{
+	TalkLatch = true;
+}
+
 function OnNotifyDressupInfo
 {
 	SnowFlakeVariants = [];

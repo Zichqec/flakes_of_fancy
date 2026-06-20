@@ -28,7 +28,7 @@ talk OnFaceThing1
 {
 	%{ TalkTimer.RandomTalkQueue = [Chain_FaceThing]; }
 	%{ local p = Shiori.Reference[0]; }
-	\p[{p}]\b[2]No, not that. The other thing.\_q{ColorAnchorAsChoice}
+	\p[{p}]\b[2]No, not that. The other thing.\_q{ColorAnchorAsChoice}{ResetBalloonTimeout}
 	
 	\_a[OnFaceThing2,{p}]\![*] Your eyes\_a\n[half]
 	\_a[OnFaceThing2,{p}]\![*] Your nose\_a\n[half]
@@ -38,31 +38,31 @@ talk OnFaceThing1
 talk OnFaceThing2
 {
 	%{ TalkTimer.RandomTalkQueue.Clear(); }
-	\p[{Shiori.Reference[0]}]\b[0]I don't like that name. Make a new one.
+	\p[{Shiori.Reference[0]}]\b[0]I don't like that name. Make a new one.{ResetBalloonTimeout}
 }
 
 talk OnFaceThing2
 {
 	%{ TalkTimer.RandomTalkQueue.Clear(); }
-	\p[{Shiori.Reference[0]}]\b[0]Oh. Ew. I want something different.
+	\p[{Shiori.Reference[0]}]\b[0]Oh. Ew. I want something different.{ResetBalloonTimeout}
 }
 
 talk OnFaceThing2
 {
 	%{ TalkTimer.RandomTalkQueue.Clear(); }
-	\p[{Shiori.Reference[0]}]\b[0]Are you sure? I think that's my {notface}.
+	\p[{Shiori.Reference[0]}]\b[0]Are you sure? I think that's my {notface}.{ResetBalloonTimeout}
 }
 
 talk OnFaceThing2
 {
 	%{ TalkTimer.RandomTalkQueue.Clear(); }
-	\p[{Shiori.Reference[0]}]\b[0]... I knew that.
+	\p[{Shiori.Reference[0]}]\b[0]... I knew that.{ResetBalloonTimeout}
 }
 
 talk OnFaceThing2
 {
 	%{ TalkTimer.RandomTalkQueue.Clear(); }
-	\p[{Shiori.Reference[0]}]\b[0]Nice. You should get a few for yourself.
+	\p[{Shiori.Reference[0]}]\b[0]Nice. You should get a few for yourself.{ResetBalloonTimeout}
 }
 
 talk Chain_FaceThing
@@ -72,7 +72,7 @@ talk Chain_FaceThing
 
 talk RandomTalk(p)
 {
-	\b[2]I want to go to {thebeach}.\_q{ColorAnchorAsChoice}
+	\b[2]I want to go to {thebeach}.\_q{ColorAnchorAsChoice}{ResetBalloonTimeout}
 	
 	\_a[OnGoBeach1,{p}]\![*] That sounds nice\_a\n[half]
 	\_a[OnGoBeach2,{p}]\![*] That's not a good idea\_a
@@ -80,31 +80,31 @@ talk RandomTalk(p)
 
 talk OnGoBeach1
 {
-	\p[{Shiori.Reference[0]}]\b[0]No, I want to go now! Take me there!
+	\p[{Shiori.Reference[0]}]\b[0]No, I want to go now! Take me there!{ResetBalloonTimeout}
 }
 
 talk OnGoBeach2
 {
-	\p[{Shiori.Reference[0]}]\b[0]YOU!! Just don't want to put me in the wagon. BUT I!! Have ambitions. I know what I'm about.
+	\p[{Shiori.Reference[0]}]\b[0]YOU!! Just don't want to put me in the wagon. BUT I!! Have ambitions. I know what I'm about.{ResetBalloonTimeout}
 }
 
 talk RandomTalk
 {
 	\b[0]How many snowmen are too many? 
 	
-	More than 12 because that's as high as I can count.
+	More than 12 because that's as high as I can count.{ResetBalloonTimeout}
 }
 
 talk RandomTalk
 {
 	\b[0]How many snowmen do you need before they form an all-powerful hivemind? 
 	
-	{howmanyinahivemind}
+	{howmanyinahivemind}{ResetBalloonTimeout}
 }
 
 talk RandomTalk(p)
 {
-	\b[2]I'm hungry.\_q{ColorAnchorAsChoice}
+	\b[2]I'm hungry.\_q{ColorAnchorAsChoice}{ResetBalloonTimeout}
 	
 	\_a[OnHungry1,{p}]\![*] You don't have a stomach\_a\n[half]
 	\_a[OnHungry2,{p}]\![*] What do you want to eat?\_a
@@ -112,10 +112,10 @@ talk RandomTalk(p)
 
 talk OnHungry1
 {
-	\p[{Shiori.Reference[0]}]\b[0]KEEP YOUR X-RAY VISION AWAY FROM ME!!
+	\p[{Shiori.Reference[0]}]\b[0]KEEP YOUR X-RAY VISION AWAY FROM ME!!{ResetBalloonTimeout}
 }
 
 talk OnHungry2
 {
-	\p[{Shiori.Reference[0]}]\b[0]Give me {asnowburger}.
+	\p[{Shiori.Reference[0]}]\b[0]Give me {asnowburger}.{ResetBalloonTimeout}
 }

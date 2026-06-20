@@ -1,6 +1,23 @@
 talk OnBoot
 {
-	Hello, world!
+	\1\s[-1]\0\s[0]
+}
+
+function OnTranslate
+{
+	local talkstr = Shiori.Reference[0];
+	
+	if (!talkstr.Contains("\![no-autopause]"))
+	{
+		talkstr = talkstr.Replace(", ",",\w4 ");
+		talkstr = talkstr.Replace(". ",".\w8\w8 ");
+		talkstr = talkstr.Replace("? ","?\w8\w8 ");
+		talkstr = talkstr.Replace("! ","!\w8\w8 ");
+		talkstr = talkstr.Replace(": ",":\w8\w8 ");
+		talkstr = talkstr.Replace("; ",";\w8\w8 ");
+	}
+	
+	return talkstr;
 }
 
 function OnAosoraDefaultSaveData
@@ -276,7 +293,7 @@ function OnSecondChange
 		if (BalloonIsOpen() && currenttime - TalkEndTime < 15) C = "\C";
 		
 		//Snow drifts
-		if (currenttime - LastDriftTime >= (Save.Data.SnowRate * 10) && cantalk == true)
+		if (currenttime - LastDriftTime >= (Save.Data.SnowRate * 60) && cantalk == true)
 		{
 			LastDriftTime = Time.GetNowUnixEpoch();
 			

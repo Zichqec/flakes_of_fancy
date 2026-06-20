@@ -421,7 +421,7 @@ function OnIncreaseSnowdrift
 	local eligible = [];
 	for (local i = 200; i < 300; i++)
 	{
-		if (Surfaces["{i}"] != -1 && SnowDriftHeight["{i}"] < 4) eligible.Add(i);
+		if (Surfaces["{i}"] != -1 && SnowDriftHeight["{i}"] < SnowDriftHeight.length) eligible.Add(i);
 	}
 	
 	if (eligible.length == 0) return;

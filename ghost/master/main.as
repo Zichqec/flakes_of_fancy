@@ -1,3 +1,8 @@
+//What a collosal mess lol
+//I'll clean this up after jam
+//please don't judge me by this i swear i can write clean code
+//look at hydrate... so clean...
+
 talk OnBoot
 {
 	\1\s[-1]\0\s[0]

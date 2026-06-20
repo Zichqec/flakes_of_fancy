@@ -48,6 +48,11 @@ function OnShellChanged
 	ShellChangeStatsLatch = true;
 }
 
+function OnInstallComplete
+{
+	CheckShellLockLatch = true;
+}
+
 //These have to be cleared when restoring, otherwise they get stuck
 //TODO i was going to have OnShellChanged here, but that seems to kill everything but the main surface...??? weird
 function OnWindowStateRestore //, OnShellChanged
@@ -103,6 +108,7 @@ function OnAosoraLoad
 	InMainMenu = false;
 	ShellChangeStatsLatch = false;
 	Save.Data.ProgrammerArtUnlocked = false;
+	CheckShellLockLatch = false;
 	//TalkBuilder.Default.AutoLineBreak = "\n\w8";
 }
 
@@ -421,6 +427,12 @@ function OnSecondChange
 	{
 		ShellChangeStatsLatch = false;
 		return "\![embed,OnSendStats]";
+	}
+	
+	if (CheckShellLockLatch == true)
+	{
+		CheckShellLockLatch = false;
+		return "\![set,property,currentghost.shelllist(Programmer art).menu,hidden]";
 	}
 	
 	if (cantalk == false && TalkLatch == true) TalkEndTime = Time.GetNowUnixEpoch();

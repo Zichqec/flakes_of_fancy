@@ -1,5 +1,5 @@
 charset,OSNative
-file,developer_options.txt0e4f2dcfad055b0915fa4bb011a944f4size=159date=2026-06-20T12:58:52
+file,developer_options.txt15374b4cd2a1cdde9168646d5161a73csize=195date=2026-06-20T13:10:24
 file,install.txt4f3f2b03d0fd801c2c60d85dba5472b1size=108date=2026-06-18T12:11:07
 file,readme.txtb2dd2d22260029f83da7db88048a83c2size=709date=2026-06-20T10:42:00
 file,thumbnail.png24ee6e9efe440bace698a9a0afdd9d50size=17888date=2026-06-20T12:51:26
@@ -8,7 +8,7 @@ file,ghost/master/descript.txt595896db2a3a83d1da834435731b1540size=327date=20
 file,ghost/master/ghost.aslang40d704470259297f93bee626c12b71fbsize=5date=2026-06-18T12:20:13
 file,ghost/master/ghost.asprojd89fcabaa122288288b679c511210175size=31date=2026-06-19T04:26:29
 file,ghost/master/icecon.ico2b224e561fd3ecbddf53025568e3df40size=370070date=2026-06-20T12:49:46
-file,ghost/master/main.as08f98ff1c261ae2b3490277475588633size=24744date=2026-06-20T12:55:06
+file,ghost/master/main.asef00ab0164b366d0e6be40fd9fb5797dsize=25189date=2026-06-20T13:08:07
 file,ghost/master/randomtalk.asb5afed14313d1d702a44e0a42f87fa6dsize=6407date=2026-06-20T11:39:32
 file,ghost/master/word.asb83608f0517aad200d753c5de30b661asize=2289date=2026-06-20T11:39:32
 file,shell/master/descript.txt3b0c24b0ac93ec5c53fe3c45be371002size=57073date=2026-06-20T07:47:27

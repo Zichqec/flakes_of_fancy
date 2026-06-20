@@ -1,5 +1,6 @@
 .gitignore,nonar,noupdate
 .gitattributes,nonar,noupdate
 thaw_ss-db/,noupdate
+shell/pixel_flakes/,nonar,noupdate
 shell/pixel_flakes_zi/,nonar,noupdate
 ghost/master/savedata.asv,nonar,noupdate

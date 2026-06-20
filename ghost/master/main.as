@@ -361,9 +361,8 @@ function OnSecondChange
 		else if (BalloonIsOpen() && currenttime - TalkEndTime < 15) C = "\C";
 		
 		//Snow drifts
-		//TODO i want increased flake amount to decrease the time it takes to spawn a drift...
-		//420 is 60 * 7, because the blizzard setting is currently 7 flakes at a time
-		if (currenttime - LastDriftTime >= (420 / Save.Data.SnowAmount).Floor() && cantalk == true)
+		local basetime = 300; //Going with 5 minutes if you have it set to the slowest snow speed
+		if (currenttime - LastDriftTime >= (basetime / Save.Data.SnowAmount).Floor() && cantalk == true)
 		{
 			LastDriftTime = Time.GetNowUnixEpoch();
 			

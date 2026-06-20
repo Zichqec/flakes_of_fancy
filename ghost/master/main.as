@@ -87,6 +87,7 @@ function OnAosoraLoad
 	TalkLatch = false;
 	InMainMenu = false;
 	ShellChangeStatsLatch = false;
+	Save.Data.ProgrammerArtUnlocked = false;
 	//TalkBuilder.Default.AutoLineBreak = "\n\w8";
 }
 
@@ -280,7 +281,7 @@ function OnMainMenu(indicator)
 	if (BalloonIsOpen() && indicator != "new") m += "\C\![lock,balloonrepaint]\c";
 	
 	m += "\0\b[2]\![quicksection,1]\![set,autoscroll,disable]";
-	m += "\![__MAIN_MENU__]"; //Don't have SHIORI3FW.LastTalk in Aosora, so trying this...
+	m += "\![__MAIN_MENU__]{refnum}"; //Don't have SHIORI3FW.LastTalk in Aosora, so trying this...
 	
 	local snowamounts = SnowAmounts();
 	
@@ -739,30 +740,34 @@ function OnNotifyDressupInfo
 	
 	SnowDriftHeight = {};
 	
+	refnum = Shiori.Reference.length;
+	
 	for (local i = 0; i < Shiori.Reference.length; i++)
 	{
 		local dressup = Shiori.Reference[i].Split((1).ToAscii());
+		if (dressup[0] == 100 || dressup[0] == 200 || dressup[0] == 300 || dressup[0] == 400)
+		{
+			//I could make these single if checks, but it's just so long and cumbersome to read...
+			//I don't want these to be associative, but I can't find a basic array search function...
+			if (dressup[1].Contains("variant") == "Snowflake variant")
+			{
+				if (InArray(dressup[2],SnowFlakeVariants) == 0) SnowFlakeVariants.Add(dressup[2]);
+			}
+			else if (dressup[1] == "Snow drift variant")
+			{
+				if (InArray(dressup[2],SnowDriftVariants) == 0) SnowDriftVariants.Add(dressup[2]);
+			}
+			else if (dressup[1] == "Snow ball variant")
+			{
+				if (InArray(dressup[2],SnowBallVariants) == 0) SnowBallVariants.Add(dressup[2]);
+			}
+			else if (dressup[1] == "Snowman variant")
+			{
+				if (InArray(dressup[2],SnowManVariants) == 0) SnowManVariants.Add(dressup[2]);
+			}
+		}
 		
-		//I could make these single if checks, but it's just so long and cumbersome to read...
-		//I don't want these to be associative, but I can't find a basic array search function...
-		if (dressup[1] == "Snowflake variant")
-		{
-			if (InArray(dressup[2],SnowFlakeVariants) == 0) SnowFlakeVariants.Add(dressup[2]);
-		}
-		if (dressup[1] == "Snow drift variant")
-		{
-			if (InArray(dressup[2],SnowDriftVariants) == 0) SnowDriftVariants.Add(dressup[2]);
-		}
-		if (dressup[1] == "Snow ball variant")
-		{
-			if (InArray(dressup[2],SnowBallVariants) == 0) SnowBallVariants.Add(dressup[2]);
-		}
-		if (dressup[1] == "Snowman variant")
-		{
-			if (InArray(dressup[2],SnowManVariants) == 0) SnowManVariants.Add(dressup[2]);
-		}
-		
-		//TODO for some reason, once i add 12 snowmen, it's hitting an infinite loop here. i do not know why.
+		//TODO this really needs infinite loop protection lol
 		//Get snow drift height
 		if (dressup[4] == "0") continue;
 		local character = dressup[0].ToNumber();

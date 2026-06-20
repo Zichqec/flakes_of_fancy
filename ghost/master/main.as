@@ -635,19 +635,19 @@ function OnNotifyDressupInfo
 		//I don't want these to be associative, but I can't find a basic array search function...
 		if (dressup[1] == "Snowflake variant")
 		{
-			if (asearch(dressup[2],SnowFlakeVariants)) SnowFlakeVariants.Add(dressup[2]);
+			if (InArray(dressup[2],SnowFlakeVariants) == 0) SnowFlakeVariants.Add(dressup[2]);
 		}
 		if (dressup[1] == "Snow drift variant")
 		{
-			if (asearch(dressup[2],SnowDriftVariants)) SnowDriftVariants.Add(dressup[2]);
+			if (InArray(dressup[2],SnowDriftVariants) == 0) SnowDriftVariants.Add(dressup[2]);
 		}
 		if (dressup[1] == "Snow ball variant")
 		{
-			if (asearch(dressup[2],SnowBallVariants)) SnowBallVariants.Add(dressup[2]);
+			if (InArray(dressup[2],SnowBallVariants) == 0) SnowBallVariants.Add(dressup[2]);
 		}
 		if (dressup[1] == "Snowman variant")
 		{
-			if (asearch(dressup[2],SnowManVariants) != -1) SnowManVariants.Add(dressup[2]);
+			if (InArray(dressup[2],SnowManVariants) == 0) SnowManVariants.Add(dressup[2]);
 		}
 		
 		//Get snow drift height
@@ -664,11 +664,11 @@ function OnNotifyDressupInfo
 }
 
 //there must be a better way... but i'm head empty......
-function asearch(key, array)
+function InArray(key, array)
 {
 	for (local i = 0; i < array.length; i++)
 	{
 		if (key == array[i]) return 1;
 	}
-	return -1;
+	return 0;
 }

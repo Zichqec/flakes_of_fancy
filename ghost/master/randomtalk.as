@@ -90,14 +90,14 @@ talk OnGoBeach2
 
 talk RandomTalk
 {
-	\b[0]How many snowmen are too many?
+	\b[0]How many snowmen are too many? 
 	
 	More than 12 because that's as high as I can count.
 }
 
 talk RandomTalk
 {
-	\b[0]How many snowmen do you need before they form an all-powerful hivemind?
+	\b[0]How many snowmen do you need before they form an all-powerful hivemind? 
 	
 	{howmanyinahivemind}
 }

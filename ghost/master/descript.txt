@@ -13,3 +13,5 @@ balloon,Thaw
 balloon,Ice Cream Cone
 balloon,Ye Olde Soul Spell
 balloon,Weather Cloud
+
+icon,icecon.ico

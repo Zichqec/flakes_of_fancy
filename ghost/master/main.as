@@ -747,7 +747,7 @@ function OnNotifyDressupInfo
 		{
 			//I could make these single if checks, but it's just so long and cumbersome to read...
 			//I don't want these to be associative, but I can't find a basic array search function...
-			if (dressup[1].Contains("variant") == "Snowflake variant")
+			if (dressup[1] == "Snowflake variant")
 			{
 				if (InArray(dressup[2],SnowFlakeVariants) == 0) SnowFlakeVariants.Add(dressup[2]);
 			}

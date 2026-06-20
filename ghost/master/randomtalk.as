@@ -70,7 +70,7 @@ talk Chain_FaceThing
 	{Chain}\b[0]Fine, don't tell me! I was just testing you anyways. I know what all of my face things are.
 }
 
-talk RandomTalk
+talk RandomTalk(p)
 {
 	\b[2]I want to go to {thebeach}.\_q{ColorAnchorAsChoice}
 	
@@ -102,7 +102,7 @@ talk RandomTalk
 	{howmanyinahivemind}
 }
 
-talk RandomTalk
+talk RandomTalk(p)
 {
 	\b[2]I'm hungry.\_q{ColorAnchorAsChoice}
 	

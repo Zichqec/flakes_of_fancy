@@ -122,12 +122,7 @@ function OnKeyPress
 function OnMouseDoubleClick
 {
 	if (Shiori.Reference[3] == 0 && Shiori.Reference[5] == 0) return OnMainMenu;
-	else if (Shiori.Reference[3] >= 200 && Shiori.Reference[3] < 400) return "\p[{Shiori.Reference[3]}]\s[-1]"; //Remove snow drift/snow ball
-	else if (Shiori.Reference[3] >= 400 && Shiori.Reference[3] < 500)
-	{
-		if (Shiori.Reference[3] != LastScope) TalkTimer.RandomTalkQueue.Clear();
-		return OnAITalk(Shiori.Reference[3]);
-	}
+	else if (Shiori.Reference[3] >= 200 && Shiori.Reference[3] < 500) return "\p[{Shiori.Reference[3]}]\s[-1]"; //Remove item
 }
 
 function OnMouseMove, OnMouseWheel
@@ -142,6 +137,15 @@ function OnMouseMove, OnMouseWheel
 			output += "\![get,property,OnSnowDriftPos,currentghost.scope({Shiori.Reference[3]}).rect]";
 			output += "\![embed,OnMakeSnowBall,{Shiori.Reference[3]}]";
 			return output;
+		}
+	}
+	else if (Shiori.Reference[3] >= 400 && Shiori.Reference[3] < 500) //Make snowmen talk. Would another action be better...?
+	{
+		stroke++;
+		if (stroke % 40 == 0)
+		{
+			if (Shiori.Reference[3] != LastScope) TalkTimer.RandomTalkQueue.Clear();
+			return OnAITalk(Shiori.Reference[3]);
 		}
 	}
 }

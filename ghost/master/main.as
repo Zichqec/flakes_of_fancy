@@ -26,6 +26,11 @@ function sakura@recommendsites
 	return "Blue{(1).ToAscii}https://www.tumblr.com/bluetheanimator{(2).ToAscii}" + "Galla{(1).ToAscii}https://gallathegalla.github.io/gtg-ghosts/{(2).ToAscii}" + "Zichqec{(1).ToAscii}https://ukagaka.zichqec.com/{(2).ToAscii}";
 }
 
+function sakura@portalsites
+{
+	return "Leave a Review{(1).ToAscii}https://docs.google.com/forms/d/e/1FAIpQLScIiGvw1euLnlG2iF3K4DRw-WKdHPH_aKfS1lgeCZDGrcOUMA/viewform{(2).ToAscii}";
+}
+
 //I don't know which i need to hit so i'm just gonna hit em all!!!!!!
 function OnOtherGhostBooted, OnOtherGhostChanged, OnGhostCalled, OnGhostCallComplete
 {

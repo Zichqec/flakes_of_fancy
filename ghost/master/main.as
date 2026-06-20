@@ -21,6 +21,11 @@ function homeurl
 	return "https://raw.githubusercontent.com/Zichqec/flakes_of_fancy/refs/heads/main/";
 }
 
+function sakura@recommendsites
+{
+	return "Blue{(1).ToAscii}https://www.tumblr.com/bluetheanimator{(2).ToAscii}" + "Galla{(1).ToAscii}https://gallathegalla.github.io/gtg-ghosts/{(2).ToAscii}" + "Zichqec{(1).ToAscii}https://ukagaka.zichqec.com/{(2).ToAscii}";
+}
+
 //I don't know which i need to hit so i'm just gonna hit em all!!!!!!
 function OnOtherGhostBooted, OnOtherGhostChanged, OnGhostCalled, OnGhostCallComplete
 {

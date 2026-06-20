@@ -3,9 +3,12 @@
 //please don't judge me by this i swear i can write clean code
 //look at hydrate... so clean...
 
-talk OnBoot
+function OnBoot
 {
-	\1\s[-1]\0\s[0]\![embed,OnSendStats]
+	local output = "";
+	if (Save.Data.ProgrammerArtUnlocked == false) output += "\![set,property,currentghost.shelllist(Programmer art).menu,hidden]";
+	output += "\1\s[-1]\0\s[0]\![embed,OnSendStats]";
+	return output;
 }
 
 talk OnClose
@@ -66,6 +69,7 @@ function OnAosoraDefaultSaveData
 {
 	Save.Data.SnowAmount = 1;
 	Save.Data.TalkInterval = 300;
+	Save.Data.ProgrammerArtUnlocked = false;
 }
 
 function OnAosoraLoad
@@ -304,21 +308,23 @@ function OnMainMenu(indicator)
 		{label: "15m", time: 900},
 	];
 	
-	m += "Talk rate:\n{ColorAnchorAsChoice}";
-	
-	foreach (local rate in talkrates)
+	if (SnowmanScopes().length > 0)
 	{
-		if (rate.time == Save.Data.TalkInterval)
+		m += "Talk rate:\n{ColorAnchorAsChoice}";
+		
+		foreach (local rate in talkrates)
 		{
-			m += "{UnColorAnchorAsChoice}\f[underline,1]\_a[OnChangeTalkInterval,{rate.time}]{rate.label}\_a\f[underline,0]{ColorAnchorAsChoice}  ";
+			if (rate.time == Save.Data.TalkInterval)
+			{
+				m += "{UnColorAnchorAsChoice}\f[underline,1]\_a[OnChangeTalkInterval,{rate.time}]{rate.label}\_a\f[underline,0]{ColorAnchorAsChoice}  ";
+			}
+			else
+			{
+				m += "\_a[OnChangeTalkInterval,{rate.time}]{rate.label}\_a  ";
+			}
 		}
-		else
-		{
-			m += "\_a[OnChangeTalkInterval,{rate.time}]{rate.label}\_a  ";
-		}
+		m += "\n\n";
 	}
-	m += "\n\n";
-	
 	m += "\![*]\_a[OnCloseMainMenu]Done\_a";
 	
 	m += "\![unlock,balloonrepaint]";
@@ -660,6 +666,11 @@ function OnSpawnSnowman(p)
 	output += "\![get,property,OnSpawning@WidthCheck,currentghost.scope({scope}).rect]";
 	output += "\![get,property,OnSpawnSnowman@WidthCheck,currentghost.scope({p[0]}).rect,currentghost.scope({p[1]}).rect,currentghost.scope({p[2]}).rect]";
 	output += "\![embed,OnSpawnSnowman@Move,{p[0]},{p[1]},{p[2]},{scope}]";
+	if (SnowmanScopes().length >= 12 && Save.Data.ProgrammerArtUnlocked == false)
+	{
+		Save.Data.ProgrammerArtUnlocked = true;
+		output += "\![set,property,currentghost.shelllist(Programmer art).menu,menu]";
+	}
 	return output;
 }
 
@@ -751,6 +762,7 @@ function OnNotifyDressupInfo
 			if (InArray(dressup[2],SnowManVariants) == 0) SnowManVariants.Add(dressup[2]);
 		}
 		
+		//TODO for some reason, once i add 12 snowmen, it's hitting an infinite loop here. i do not know why.
 		//Get snow drift height
 		if (dressup[4] == "0") continue;
 		local character = dressup[0].ToNumber();

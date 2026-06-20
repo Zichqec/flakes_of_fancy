@@ -9,7 +9,8 @@ talk OnBoot
 }
 
 //These have to be cleared when restoring, otherwise they get stuck
-function OnWindowStateRestore
+//TODO i was going to have OnShellChanged here, but that seems to kill everything but the main surface...??? weird
+function OnWindowStateRestore //, OnShellChanged
 {
 	local snowflakes = "";
 	for (local i = 100; i < 200; i++)

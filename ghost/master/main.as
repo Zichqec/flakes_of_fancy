@@ -134,7 +134,12 @@ function OnKeyPress
 function OnMouseDoubleClick
 {
 	if (Shiori.Reference[3] == 0 && Shiori.Reference[5] == 0) return OnMainMenu("new");
-	else if (Shiori.Reference[3] >= 200 && Shiori.Reference[3] < 500) return "\p[{Shiori.Reference[3]}]\s[-1]"; //Remove item
+	else if (Shiori.Reference[3] >= 200 && Shiori.Reference[3] < 500)
+	{
+		if (Shiori.Reference[3] == LastScope) TalkTimer.RandomTalkQueue.Clear();
+		
+		return "\p[{Shiori.Reference[3]}]\s[-1]"; //Remove item
+	}
 }
 
 function OnMouseMove, OnMouseWheel
@@ -157,6 +162,7 @@ function OnMouseMove, OnMouseWheel
 		if (stroke % 40 == 0)
 		{
 			if (Shiori.Reference[3] != LastScope) TalkTimer.RandomTalkQueue.Clear();
+			
 			return OnAITalk(Shiori.Reference[3]);
 		}
 	}
@@ -356,7 +362,8 @@ function OnSecondChange
 		
 		//Snow drifts
 		//TODO i want increased flake amount to decrease the time it takes to spawn a drift...
-		if (currenttime - LastDriftTime >= (60) && cantalk == true)
+		//420 is 60 * 7, because the blizzard setting is currently 7 flakes at a time
+		if (currenttime - LastDriftTime >= (420 / Save.Data.SnowAmount).Floor() && cantalk == true)
 		{
 			LastDriftTime = Time.GetNowUnixEpoch();
 			

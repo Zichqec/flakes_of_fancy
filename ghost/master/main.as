@@ -115,19 +115,8 @@ function SnowdriftScopes
 
 function OnKeyPress
 {
-	if (Shiori.Reference[0] == "v")
-	{
-		local display = "\0\_q\b[4]";
-		for (local i = 0; i < Surfaces.length; i++)
-		{
-			display += "{i}: {Surfaces[i]}\n";
-		}
-		return display;
-	}
-	else if (Shiori.Reference[0] == "t")
-	{
-		return OnAITalk;
-	}
+	if (Shiori.Reference[0] == "t") return OnAITalk;
+	else if (Shiori.Reference[0] == "f1") return "\![open,readme]";
 }
 
 function OnMouseDoubleClick

@@ -90,14 +90,14 @@ talk OnGoBeach2
 
 talk RandomTalk(p)
 {
-	\b[2]How many snowmen are too many?
+	\b[2]How many snowmen are too many?\![ap-n]
 	
 	More than 12 because that's as high as I can count.
 }
 
 talk RandomTalk(p)
 {
-	\b[2]How many snowmen do you need before they form an all-powerful hivemind?
+	\b[2]How many snowmen do you need before they form an all-powerful hivemind?\![ap-n]
 	
 	{howmanyinahivemind}
 }
@@ -197,7 +197,7 @@ talk RandomTalk(p)
 
 talk RandomTalk(p)
 {
-	\b[2]Have you ever wondered what it would be like if it suddenly started raining {fingersandtoes}?
+	\b[2]Have you ever wondered what it would be like if it suddenly started raining {fingersandtoes}?\![ap-n]
 	
 	Yeah, well, I'm a snowman in the snow.
 }
@@ -259,9 +259,9 @@ talk RandomTalk(p)
 
 talk RandomTalk(p)
 {
-	\b[2]Shh I'm counting snowflakes.
+	\b[2]Shh I'm counting snowflakes.\![ap-n]
 	
-	1... 2... 3... 4... 5... 6... 7... 8... 9... 10... 11... 12...
+	1... 2... 3... 4... 5... 6... 7... 8... 9... 10... 11... 12...\![ap-n]
 	
 	... Yep, that's all of them.
 }

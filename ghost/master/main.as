@@ -77,6 +77,7 @@ function OnTranslate
 		talkstr = talkstr.Replace("! ","!\w8\w8 ");
 		talkstr = talkstr.Replace(": ",":\w8\w8 ");
 		talkstr = talkstr.Replace("; ",";\w8\w8 ");
+		talkstr = talkstr.Replace("\![ap-n]","\w8\w8"); //linebreaks, because it's awkward to not explicitly show them...
 	}
 	
 	InMainMenu = false;

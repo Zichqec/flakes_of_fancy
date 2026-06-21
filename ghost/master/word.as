@@ -103,7 +103,7 @@ function standing
 {
 	return Random.Select([
 		"standing",
-		"being a wintery scarecrow",
+		"being a wintry scarecrow",
 		"staying in one place for hours",
 		"freezing",
 		"camouflage",

@@ -3,6 +3,17 @@
 //please don't judge me by this i swear i can write clean code
 //look at hydrate... so clean...
 
+//TODO i'm not sure if snow drifts are building up anymore...? it seems like they waited until I had 25, but I'm not quite sure...
+//TODO ↓ i could also try an embed method mid dialogue, but if i group them then it may remove the need for this...
+//TODO if i make the snowflakes be multiple per-character, then they can fall down even if the character is talking...
+//Here's a wild idea: handle it ALL shell side, by simply... oh hell lol, if people move the snowflakes it will be obvious what's happened lol
+//But if I were to spawn enough characters to cover the full screen, then... i could just control the amount by making each character poke the snowflake button at different rates based on a dressup or something? maybe that could solve it (though SSP still might not like this, shell stuff is heavy I think)
+//Of course, they wouldn't be randomly distributed that way without a lot of copy-pasting...
+//But I mean like... if they just snow down a few times, then move randomly and do it again... that's pretty good and keeps the random distributon more or less
+//TODO changing the snow amount in the menu needs to send the notify event lol
+//TODO it might be fun if clicking a snowflake made it disappear (but, if I group them together, this is perhaps not a good idea...)
+//TODO some of the chain dialogues are disappearing... weird??
+
 function OnBoot
 {
 	local output = "";
@@ -746,6 +757,7 @@ function UnColorAnchorAsChoice
 function Chain
 {
 	TalkLatch = true;
+	ResetBalloonTimeout(); //TODO test this -- not working... hm
 	return "\p[{LastScope}]";
 }
 

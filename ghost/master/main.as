@@ -38,9 +38,7 @@ function OnAosoraLoad
 	TalkLatch = false;
 	InMainMenu = false;
 	ShellChangeStatsLatch = false;
-	Save.Data.ProgrammerArtUnlocked = false;
 	CheckShellLockLatch = false;
-	//TalkBuilder.Default.AutoLineBreak = "\n\w8";
 }
 
 function OnInitialize

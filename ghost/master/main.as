@@ -104,12 +104,22 @@ function homeurl
 
 function sakura@recommendsites
 {
-	return "Blue{(1).ToAscii}https://www.tumblr.com/bluetheanimator{(2).ToAscii}" + "Galla{(1).ToAscii}https://gallathegalla.github.io/gtg-ghosts/{(2).ToAscii}" + "Zichqec{(1).ToAscii}https://ukagaka.zichqec.com/{(2).ToAscii}";
+	return FormatLinks([
+		{label: "Blue", url: "https://www.tumblr.com/bluetheanimator"},
+		{label: "Galla", url: "https://gallathegalla.github.io/gtg-ghosts/"},
+		{label: "Zichqec", url: "https://ukagaka.zichqec.com/"},
+	]);
 }
 
 function sakura@portalsites
 {
-	return "Leave a Review{(1).ToAscii}https://docs.google.com/forms/d/e/1FAIpQLScIiGvw1euLnlG2iF3K4DRw-WKdHPH_aKfS1lgeCZDGrcOUMA/viewform{(2).ToAscii}";
+	return FormatLinks([
+		{label: "Leave a Review", url: "https://docs.google.com/forms/d/e/1FAIpQLScIiGvw1euLnlG2iF3K4DRw-WKdHPH_aKfS1lgeCZDGrcOUMA/viewform"},
+		{label: "Aosora SHIORI", url: "https://github.com/kanadelab/aosora-shiori"},
+		{label: "Ghost Jam 2026", url: "https://ukagakadreamteam.com/events/ghost_jam_2026/rules.html"},
+		{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/"},
+		{label: "Ukagaka Dream Team Forum", url: "https://forum.ukagakadreamteam.com/"},
+	]);
 }
 
 

@@ -17,6 +17,19 @@ function abs(num)
 	return num;
 }
 
+function FormatLinks(links)
+{
+	local output = "";
+	for (local i = 0; i < links.length; i++)
+	{
+		output += links[i].label;
+		output += (1).ToAscii();
+		output += links[i].url;
+		output += (2).ToAscii();
+	}
+	return output;
+}
+
 
 //———————————————————— Formatting shortcuts (fixed output, mostly) ————————————————————
 function ColorAnchorAsChoice

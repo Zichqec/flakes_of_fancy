@@ -268,22 +268,6 @@ function OnBalloonBreak, OnBalloonClose
 	else if (Shiori.Reference[0].Contains("\![__CHOICES__]")) return "\C\p[{LastScope}]\![__CHOICES__] \c[char,1]";
 }
 
-function OnDisplayChangeEx
-{
-	Monitor.Clear();
-	
-	//First reference we can ignore since it's not display data
-	for (local i = 1; i < Shiori.Reference.length; i++)
-	{
-		local info = Shiori.Reference[i].Split(",");
-		local left = info[0].ToNumber();
-		local right = info[2].ToNumber();
-		
-		local width = abs(abs(right) - abs(left));
-		Monitor.Add({left: left, right: right, width: width});
-	}
-}
-
 function OnSecondChange
 {
 	local cantalk = true;
@@ -347,54 +331,6 @@ function OnSecondChange
 	}
 }
 
-function OnNotifyDressupInfo
-{
-	SnowFlakeVariants = [];
-	SnowDriftVariants = [];
-	SnowBallVariants = [];
-	SnowManVariants = [];
-	
-	SnowDriftHeight = {};
-	
-	for (local i = 0; i < Shiori.Reference.length; i++)
-	{
-		local dressup = Shiori.Reference[i].Split((1).ToAscii());
-		if (dressup[0] == 100 || dressup[0] == 200 || dressup[0] == 300 || dressup[0] == 400)
-		{
-			//I could make these single if checks, but it's just so long and cumbersome to read...
-			//I don't want these to be associative, but I can't find a basic array search function...
-			if (dressup[1] == "Snowflake variant")
-			{
-				if (InArray(dressup[2],SnowFlakeVariants) == 0) SnowFlakeVariants.Add(dressup[2]);
-			}
-			else if (dressup[1] == "Snow drift variant")
-			{
-				if (InArray(dressup[2],SnowDriftVariants) == 0) SnowDriftVariants.Add(dressup[2]);
-			}
-			else if (dressup[1] == "Snow ball variant")
-			{
-				if (InArray(dressup[2],SnowBallVariants) == 0) SnowBallVariants.Add(dressup[2]);
-			}
-			else if (dressup[1] == "Snowman variant")
-			{
-				if (InArray(dressup[2],SnowManVariants) == 0) SnowManVariants.Add(dressup[2]);
-			}
-		}
-		
-		//TODO this really needs infinite loop protection lol
-		//Get snow drift height
-		if (dressup[4] == "0") continue;
-		local character = dressup[0].ToNumber();
-		
-		//[character ID, category name, part name, option, on-1/off-0, thumbnail path]
-		if (character >= 200 && character < 300) //Snow drifts
-		{
-			//If this is the stage dressup, save the character ID and stage number
-			if (dressup[1] == "Snow drift stage") SnowDriftHeight["{character}"] = dressup[2].ToNumber();
-		}
-	}
-}
-
 //Communication event:
 //How hard it's snowing, How many snow drifts, How many snow balls, How many snowmen, Snow drift depth dressups, Wind speed, Wind direction,
 //OnFlakesOfFancyStateNotify
@@ -432,9 +368,4 @@ function OnSendStats
 	output += `,"{driftheights}"`;
 	output += "]";
 	return output;
-}
-
-function OnNotifyShellInfo
-{
-	CurrentShell = Shiori.Reference[0];
 }

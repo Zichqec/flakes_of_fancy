@@ -14,73 +14,8 @@
 //TODO it might be fun if clicking a snowflake made it disappear (but, if I group them together, this is perhaps not a good idea...)
 //TODO some of the chain dialogues are disappearing... weird??
 
-function OnBoot
-{
-	local output = "";
-	if (Save.Data.ProgrammerArtUnlocked == false) output += "\![set,property,currentghost.shelllist(Programmer art).menu,hidden]";
-	output += "\1\s[-1]\0\s[0]\![embed,OnSendStats]";
-	return output;
-}
 
-function homeurl
-{
-	return "https://raw.githubusercontent.com/Zichqec/flakes_of_fancy/refs/heads/main/";
-}
-
-function sakura@recommendsites
-{
-	return "Blue{(1).ToAscii}https://www.tumblr.com/bluetheanimator{(2).ToAscii}" + "Galla{(1).ToAscii}https://gallathegalla.github.io/gtg-ghosts/{(2).ToAscii}" + "Zichqec{(1).ToAscii}https://ukagaka.zichqec.com/{(2).ToAscii}";
-}
-
-function sakura@portalsites
-{
-	return "Leave a Review{(1).ToAscii}https://docs.google.com/forms/d/e/1FAIpQLScIiGvw1euLnlG2iF3K4DRw-WKdHPH_aKfS1lgeCZDGrcOUMA/viewform{(2).ToAscii}";
-}
-
-function OnShellChanged
-{
-	//return "\![embed,OnSendStats]";
-	ShellChangeStatsLatch = true;
-}
-
-function OnInstallComplete
-{
-	CheckShellLockLatch = true;
-}
-
-//These have to be cleared when restoring, otherwise they get stuck
-//TODO i was going to have OnShellChanged here, but that seems to kill everything but the main surface...??? weird
-function OnWindowStateRestore //, OnShellChanged
-{
-	local snowflakes = "";
-	for (local i = 100; i < 200; i++)
-	{
-		snowflakes += "\p[{i}]\s[-1]";
-	}
-	return snowflakes + "\1\s[-1]\0\s[0]";
-}
-
-function OnTranslate
-{
-	local talkstr = Shiori.Reference[0];
-	
-	if (!talkstr.Contains("\![no-autopause]"))
-	{
-		talkstr = talkstr.Replace(", ",",\w4 ");
-		talkstr = talkstr.Replace(". ",".\w8\w8 ");
-		talkstr = talkstr.Replace("? ","?\w8\w8 ");
-		talkstr = talkstr.Replace("! ","!\w8\w8 ");
-		talkstr = talkstr.Replace(": ",":\w8\w8 ");
-		talkstr = talkstr.Replace("; ",";\w8\w8 ");
-		talkstr = talkstr.Replace("\![ap-n]","\w8\w8"); //linebreaks, because it's awkward to not explicitly show them...
-	}
-	
-	InMainMenu = false;
-	if (talkstr.Contains("\![__MAIN_MENU__]")) InMainMenu = true;
-	
-	return talkstr;
-}
-
+//———————————————————— Boot ————————————————————
 function OnAosoraDefaultSaveData
 {
 	Save.Data.SnowAmount = 1;
@@ -116,6 +51,16 @@ function OnInitialize
 	}
 }
 
+function OnBoot
+{
+	local output = "";
+	if (Save.Data.ProgrammerArtUnlocked == false) output += "\![set,property,currentghost.shelllist(Programmer art).menu,hidden]";
+	output += "\1\s[-1]\0\s[0]\![embed,OnSendStats]";
+	return output;
+}
+
+
+//———————————————————— Talk control ————————————————————
 //IIRC the below calls this one, and this one does the actual call to randomtalk...
 //NOTE: chain talks don't come through this function............. or at least not if i prompt them
 function OnTimedTalk
@@ -150,12 +95,84 @@ function OnAITalk(scope)
 	return LastTalk;
 }
 
+
+//———————————————————— Network/web ————————————————————
+function homeurl
+{
+	return "https://raw.githubusercontent.com/Zichqec/flakes_of_fancy/refs/heads/main/";
+}
+
+function sakura@recommendsites
+{
+	return "Blue{(1).ToAscii}https://www.tumblr.com/bluetheanimator{(2).ToAscii}" + "Galla{(1).ToAscii}https://gallathegalla.github.io/gtg-ghosts/{(2).ToAscii}" + "Zichqec{(1).ToAscii}https://ukagaka.zichqec.com/{(2).ToAscii}";
+}
+
+function sakura@portalsites
+{
+	return "Leave a Review{(1).ToAscii}https://docs.google.com/forms/d/e/1FAIpQLScIiGvw1euLnlG2iF3K4DRw-WKdHPH_aKfS1lgeCZDGrcOUMA/viewform{(2).ToAscii}";
+}
+
+
+//———————————————————— Misc ————————————————————
+function OnTranslate
+{
+	local talkstr = Shiori.Reference[0];
+	
+	if (!talkstr.Contains("\![no-autopause]"))
+	{
+		talkstr = talkstr.Replace(", ",",\w4 ");
+		talkstr = talkstr.Replace(". ",".\w8\w8 ");
+		talkstr = talkstr.Replace("? ","?\w8\w8 ");
+		talkstr = talkstr.Replace("! ","!\w8\w8 ");
+		talkstr = talkstr.Replace(": ",":\w8\w8 ");
+		talkstr = talkstr.Replace("; ",";\w8\w8 ");
+		talkstr = talkstr.Replace("\![ap-n]","\w8\w8"); //linebreaks, because it's awkward to not explicitly show them...
+	}
+	
+	InMainMenu = false;
+	if (talkstr.Contains("\![__MAIN_MENU__]")) InMainMenu = true;
+	
+	return talkstr;
+}
+
 function OnKeyPress
 {
 	if (Shiori.Reference[0] == "t") return OnAITalk;
 	else if (Shiori.Reference[0] == "f1") return "\![open,readme]";
 }
 
+//It's a little janky, but since the main menu uses anchors instead of choices, this avoids having it be really touchy and closing if you miss clicking a choice...
+function OnBalloonBreak, OnBalloonClose
+{
+	if (Shiori.Reference[0].Contains("\![__MAIN_MENU__]")) return "\C\![__MAIN_MENU__] \c[char,1]";
+	else if (Shiori.Reference[0].Contains("\![__CHOICES__]")) return "\C\p[{LastScope}]\![__CHOICES__] \c[char,1]";
+}
+
+//These have to be cleared when restoring, otherwise they get stuck
+//TODO i was going to have OnShellChanged here, but that seems to kill everything but the main surface...??? weird
+function OnWindowStateRestore //, OnShellChanged
+{
+	local snowflakes = "";
+	for (local i = 100; i < 200; i++)
+	{
+		snowflakes += "\p[{i}]\s[-1]";
+	}
+	return snowflakes + "\1\s[-1]\0\s[0]";
+}
+
+function OnShellChanged
+{
+	//return "\![embed,OnSendStats]";
+	ShellChangeStatsLatch = true;
+}
+
+function OnInstallComplete
+{
+	CheckShellLockLatch = true;
+}
+
+
+//———————————————————— Snow control ————————————————————
 function OnMouseDoubleClick
 {
 	if (Shiori.Reference[3] == 0 && Shiori.Reference[5] == 0) return OnMainMenu("new");
@@ -237,13 +254,6 @@ function OnOverlap
 			overlaps.Add(ref);
 		}
 	}
-}
-
-//It's a little janky, but since the main menu uses anchors instead of choices, this avoids having it be really touchy and closing if you miss clicking a choice...
-function OnBalloonBreak, OnBalloonClose
-{
-	if (Shiori.Reference[0].Contains("\![__MAIN_MENU__]")) return "\C\![__MAIN_MENU__] \c[char,1]";
-	else if (Shiori.Reference[0].Contains("\![__CHOICES__]")) return "\C\p[{LastScope}]\![__CHOICES__] \c[char,1]";
 }
 
 function OnSecondChange

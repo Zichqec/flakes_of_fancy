@@ -300,7 +300,8 @@ function OnSecondChange
 	else TalkLatch = false;
 	
 	//This check is the conditions for a randomtalk happening. This is necessary because otherwise snowflake spawns block the talking... oopsie
-	if (TalkTimer.RandomTalkElapsedSeconds >= TalkTimer.RandomTalkIntervalSeconds && cantalk == true) return;
+	//This is janky and ideally I'd be able to replace it later... we'll see
+	if (Save.Data.TalkInterval > 0 && TalkTimer.RandomTalkElapsedSeconds >= TalkTimer.RandomTalkIntervalSeconds && cantalk == true) return;
 	
 	if (Save.Data.SnowAmount > 0)
 	{

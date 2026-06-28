@@ -29,9 +29,9 @@ function OnSendStats
 	output += "\![notifyother,OnFlakesOfFancyStateNotify";
 	output += `,{snowlevel}`;
 	output += `,"{shellname}"`;
-	output += `,{SnowdriftScopes.length}`;
-	output += `,{SnowballScopes.length}`;
-	output += `,{SnowmanScopes.length}`;
+	output += `,{SnowdriftScopes().length}`;
+	output += `,{SnowballScopes().length}`;
+	output += `,{SnowmanScopes().length}`;
 	output += `,"{driftheights}"`;
 	output += "]";
 	return output;

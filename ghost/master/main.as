@@ -52,7 +52,7 @@ function OnInitialize
 function OnBoot
 {
 	local output = "";
-	if (Save.Data.ProgrammerArtUnlocked == false) output += "\![set,property,currentghost.shelllist(Programmer art).menu,hidden]";
+	if (!Save.Data.ProgrammerArtUnlocked) output += "\![set,property,currentghost.shelllist(Programmer art).menu,hidden]";
 	output += "\1\s[-1]\0\s[0]\![embed,OnSendStats]";
 	return output;
 }
@@ -281,20 +281,22 @@ function OnSecondChange
 	if (Shiori.Reference[3] == "0") cantalk = false;
 	//TODO I don't know why I have to write out the == false here and can't just write !cantalk...... i'm losing my mind a bit right now, i'll revisit this. can't get the debugging functions working either
 	//TalkLatch is a latch that makes it get the TalkEndTime *one* time after a dialogue ends (without this latch it just constantly updates)
-	if (ShellChangeStatsLatch == true)
+	if (ShellChangeStatsLatch)
 	{
 		ShellChangeStatsLatch = false;
 		return "\![embed,OnSendStats]";
 	}
 	
-	if (CheckShellLockLatch == true)
+	if (CheckShellLockLatch)
 	{
 		CheckShellLockLatch = false;
 		return "\![set,property,currentghost.shelllist(Programmer art).menu,hidden]";
 	}
 	
-	if (cantalk == false && TalkLatch == true) TalkEndTime = Time.GetNowUnixEpoch();
+	if (cantalk == false && TalkLatch) TalkEndTime = Time.GetNowUnixEpoch();
 	else TalkLatch = false;
+	
+	//Debug.WriteLine("TalkEndTime: {TalkEndTime}");
 	
 	//This check is the conditions for a randomtalk happening. This is necessary because otherwise snowflake spawns block the talking... oopsie
 	//This is janky and ideally I'd be able to replace it later... we'll see

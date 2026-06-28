@@ -37,6 +37,8 @@ function OnSendStats
 	return output;
 }
 
+//The above event is sent by more than the events listed below, but the ones listed here are exclusively used for the purposes of sending this event
+
 //I don't know which i need to hit so i'm just gonna hit em all!!!!!!
 function OnOtherGhostBooted, OnOtherGhostChanged, OnGhostCalled, OnGhostCallComplete
 {

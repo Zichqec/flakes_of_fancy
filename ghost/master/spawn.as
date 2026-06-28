@@ -257,3 +257,4 @@ function OnSpawnSnowman@Move
 	output += "\p[{Shiori.Reference[3]}]\![move,--X={X},--base=primaryscreen]\s[4]\![set,alpha,100]\p[{Shiori.Reference[0]}]\s[-1]\p[{Shiori.Reference[1]}]\s[-1]\p[{Shiori.Reference[2]}]\s[-1]\![embed,OnSendStats]"; // + "{AllTogetherCenter}, {NonFlakeWidth} / 2 = {(NonFlakeWidth / 2).Floor()}, together {X}";
 	return output;
 }
+//TODO after making a snowman, the count of snowballs in the commu event is incorrect... hm! It updated later, but...

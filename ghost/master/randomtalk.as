@@ -275,3 +275,8 @@ talk RandomTalk(p)
 {
 	\b[0]Where does the snowman end and the snowdrifts begin?
 }
+
+talk SnowDozenTalk
+{
+	TODO
+}

@@ -216,6 +216,14 @@ function OnSpawnSnowman(p)
 	{
 		Save.Data.ProgrammerArtUnlocked = true;
 		output += "\![set,property,currentghost.shelllist(Programmer art).menu,menu]";
+		output += "\_s[";
+		foreach (local snowman in SnowmanScopes())
+		{
+			output += "{snowman},";
+		}
+		output += "{scope}]";
+		output += SnowDozenTalk();
+		output += "\_s";
 	}
 	return output;
 }

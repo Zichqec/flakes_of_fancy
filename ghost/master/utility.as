@@ -177,3 +177,8 @@ function OnDisplayChangeEx
 	}
 }
 
+function OnSurfaceChange
+{
+	local ref = Shiori.Reference[2].Split(",");
+	Surfaces["{ref[0]}"] = ref[1].ToNumber();
+}

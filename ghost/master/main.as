@@ -255,12 +255,6 @@ function OnOverlap
 	}
 }
 
-function OnSurfaceChange
-{
-	local ref = Shiori.Reference[2].Split(",");
-	Surfaces["{ref[0]}"] = ref[1].ToNumber();
-}
-
 //It's a little janky, but since the main menu uses anchors instead of choices, this avoids having it be really touchy and closing if you miss clicking a choice...
 function OnBalloonBreak, OnBalloonClose
 {

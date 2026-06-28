@@ -195,6 +195,7 @@ function OnInstallComplete
 
 
 //———————————————————— Snow control ————————————————————
+//Remove snow drifts, snowballs, snowmen
 function OnMouseDoubleClick
 {
 	if (Shiori.Reference[3] == 0 && Shiori.Reference[5] == 0) return OnMainMenu("init");
@@ -208,10 +209,11 @@ function OnMouseDoubleClick
 
 function OnMouseMove, OnMouseWheel
 {
-	if (Shiori.Reference[3] >= 200 && Shiori.Reference[3] < 300)
+	stroke++;
+	if (stroke % 40 == 0)
 	{
-		stroke++;
-		if (stroke % 40 == 0)
+		//Make snowdrifts into snowballs
+		if (Shiori.Reference[3] >= 200 && Shiori.Reference[3] < 300)
 		{
 			local output = "";
 			if (BalloonIsOpen()) output += "\C";
@@ -219,14 +221,9 @@ function OnMouseMove, OnMouseWheel
 			output += "\![embed,OnMakeSnowBall,{Shiori.Reference[3]}]";
 			return output;
 		}
-	}
-	else if (Shiori.Reference[3] >= 400 && Shiori.Reference[3] < 500) //Make snowmen talk. Would another action be better...?
-	{
-		stroke++;
-		if (stroke % 40 == 0)
+		else if (Shiori.Reference[3] >= 400 && Shiori.Reference[3] < 500) //Make snowmen talk. Would another action be better...?
 		{
 			if (Shiori.Reference[3] != LastScope) TalkTimer.RandomTalkQueue.Clear();
-			
 			return OnAITalk(Shiori.Reference[3]);
 		}
 	}
@@ -237,6 +234,7 @@ function OnMouseLeaveAll
 	stroke = 0;
 }
 
+//Make snowballs into snowmen
 function OnOverlap
 {
 	//return "\0\b[4]\_q" + Shiori.Reference[0] + "\n" + Shiori.Reference[1];
@@ -278,6 +276,7 @@ function OnOverlap
 	}
 }
 
+//Spawn flakes and drifts
 function OnSecondChange
 {
 	local cantalk = true;

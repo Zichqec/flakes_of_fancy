@@ -26,7 +26,7 @@ function OnSendStats
 	
 	local shellname = CurrentShell.Replace('"','""');
 	local output = "";
-	output += "\![notifyother,OnFlakesOfFancyStateNotify";
+	output += "\![notifyother,__SYSTEM_ALL_GHOST__,OnFlakesOfFancyStateNotify";
 	output += `,{snowlevel}`;
 	output += `,"{shellname}"`;
 	output += `,{SnowdriftScopes().length}`;

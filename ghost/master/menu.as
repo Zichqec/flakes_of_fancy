@@ -62,7 +62,7 @@ function OnChangeSnowRate
 	local time = Time.GetNowUnixEpoch();
 	LastFlakeTime = time;
 	LastDriftTime = time;
-	return OnMainMenu;
+	return "\![embed,OnSendStats]" + OnMainMenu();
 }
 
 function OnChangeTalkInterval

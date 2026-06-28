@@ -278,8 +278,8 @@ function OnOverlap
 function OnSecondChange
 {
 	local cantalk = true;
-	if (Shiori.Reference[3] == "0") cantalk = false;
-	//TODO I don't know why I have to write out the == false here and can't just write !cantalk...... i'm losing my mind a bit right now, i'll revisit this. can't get the debugging functions working either
+	if (Shiori.Reference[3] == 0) cantalk = false;
+	
 	//TalkLatch is a latch that makes it get the TalkEndTime *one* time after a dialogue ends (without this latch it just constantly updates)
 	if (ShellChangeStatsLatch)
 	{
@@ -293,14 +293,12 @@ function OnSecondChange
 		return "\![set,property,currentghost.shelllist(Programmer art).menu,hidden]";
 	}
 	
-	if (cantalk == false && TalkLatch) TalkEndTime = Time.GetNowUnixEpoch();
+	if (TalkLatch && !cantalk) TalkEndTime = Time.GetNowUnixEpoch();
 	else TalkLatch = false;
-	
-	//Debug.WriteLine("TalkEndTime: {TalkEndTime}");
 	
 	//This check is the conditions for a randomtalk happening. This is necessary because otherwise snowflake spawns block the talking... oopsie
 	//This is janky and ideally I'd be able to replace it later... we'll see
-	if (Save.Data.TalkInterval > 0 && TalkTimer.RandomTalkElapsedSeconds >= TalkTimer.RandomTalkIntervalSeconds && cantalk == true) return;
+	if (Save.Data.TalkInterval > 0 && TalkTimer.RandomTalkElapsedSeconds >= TalkTimer.RandomTalkIntervalSeconds && cantalk) return;
 	
 	if (Save.Data.SnowAmount > 0)
 	{
@@ -314,7 +312,7 @@ function OnSecondChange
 		
 		//Snow drifts
 		local basetime = 300; //Going with 5 minutes if you have it set to the slowest snow speed
-		if (currenttime - LastDriftTime >= (basetime / Save.Data.SnowAmount).Floor() && cantalk == true)
+		if (currenttime - LastDriftTime >= (basetime / Save.Data.SnowAmount).Floor() && cantalk)
 		{
 			LastDriftTime = Time.GetNowUnixEpoch();
 			
@@ -332,7 +330,7 @@ function OnSecondChange
 		
 		//Snowflakes
 		//currenttime - LastFlakeTime >= Save.Data.SnowRate && 
-		else if (cantalk == true)
+		else if (cantalk)
 		{
 			LastFlakeTime = Time.GetNowUnixEpoch();
 			

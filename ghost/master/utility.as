@@ -1,3 +1,5 @@
+//———————————————————— Pure functions ————————————————————
+
 //Equivalent to YAYA ASEARCH (except it's just a yes or no, not a position finder)
 //there must be a better way... but i'm head empty......
 function InArray(key, array)
@@ -9,6 +11,14 @@ function InArray(key, array)
 	return 0;
 }
 
+function abs(num)
+{
+	if (num < 0) num *= -1;
+	return num;
+}
+
+
+//———————————————————— Formatting shortcuts (fixed output, mostly) ————————————————————
 function ColorAnchorAsChoice
 {
 	return "\f[anchor.font.color,default.cursor]\f[anchor.visited.font.color,default.cursor]";
@@ -30,6 +40,11 @@ function SnowAmounts
 	];
 }
 
+function Choices
+{
+	return "\![__CHOICES__]";
+}
+
 function Chain
 {
 	TalkLatch = true;
@@ -42,17 +57,8 @@ function ResetBalloonTimeout
 	TalkLatch = true;
 }
 
-function Choices
-{
-	return "\![__CHOICES__]";
-}
 
-function abs(num)
-{
-	if (num < 0) num *= -1;
-	return num;
-}
-
+//———————————————————— Helper shortcuts (variable output, for checks) ————————————————————
 //Don't forget the ()!!!!!!
 function BalloonIsOpen
 {
@@ -99,3 +105,6 @@ function SnowdriftScopes
 	}
 	return scopes;
 }
+
+
+//———————————————————— Notify (information for later use) ————————————————————

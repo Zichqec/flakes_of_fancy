@@ -95,6 +95,11 @@ function OnAITalk(scope)
 	return LastTalk;
 }
 
+function OnLastTalk
+{
+	return LastTalk;
+}
+
 
 //———————————————————— Network/web ————————————————————
 function homeurl
@@ -154,6 +159,7 @@ function OnTranslate
 function OnKeyPress
 {
 	if (Shiori.Reference[0] == "t") return OnAITalk;
+	else if (Shiori.Reference[0] == "r") return OnLastTalk;
 	else if (Shiori.Reference[0] == "f1") return "\![open,readme]";
 }
 

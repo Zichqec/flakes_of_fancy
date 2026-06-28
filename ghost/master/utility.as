@@ -19,6 +19,17 @@ function UnColorAnchorAsChoice
 	return "\f[anchor.font.color,default]\f[anchor.visited.font.color,default]";
 }
 
+function SnowAmounts
+{
+	return [
+		{label: "None", amount: 0},
+		{label: "Light", amount: 1},
+		{label: "Medium", amount: 3},
+		{label: "Heavy", amount: 5},
+		{label: "Blizzard", amount: 7},
+	];
+}
+
 function Chain
 {
 	TalkLatch = true;

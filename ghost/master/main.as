@@ -188,7 +188,7 @@ function OnShellChanged
 
 function OnInstallComplete
 {
-	CheckShellLockLatch = true;
+	if (!Save.Data.ProgrammerArtUnlocked) CheckShellLockLatch = true;
 }
 
 

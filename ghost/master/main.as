@@ -197,7 +197,7 @@ function OnInstallComplete
 //———————————————————— Snow control ————————————————————
 function OnMouseDoubleClick
 {
-	if (Shiori.Reference[3] == 0 && Shiori.Reference[5] == 0) return OnMainMenu("new");
+	if (Shiori.Reference[3] == 0 && Shiori.Reference[5] == 0) return OnMainMenu("init");
 	else if (Shiori.Reference[3] >= 200 && Shiori.Reference[3] < 500)
 	{
 		if (Shiori.Reference[3] == LastScope) TalkTimer.RandomTalkQueue.Clear();

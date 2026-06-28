@@ -118,7 +118,8 @@ function OnTranslate
 {
 	local talkstr = Shiori.Reference[0];
 	
-	if (!talkstr.Contains("\![no-autopause]"))
+	//The second check is to exclude the Aosora error balloon from autopause
+	if (!(talkstr.Contains("\![no-autopause]") || talkstr.Contains("■Aosora")))
 	{
 		talkstr = talkstr.Replace(", ",",\w4 ");
 		talkstr = talkstr.Replace(". ",".\w8\w8 ");
@@ -126,7 +127,12 @@ function OnTranslate
 		talkstr = talkstr.Replace("! ","!\w8\w8 ");
 		talkstr = talkstr.Replace(": ",":\w8\w8 ");
 		talkstr = talkstr.Replace("; ",";\w8\w8 ");
-		talkstr = talkstr.Replace("\![ap-n]","\w8\w8"); //linebreaks, because it's awkward to not explicitly show them...
+		talkstr = talkstr.Replace(",\n",",\w4\n");
+		talkstr = talkstr.Replace(".\n",".\w8\w8\n");
+		talkstr = talkstr.Replace(":\n",":\w8\w8\n");
+		talkstr = talkstr.Replace(";\n",";\w8\n");
+		talkstr = talkstr.Replace("!\n","!\w8\w8\n");
+		talkstr = talkstr.Replace("?\n","?\w8\w8\n");
 	}
 	
 	InMainMenu = false;

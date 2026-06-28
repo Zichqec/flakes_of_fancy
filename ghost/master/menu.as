@@ -3,7 +3,7 @@ function OnMainMenu(indicator)
 	local m = "";
 	if (BalloonIsOpen() && indicator != "new") m += "\C\![lock,balloonrepaint]\c";
 	
-	m += "\0\b[2]\![quicksection,1]\![set,autoscroll,disable]";
+	m += "\0\b[2]\![quicksection,1]\![set,autoscroll,disable]\![no-autopause]";
 	m += "\![__MAIN_MENU__]"; //Don't have SHIORI3FW.LastTalk in Aosora, so trying this...
 	
 	local snowamounts = SnowAmounts();
